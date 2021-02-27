@@ -11,445 +11,86 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ntk-bD-czj">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmC-yG-kVi">
-                                <rect key="frame" x="0.0" y="0.0" width="740" height="810"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收銀系統" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJ5-6T-4e2">
+                                <rect key="frame" x="440" y="50" width="200" height="70"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ws0-fo-I0g">
+                                <rect key="frame" x="365" y="170" width="350" height="590"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-68-xV7">
-                                        <rect key="frame" x="120" y="24" width="500" height="80"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBG-mg-tdG" userLabel="money">
-                                                <rect key="frame" x="0.0" y="0.0" width="500" height="80"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="1kF-M5-tU0"/>
-                                                    <constraint firstAttribute="width" constant="500" id="XDh-fg-Ivx"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="IBG-mg-tdG" firstAttribute="top" secondItem="ebe-68-xV7" secondAttribute="top" id="05x-iY-4gL"/>
-                                            <constraint firstAttribute="trailing" secondItem="IBG-mg-tdG" secondAttribute="trailing" id="5bo-MY-b50"/>
-                                            <constraint firstAttribute="bottom" secondItem="IBG-mg-tdG" secondAttribute="bottom" id="HYQ-oy-8gC"/>
-                                            <constraint firstItem="IBG-mg-tdG" firstAttribute="leading" secondItem="ebe-68-xV7" secondAttribute="leading" id="jA2-5G-jvV"/>
-                                        </constraints>
-                                    </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V1T-Zm-mJE">
-                                        <rect key="frame" x="20" y="124" width="700" height="666"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K6J-Fo-zOQ">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qrV-5E-g11">
-                                        <rect key="frame" x="20" y="124" width="700" height="656"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-Yl-9Sh">
-                                                <rect key="frame" x="0.0" y="0.0" width="136" height="656"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idC-BP-4Mw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                        <state key="normal">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-24-L8w">
-                                                        <rect key="frame" x="0.0" y="132" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYY-ZG-uBP">
-                                                        <rect key="frame" x="0.0" y="264.5" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHu-iJ-F2j">
-                                                        <rect key="frame" x="0.0" y="396.5" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFB-ZF-DBl">
-                                                        <rect key="frame" x="0.0" y="529" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wnu-dS-E8N">
-                                                <rect key="frame" x="141" y="0.0" width="136" height="656"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqe-mk-qjz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-Iy-Znd">
-                                                        <rect key="frame" x="0.0" y="132" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khM-XX-vLR">
-                                                        <rect key="frame" x="0.0" y="264.5" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EF-Rt-gnN">
-                                                        <rect key="frame" x="0.0" y="396.5" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqj-8t-qvD">
-                                                        <rect key="frame" x="0.0" y="529" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G1a-CV-o0p">
-                                                <rect key="frame" x="282" y="0.0" width="136" height="656"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHe-w7-Z8c">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egh-eq-n94">
-                                                        <rect key="frame" x="0.0" y="132" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9J-Ju-hv3">
-                                                        <rect key="frame" x="0.0" y="264.5" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5E-nt-YGP">
-                                                        <rect key="frame" x="0.0" y="396.5" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKX-Th-ZMK">
-                                                        <rect key="frame" x="0.0" y="529" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-xo-fqG">
-                                                <rect key="frame" x="423" y="0.0" width="136" height="656"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-e5-nz5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfH-Y2-fzs">
-                                                        <rect key="frame" x="0.0" y="132" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taI-6u-PrQ">
-                                                        <rect key="frame" x="0.0" y="264.5" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsg-yH-3vW">
-                                                        <rect key="frame" x="0.0" y="396.5" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-NM-xPB">
-                                                        <rect key="frame" x="0.0" y="529" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-Js-1NN">
-                                                <rect key="frame" x="564" y="0.0" width="136" height="656"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1I-YG-ZzZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmX-gH-XZH">
-                                                        <rect key="frame" x="0.0" y="132" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZc-fS-eAd">
-                                                        <rect key="frame" x="0.0" y="264.5" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAQ-T0-4fU">
-                                                        <rect key="frame" x="0.0" y="396.5" width="136" height="127.5"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUB-dH-CIy">
-                                                        <rect key="frame" x="0.0" y="529" width="136" height="127"/>
-                                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <string key="userLabel">
-mainMealStackView</string>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="ebe-68-xV7" firstAttribute="centerX" secondItem="FmC-yG-kVi" secondAttribute="centerX" id="8Bj-vK-rl8"/>
-                                    <constraint firstItem="qrV-5E-g11" firstAttribute="leading" secondItem="FmC-yG-kVi" secondAttribute="leading" constant="20" symbolic="YES" id="8K8-xH-bCM"/>
-                                    <constraint firstAttribute="bottom" secondItem="V1T-Zm-mJE" secondAttribute="bottom" constant="20" id="9FR-UX-dgf"/>
-                                    <constraint firstItem="qrV-5E-g11" firstAttribute="centerX" secondItem="FmC-yG-kVi" secondAttribute="centerX" id="ISO-gT-Kpe"/>
-                                    <constraint firstAttribute="trailing" secondItem="V1T-Zm-mJE" secondAttribute="trailing" constant="20" id="OGI-3y-ar6"/>
-                                    <constraint firstItem="ebe-68-xV7" firstAttribute="top" secondItem="FmC-yG-kVi" secondAttribute="top" constant="24" id="SHR-SW-8aM"/>
-                                    <constraint firstAttribute="bottom" secondItem="qrV-5E-g11" secondAttribute="bottom" constant="30" id="VHw-bw-vV8"/>
-                                    <constraint firstItem="qrV-5E-g11" firstAttribute="top" secondItem="ebe-68-xV7" secondAttribute="bottom" constant="20" id="WPU-TP-nfe"/>
-                                    <constraint firstItem="V1T-Zm-mJE" firstAttribute="leading" secondItem="FmC-yG-kVi" secondAttribute="leading" constant="20" id="f5g-os-2wV"/>
-                                    <constraint firstItem="V1T-Zm-mJE" firstAttribute="top" secondItem="ebe-68-xV7" secondAttribute="bottom" constant="20" id="vU7-Kl-Vqu"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="qrV-5E-g11"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="j7y-dG-IY7" userLabel="mathStackView">
-                                <rect key="frame" x="750" y="20" width="300" height="340"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZvV-FH-TNE">
-                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="340"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiX-Ng-X8t">
-                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="84.5"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="1"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLx-P6-9vF">
-                                                <rect key="frame" x="0.0" y="85.5" width="99.5" height="84"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="4"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWd-50-MDp">
-                                                <rect key="frame" x="0.0" y="170.5" width="99.5" height="84.5"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="7"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-yo-aHL">
-                                                <rect key="frame" x="0.0" y="256" width="99.5" height="84"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="+"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CZ1-Kk-p6A">
-                                        <rect key="frame" x="100.5" y="0.0" width="99" height="340"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdS-84-qsT">
-                                                <rect key="frame" x="0.0" y="0.0" width="99" height="84.5"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="2"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snP-BI-dT1">
-                                                <rect key="frame" x="0.0" y="85.5" width="99" height="84"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="5"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdL-Rf-d6w">
-                                                <rect key="frame" x="0.0" y="170.5" width="99" height="84.5"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="8"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbl-FS-yKc">
-                                                <rect key="frame" x="0.0" y="256" width="99" height="84"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="x"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9HW-rO-qtJ">
-                                        <rect key="frame" x="200.5" y="0.0" width="99.5" height="340"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhG-Ki-ALT">
-                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="84.5"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="3"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLZ-VN-s1B">
-                                                <rect key="frame" x="0.0" y="85.5" width="99.5" height="84"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="6"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUr-Pq-Rvx">
-                                                <rect key="frame" x="0.0" y="170.5" width="99.5" height="84.5"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="9"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-Rd-Guf">
-                                                <rect key="frame" x="0.0" y="256" width="99.5" height="84"/>
-                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                                                <state key="normal" title="="/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="340" id="DAj-3G-EQr"/>
-                                    <constraint firstAttribute="width" constant="300" id="o4j-BL-mIQ"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rWB-wI-mNc" userLabel="checkOutStackView">
-                                <rect key="frame" x="750" y="700" width="300" height="80"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-mE-vGt">
-                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="80"/>
-                                        <state key="normal" title="外送打單"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buj-F2-xZo">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="144"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="40"/>
+                                        <state key="normal" title="收銀">
+                                            <color key="titleColor" systemColor="systemIndigoColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTouchCashRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lBj-Lb-OkQ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgR-1m-Xr5">
-                                        <rect key="frame" x="100.5" y="0.0" width="99" height="80"/>
-                                        <state key="normal" title="查看數量"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN9-lH-2u7">
+                                        <rect key="frame" x="0.0" y="149" width="350" height="143.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="40"/>
+                                        <state key="normal" title="結帳">
+                                            <color key="titleColor" systemColor="systemIndigoColor"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IC-94-tTk">
-                                        <rect key="frame" x="200.5" y="0.0" width="99.5" height="80"/>
-                                        <state key="normal" title="結帳"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63q-lb-fRa">
+                                        <rect key="frame" x="0.0" y="297.5" width="350" height="144"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="40"/>
+                                        <state key="normal" title="歷史資料">
+                                            <color key="titleColor" systemColor="systemIndigoColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCo-c9-7aG">
+                                        <rect key="frame" x="0.0" y="446.5" width="350" height="143.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="40"/>
+                                        <state key="normal" title="設定">
+                                            <color key="titleColor" systemColor="systemIndigoColor"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="bk7-tm-jiU"/>
-                                    <constraint firstAttribute="height" constant="80" id="hGM-iL-NWa"/>
+                                    <constraint firstAttribute="width" constant="350" id="Usp-ae-f34"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1aR-b9-121"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FmC-yG-kVi" firstAttribute="top" secondItem="1aR-b9-121" secondAttribute="top" id="8Ea-W8-FnO"/>
-                            <constraint firstItem="FmC-yG-kVi" firstAttribute="bottom" secondItem="1aR-b9-121" secondAttribute="bottom" id="QLd-bg-GYU"/>
-                            <constraint firstItem="j7y-dG-IY7" firstAttribute="top" secondItem="1aR-b9-121" secondAttribute="top" constant="20" id="aFM-v6-7RA"/>
-                            <constraint firstItem="FmC-yG-kVi" firstAttribute="leading" secondItem="1aR-b9-121" secondAttribute="leading" id="dO4-P4-gz4"/>
-                            <constraint firstItem="rWB-wI-mNc" firstAttribute="bottom" secondItem="1aR-b9-121" secondAttribute="bottom" constant="-30" id="mru-Ot-Abm"/>
-                            <constraint firstItem="j7y-dG-IY7" firstAttribute="leading" secondItem="FmC-yG-kVi" secondAttribute="trailing" constant="10" id="r6n-4K-oUM"/>
-                            <constraint firstItem="j7y-dG-IY7" firstAttribute="trailing" secondItem="1aR-b9-121" secondAttribute="trailing" constant="-30" id="u7q-nE-sUY"/>
-                            <constraint firstItem="rWB-wI-mNc" firstAttribute="trailing" secondItem="1aR-b9-121" secondAttribute="trailing" constant="-30" id="w1g-BW-eKx"/>
+                            <constraint firstItem="ws0-fo-I0g" firstAttribute="bottom" secondItem="1aR-b9-121" secondAttribute="bottom" constant="-50" id="8Ws-1i-8zn"/>
+                            <constraint firstItem="ws0-fo-I0g" firstAttribute="centerX" secondItem="1aR-b9-121" secondAttribute="centerX" id="8s0-v3-cK7"/>
+                            <constraint firstItem="WJ5-6T-4e2" firstAttribute="top" secondItem="1aR-b9-121" secondAttribute="top" constant="50" id="Xoc-gs-aK3"/>
+                            <constraint firstItem="ws0-fo-I0g" firstAttribute="top" secondItem="WJ5-6T-4e2" secondAttribute="bottom" constant="50" id="qKX-9g-PMS"/>
+                            <constraint firstItem="WJ5-6T-4e2" firstAttribute="centerX" secondItem="1aR-b9-121" secondAttribute="centerX" id="qLj-MO-6nc"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="money" destination="IBG-mg-tdG" id="VaM-Z2-dMS"/>
-                        <outlet property="moneyView" destination="ebe-68-xV7" id="cN0-2t-KhN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29" y="88"/>
+            <point key="canvasLocation" x="28.888888888888889" y="87.407407407407405"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

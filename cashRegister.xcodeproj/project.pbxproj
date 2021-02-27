@@ -17,6 +17,8 @@
 		60E1893D25E9F07B002A0F89 /* cashRegisterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1893C25E9F07B002A0F89 /* cashRegisterUITests.swift */; };
 		60E1895725E9F267002A0F89 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1895525E9F267002A0F89 /* MenuCollectionViewCell.swift */; };
 		60E1895825E9F267002A0F89 /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E1895625E9F267002A0F89 /* MenuCollectionViewCell.xib */; };
+		60E1897425EA2A7E002A0F89 /* CashRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */; };
+		60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		60E1893E25E9F07B002A0F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E1895525E9F267002A0F89 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		60E1895625E9F267002A0F89 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CashRegister.storyboard; sourceTree = "<group>"; };
+		60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				60E1891E25E9F079002A0F89 /* MainViewController.swift */,
+				60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */,
 				60E1895425E9F24D002A0F89 /* menu */,
 			);
 			path = UI;
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				60E1892025E9F079002A0F89 /* MainViewController.storyboard */,
+				60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				60E1892425E9F07A002A0F89 /* Assets.xcassets in Resources */,
 				60E1892225E9F079002A0F89 /* MainViewController.storyboard in Resources */,
 				60E1895825E9F267002A0F89 /* MenuCollectionViewCell.xib in Resources */,
+				60E1897425EA2A7E002A0F89 /* CashRegister.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +314,7 @@
 			files = (
 				60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */,
 				60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */,
+				60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */,
 				60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */,
 				60E1895725E9F267002A0F89 /* MenuCollectionViewCell.swift in Sources */,
 			);

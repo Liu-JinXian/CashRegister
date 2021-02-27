@@ -9,15 +9,20 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var money: UILabel!
-    @IBOutlet weak var moneyView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moneyView.layer.borderColor = UIColor.black.cgColor
-        moneyView.layer.borderWidth = 1.0
+    }
+    
+    @IBAction func onTouchCashRegister(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CashRegister", bundle: Bundle.main)
+        let viewController: CashRegisterViewController = storyboard.instantiateViewController(withIdentifier: "CashRegisterViewController") as! CashRegisterViewController
+//        viewController.getLocationList(locationResponse: locationResponse)
+//        viewController.delegate = self
         
+//        let navigationViewController = UINavigationController(rootViewController: viewController)
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
     }
 }
 

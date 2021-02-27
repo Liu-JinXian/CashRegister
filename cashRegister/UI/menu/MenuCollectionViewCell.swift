@@ -9,6 +9,8 @@ import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var foodItem: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
