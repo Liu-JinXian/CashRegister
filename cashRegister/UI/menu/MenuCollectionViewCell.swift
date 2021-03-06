@@ -8,12 +8,15 @@
 import UIKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var foodItem: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func setCell(foodItem: String) {
+        self.foodItem.setTitle(foodItem, for: .normal)
+    }
 }
