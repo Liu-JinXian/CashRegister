@@ -98,6 +98,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionViewLayout" destination="GkD-u8-dlU" id="p6L-O9-7VJ"/>
                         <outlet property="foodItemCollectionView" destination="nCO-eP-wEa" id="6fx-m1-Zqx"/>
                     </connections>
                 </viewController>
