@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol  MenuCollectionViewCellProtocol : NSObjectProtocol {
+    func onTouchItem(price: Int)
+}
+
 class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var foodItem: UIButton!
     
+    let userDefault = UserDefaultUtil.shared
+    weak var delegate: MenuCollectionViewCellProtocol?
     var item: String = ""
     var price: Int = 0
     
@@ -23,10 +29,14 @@ class MenuCollectionViewCell: UICollectionViewCell {
         
         for (item, price) in foodItem {
             self.foodItem.setTitle(item, for: .normal)
+            self.item = item
             self.price = price
         }
     }
     @IBAction func onTouch(_ sender: Any) {
-        print(price)
+        
+        userDefault.item?.insert(self.item, at: 0)
+        userDefault.price?.insert(self.price, at: 0)
+        self.delegate?.onTouchItem(price: price)
     }
 }

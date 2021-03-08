@@ -16,12 +16,22 @@ class UserDefaultUtil: NSObject {
     
     static var shared = UserDefaultUtil()
     
-    var uuid: String? {
+    var item: [String]? {
         get {
-            return getObject(classType: String(), key: .item)
+            return getObject(classType: [String](), key: .item) ?? []
         }
-        set(uuid){
-            update(object: uuid, key: .item)
+        set(value){
+            let values = setOnlyThreeItem(array: value ?? [])
+            update(object: values, key: .item)
+        }
+    }
+    
+    var price: [Int]? {
+        get {
+            return getObject(classType: [Int](), key: .price) ?? []
+        }set(value){
+            let values = setOnlyThreeItem(array: value ?? [])
+            update(object: values, key: .price)
         }
     }
     
@@ -38,6 +48,13 @@ class UserDefaultUtil: NSObject {
     private func getObject<T>(classType: T, key: UserDefaultKey) -> T? {
         let userDefaults = UserDefaults.standard
         return userDefaults.object(forKey: key.rawValue) as? T
+    }
+    private func setOnlyThreeItem(array:[Any]) -> [Any] {
+        var howManyItem = array
+        if howManyItem.count > 1000 {
+            howManyItem.removeLast()
+        }
+        return howManyItem
     }
 }
 
