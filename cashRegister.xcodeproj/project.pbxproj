@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */; };
 		606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */; };
 		606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFABA25F674A500E16370 /* ItemTableViewCell.swift */; };
 		606AFABD25F674A500E16370 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606AFABB25F674A500E16370 /* ItemTableViewCell.xib */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexUtil.swift; sourceTree = "<group>"; };
 		606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		606AFABA25F674A500E16370 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		606AFABB25F674A500E16370 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				60E1892525E9F07A002A0F89 /* LaunchScreen.storyboard */,
 				60E1892825E9F07A002A0F89 /* Info.plist */,
 				606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */,
+				0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */,
 				60E1894D25E9F188002A0F89 /* UI */,
 				60E1894E25E9F18E002A0F89 /* Storyboard */,
 				60E1895225E9F210002A0F89 /* Repository */,
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */,
+				0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */,
 				60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */,
 				606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */,
 				60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */,

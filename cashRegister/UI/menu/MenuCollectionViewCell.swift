@@ -22,7 +22,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        foodItem.layer.cornerRadius = 15
     }
     
     func setCell(foodItem: [String:Int]) {
