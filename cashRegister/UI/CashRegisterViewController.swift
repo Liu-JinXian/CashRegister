@@ -20,7 +20,6 @@ class CashRegisterViewController: UIViewController {
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var cashRegister: UIButton!
     
-    
     let userDefault = UserDefaultUtil.shared
     
     var totalAmount: Int = 0
@@ -30,37 +29,7 @@ class CashRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationItem.title = "收銀系統"
-        
-        self.cancel.layer.cornerRadius = 30
-        self.cancel.layer.borderWidth = 1
-        self.cancel.layer.borderColor = UIColor.black.cgColor
-        
-        //00DB00
-        cashRegister.layer.cornerRadius = 30
-        cashRegister.layer.masksToBounds = false
-        cashRegister.layer.shadowColor = UIColor.gray.cgColor
-        cashRegister.layer.shadowOffset = CGSize.init(width: -3, height: -3)
-        cashRegister.layer.shadowOpacity = 0.5
-        cashRegister.layer.shadowRadius = 1
-        
-        
-        self.outside.layer.cornerRadius = 30
-        self.inside.layer.cornerRadius = 30
-        
-        self.outside.layer.borderWidth = 2
-        self.outside.layer.borderColor = UIColor.lightGray.cgColor
-        
-        inside.backgroundColor = UIColor(red: 0.0 / 255.0, green: 219.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
-        inside.layer.masksToBounds = false
-        inside.layer.shadowColor = UIColor.gray.cgColor
-        inside.layer.shadowOffset = CGSize.init(width: -3, height: -3)
-        inside.layer.shadowOpacity = 0.5
-        inside.layer.shadowRadius = 1
-        inside.setTitleColor(.white, for: .normal)
-
-        
-        setDetailsView()
+        setView()
         setCollectionView()
         setTableView()
     }
@@ -87,16 +56,13 @@ class CashRegisterViewController: UIViewController {
         self.totalPrice.text = "$\(total)元"
         self.itemTableView.reloadData()
     }
+    
     @IBAction func onTouchInside(_ sender: Any) {
         
         insideOrOutside.text = "內用  >"
         
-        inside.backgroundColor = UIColor(red: 0.0 / 255.0, green: 219.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
-        inside.layer.masksToBounds = false
-        inside.layer.shadowColor = UIColor.gray.cgColor
-        inside.layer.shadowOffset = CGSize.init(width: -3, height: -3)
-        inside.layer.shadowOpacity = 0.5
-        inside.layer.shadowRadius = 1
+        inside.backgroundColor = colorButtonGreen
+        inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
         inside.setTitleColor(.white, for: .normal)
         
         outside.backgroundColor = UIColor.white
@@ -106,10 +72,11 @@ class CashRegisterViewController: UIViewController {
         outside.layer.borderWidth = 2
         outside.layer.borderColor = UIColor.lightGray.cgColor
     }
+    
     @IBAction func onTouchOutside(_ sender: Any) {
         
         insideOrOutside.text = "外帶  >"
-
+        
         inside.backgroundColor = UIColor.white
         inside.layer.borderColor = UIColor.green.cgColor
         inside.setTitleColor(.black, for: .normal)
@@ -120,14 +87,11 @@ class CashRegisterViewController: UIViewController {
         outside.backgroundColor = UIColor.lightGray
         outside.layer.borderColor = UIColor.black.cgColor
         outside.setTitleColor(.white, for: .normal)
-        outside.backgroundColor = UIColor(red: 0.0 / 255.0, green: 219.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
-        outside.layer.masksToBounds = false
         outside.layer.borderWidth = 0
-        outside.layer.shadowColor = UIColor.gray.cgColor
-        outside.layer.shadowOffset = CGSize.init(width: -3, height: -3)
-        outside.layer.shadowOpacity = 0.5
-        outside.layer.shadowRadius = 1
         outside.setTitleColor(.white, for: .normal)
+        outside.backgroundColor = colorButtonGreen
+        outside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
+        
     }
 }
 
@@ -183,14 +147,28 @@ extension CashRegisterViewController: MenuCollectionViewCellProtocol {
 
 extension CashRegisterViewController {
     
-    private func setDetailsView() {
+    private func setView() {
         
-        self.detailsView.layer.masksToBounds = false
-        self.detailsView.layer.cornerRadius = 30
-        self.detailsView.layer.shadowOffset = CGSize.init(width: 3, height: 3)
-        self.detailsView.layer.shadowOpacity = 0.7
-        self.detailsView.layer.shadowRadius = 5
-        self.detailsView.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationItem.title = "收銀系統"
+        
+        detailsView.setShadow(offset: CGSize.init(width: 3, height: 3), opacity: 0.7, shadowRadius: 5, color: .black)
+        detailsView.layer.cornerRadius = 30
+        
+        cancel.layer.cornerRadius = 30
+        cancel.layer.borderWidth = 1
+        cancel.layer.borderColor = UIColor.black.cgColor
+        
+        cashRegister.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
+        cashRegister.layer.cornerRadius = 30
+        
+        outside.layer.cornerRadius = 30
+        outside.layer.borderWidth = 2
+        outside.layer.borderColor = UIColor.lightGray.cgColor
+        
+        inside.layer.cornerRadius = 30
+        inside.backgroundColor = colorButtonGreen
+        inside.setTitleColor(.white, for: .normal)
+        inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
     }
     
     private func setCollectionView() {
