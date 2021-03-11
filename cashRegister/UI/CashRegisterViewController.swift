@@ -134,6 +134,17 @@ extension CashRegisterViewController: UITableViewDataSource {
         cell.setCell(Item: userDefault.item?[indexPath.row] ?? "", price: userDefault.price?[indexPath.row] ?? 0)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        total = total - (userDefault.price?[indexPath.row] ?? 0)
+        
+        userDefault.item?.remove(at: indexPath.row)
+        userDefault.price?.remove(at: indexPath.row)
+        
+        self.totalPrice.text = "$\(total)元"
+        self.itemTableView.reloadData()
+    }
 }
 
 extension CashRegisterViewController: MenuCollectionViewCellProtocol {
