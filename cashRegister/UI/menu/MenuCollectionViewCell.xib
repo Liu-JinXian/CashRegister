@@ -19,7 +19,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QI3-bD-jsn">
                         <rect key="frame" x="0.0" y="0.0" width="206" height="140"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Thin" family="PingFang TC" pointSize="30"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.19379537295644866" green="0.14966085063412549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>

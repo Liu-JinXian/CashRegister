@@ -49,6 +49,7 @@ class UserDefaultUtil: NSObject {
         let userDefaults = UserDefaults.standard
         return userDefaults.object(forKey: key.rawValue) as? T
     }
+    
     private func setOnlyThreeItem(array:[Any]) -> [Any] {
         var howManyItem = array
         if howManyItem.count > 1000 {

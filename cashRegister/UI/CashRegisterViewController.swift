@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CashRegisterViewController: UIViewController {
+class CashRegisterViewController: BaseViewController {
     
     @IBOutlet weak var inside: UIButton!
     @IBOutlet weak var outside: UIButton!
@@ -20,10 +20,15 @@ class CashRegisterViewController: UIViewController {
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var cashRegister: UIButton!
     
-    let userDefault = UserDefaultUtil.shared
+    var items: [String] = []
+    var amounts: [Int] = []
+    var itemTotalPrice: [Int] = []
+
+    var amount: Int = 0
+    var price: Int = 0
+    var totalprice: Int = 0
+    var totalamount: Int = 0
     
-    var totalAmount: Int = 0
-    var total: Int = 0
     var fooditem: [[String:Int]] = [["香腸":80],["Ｇ排":85],["招牌":95],["滷Ｇ":90],["鯖魚":90],["鯛魚":90],["秋刀魚":90],["燒肉":115],["烤雞":90],["滷排":110],["焢肉":110],["炸排":110],["養生":95],["鮭魚":110],["雞腿":120],["海南烤雞":110],["養生菜飯":80],["菜飯":70],["單腿":65],["單排":65],["單魚":50],["其他":45]]
     
     override func viewDidLoad() {
@@ -32,6 +37,12 @@ class CashRegisterViewController: UIViewController {
         setView()
         setCollectionView()
         setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "收銀系統"
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,24 +55,22 @@ class CashRegisterViewController: UIViewController {
     @IBAction func onTouchCashRegister(_ sender: Any) {
         
         clearUserDeafaults()
-        total = 0
-        self.totalPrice.text = "$\(total)元"
-        self.itemTableView.reloadData()
+        totalprice = 0
+        totalAndTableviewReload()
     }
     
     @IBAction func onTouchCancel(_ sender: Any) {
         
         clearUserDeafaults()
-        total = 0
-        self.totalPrice.text = "$\(total)元"
-        self.itemTableView.reloadData()
+        totalprice = 0
+        totalAndTableviewReload()
     }
     
     @IBAction func onTouchInside(_ sender: Any) {
         
         insideOrOutside.text = "內用  >"
         
-        inside.backgroundColor = colorButtonGreen
+        inside.backgroundColor = colorButtonYellow
         inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
         inside.setTitleColor(.white, for: .normal)
         
@@ -89,12 +98,19 @@ class CashRegisterViewController: UIViewController {
         outside.setTitleColor(.white, for: .normal)
         outside.layer.borderWidth = 0
         outside.setTitleColor(.white, for: .normal)
-        outside.backgroundColor = colorButtonGreen
+        outside.backgroundColor = colorButtonYellow
         outside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
         
     }
 }
 
+
+extension CashRegisterViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: (self.foodItemCollectionView.frame.width/5 - 10), height: (self.foodItemCollectionView.frame.height/5 - 10))
+    }
+}
 extension CashRegisterViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -123,36 +139,54 @@ extension CashRegisterViewController: UITableViewDelegate {
 extension CashRegisterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        totalAmount = userDefault.item?.count ?? 0
-        self.totalItem.text = "共\(totalAmount)項"
-        return  userDefault.item?.count ?? 0
+        
+        return  items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-        
-        cell.setCell(Item: userDefault.item?[indexPath.row] ?? "", price: userDefault.price?[indexPath.row] ?? 0)
+        cell.setCell(Item: items[indexPath.row] ,amount: amounts[indexPath.row] ,price: itemTotalPrice[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
         
-        total = total - (userDefault.price?[indexPath.row] ?? 0)
+        totalprice -= itemTotalPrice[indexPath.row]
+        totalamount -= amounts[indexPath.row]
         
-        userDefault.item?.remove(at: indexPath.row)
-        userDefault.price?.remove(at: indexPath.row)
+        items.remove(at: indexPath.row)
+        amounts.remove(at: indexPath.row)
+        itemTotalPrice.remove(at: indexPath.row)
         
-        self.totalPrice.text = "$\(total)元"
+        self.totalItem.text = "共\(totalamount)項"
+        self.totalPrice.text = "$\(totalprice)元"
         self.itemTableView.reloadData()
     }
 }
 
 extension CashRegisterViewController: MenuCollectionViewCellProtocol {
-    func onTouchItem(price: Int) {
+    
+    func onTouchItem(item: String, price: Int) {
         
-        total += price
-        self.totalPrice.text = "$\(total)元"
-        self.itemTableView.reloadData()
+        if items.contains(item) == false {
+            items.append(item)
+            amounts.append(1)
+            itemTotalPrice.append(price)
+        } else {
+            amount = amounts[items.firstIndex(of: item) ?? 0]
+            amount += 1
+            amounts[items.firstIndex(of: item) ?? 0] = amount
+            
+            self.price = itemTotalPrice[items.firstIndex(of: item) ?? 0]
+            self.price += price
+            itemTotalPrice[items.firstIndex(of: item) ?? 0] = self.price
+        }
+        
+        totalprice += price
+        totalamount += 1
+        amount = 0
+        totalAndTableviewReload()
     }
 }
 
@@ -163,21 +197,15 @@ extension CashRegisterViewController {
         self.navigationController?.navigationItem.title = "收銀系統"
         
         detailsView.setShadow(offset: CGSize.init(width: 3, height: 3), opacity: 0.7, shadowRadius: 5, color: .black)
-        detailsView.layer.cornerRadius = 30
         
-        cancel.layer.cornerRadius = 30
         cancel.layer.borderWidth = 1
         cancel.layer.borderColor = UIColor.black.cgColor
         
         cashRegister.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
-        cashRegister.layer.cornerRadius = 30
         
-        outside.layer.cornerRadius = 30
         outside.layer.borderWidth = 2
         outside.layer.borderColor = UIColor.lightGray.cgColor
         
-        inside.layer.cornerRadius = 30
-        inside.backgroundColor = colorButtonGreen
         inside.setTitleColor(.white, for: .normal)
         inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
     }
@@ -185,10 +213,10 @@ extension CashRegisterViewController {
     private func setCollectionView() {
         
         foodItemCollectionView.dataSource = self
+        foodItemCollectionView.delegate = self
         foodItemCollectionView.register(UINib(nibName: "MenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MenuCollectionViewCell")
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 120, height: 120)
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 5
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -204,10 +232,18 @@ extension CashRegisterViewController {
     
     private func clearUserDeafaults() {
         
-        let userDefaults = UserDefaults.standard
-        let dics = userDefaults.dictionaryRepresentation()
-        for key in dics { userDefaults.removeObject(forKey: key.key) }
-        userDefaults.synchronize()
+        items = []
+        amounts = []
+        itemTotalPrice = []
+        price = 0
+        totalprice = 0
+        totalamount = 0
+    }
+    
+    private func totalAndTableviewReload() {
+        self.totalPrice.text = "$\(totalprice)元"
+        self.totalItem.text = "共\(totalamount)項"
+        self.itemTableView.reloadData()
     }
 }
 

@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A13BA2626004DE200CC2D15 /* SetUpItemViewController.swift */; };
+		0A1E0E092609D72900910A4B /* UIDatePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0E082609D72900910A4B /* UIDatePickerExtension.swift */; };
+		0A1E0E112609DE9B00910A4B /* FormatUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E0E102609DE9A00910A4B /* FormatUtil.swift */; };
 		0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */; };
 		0A2E9E8C25F76E50006ACEAC /* ColorDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */; };
 		0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */; };
+		0AE56F4525FF5D1C00877314 /* StepUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE56F4425FF5D1C00877314 /* StepUp.storyboard */; };
+		0AE56F4A25FF5D5600877314 /* StepUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE56F4925FF5D5600877314 /* StepUpViewController.swift */; };
+		0AF28B6E25FAFADE008CA39A /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF28B6D25FAFADE008CA39A /* Data.storyboard */; };
+		0AF28B7625FAFFBC008CA39A /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF28B7525FAFFBC008CA39A /* DataViewController.swift */; };
+		0AF28B9025FB0AC8008CA39A /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF28B8E25FB0AC8008CA39A /* DataTableViewCell.swift */; };
+		0AF28B9125FB0AC8008CA39A /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF28B8F25FB0AC8008CA39A /* DataTableViewCell.xib */; };
+		0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFA5B9A26018B6A000FD4C0 /* BaseViewController.swift */; };
 		606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */; };
 		606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFABA25F674A500E16370 /* ItemTableViewCell.swift */; };
 		606AFABD25F674A500E16370 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606AFABB25F674A500E16370 /* ItemTableViewCell.xib */; };
 		60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891A25E9F079002A0F89 /* AppDelegate.swift */; };
 		60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891C25E9F079002A0F89 /* SceneDelegate.swift */; };
 		60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891E25E9F079002A0F89 /* MainViewController.swift */; };
-		60E1892225E9F079002A0F89 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892025E9F079002A0F89 /* MainViewController.storyboard */; };
+		60E1892225E9F079002A0F89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892025E9F079002A0F89 /* Main.storyboard */; };
 		60E1892425E9F07A002A0F89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892325E9F07A002A0F89 /* Assets.xcassets */; };
 		60E1892725E9F07A002A0F89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892525E9F07A002A0F89 /* LaunchScreen.storyboard */; };
 		60E1893225E9F07B002A0F89 /* cashRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1893125E9F07B002A0F89 /* cashRegisterTests.swift */; };
@@ -45,9 +55,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A13BA2626004DE200CC2D15 /* SetUpItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemViewController.swift; sourceTree = "<group>"; };
+		0A1E0E082609D72900910A4B /* UIDatePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtension.swift; sourceTree = "<group>"; };
+		0A1E0E102609DE9A00910A4B /* FormatUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatUtil.swift; sourceTree = "<group>"; };
 		0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexUtil.swift; sourceTree = "<group>"; };
 		0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDef.swift; sourceTree = "<group>"; };
 		0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		0AE56F4425FF5D1C00877314 /* StepUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepUp.storyboard; sourceTree = "<group>"; };
+		0AE56F4925FF5D5600877314 /* StepUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepUpViewController.swift; sourceTree = "<group>"; };
+		0AF28B6D25FAFADE008CA39A /* Data.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
+		0AF28B7525FAFFBC008CA39A /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		0AF28B8E25FB0AC8008CA39A /* DataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
+		0AF28B8F25FB0AC8008CA39A /* DataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
+		0AFA5B9A26018B6A000FD4C0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		606AFABA25F674A500E16370 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		606AFABB25F674A500E16370 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -55,7 +75,7 @@
 		60E1891A25E9F079002A0F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E1891C25E9F079002A0F89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		60E1891E25E9F079002A0F89 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		60E1892125E9F079002A0F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
+		60E1892125E9F079002A0F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60E1892325E9F07A002A0F89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60E1892625E9F07A002A0F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60E1892825E9F07A002A0F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AF28B7D25FB0A8C008CA39A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0AF28B8E25FB0AC8008CA39A /* DataTableViewCell.swift */,
+				0AF28B8F25FB0AC8008CA39A /* DataTableViewCell.xib */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		606AFAC125F674AC00E16370 /* Item */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,8 +164,10 @@
 				60E1892825E9F07A002A0F89 /* Info.plist */,
 				606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */,
 				0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */,
+				0A1E0E082609D72900910A4B /* UIDatePickerExtension.swift */,
 				0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */,
 				0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */,
+				0A1E0E102609DE9A00910A4B /* FormatUtil.swift */,
 				60E1894D25E9F188002A0F89 /* UI */,
 				60E1894E25E9F18E002A0F89 /* Storyboard */,
 				60E1895225E9F210002A0F89 /* Repository */,
@@ -166,8 +197,13 @@
 		60E1894D25E9F188002A0F89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0AFA5B9A26018B6A000FD4C0 /* BaseViewController.swift */,
 				60E1891E25E9F079002A0F89 /* MainViewController.swift */,
 				60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */,
+				0AF28B7525FAFFBC008CA39A /* DataViewController.swift */,
+				0AE56F4925FF5D5600877314 /* StepUpViewController.swift */,
+				0A13BA2626004DE200CC2D15 /* SetUpItemViewController.swift */,
+				0AF28B7D25FB0A8C008CA39A /* Data */,
 				606AFAC125F674AC00E16370 /* Item */,
 				60E1895425E9F24D002A0F89 /* menu */,
 			);
@@ -177,8 +213,10 @@
 		60E1894E25E9F18E002A0F89 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				60E1892025E9F079002A0F89 /* MainViewController.storyboard */,
+				60E1892025E9F079002A0F89 /* Main.storyboard */,
 				60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */,
+				0AF28B6D25FAFADE008CA39A /* Data.storyboard */,
+				0AE56F4425FF5D1C00877314 /* StepUp.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -311,8 +349,11 @@
 			files = (
 				60E1892725E9F07A002A0F89 /* LaunchScreen.storyboard in Resources */,
 				60E1892425E9F07A002A0F89 /* Assets.xcassets in Resources */,
-				60E1892225E9F079002A0F89 /* MainViewController.storyboard in Resources */,
+				60E1892225E9F079002A0F89 /* Main.storyboard in Resources */,
+				0AF28B9125FB0AC8008CA39A /* DataTableViewCell.xib in Resources */,
+				0AE56F4525FF5D1C00877314 /* StepUp.storyboard in Resources */,
 				60E1895825E9F267002A0F89 /* MenuCollectionViewCell.xib in Resources */,
+				0AF28B6E25FAFADE008CA39A /* Data.storyboard in Resources */,
 				606AFABD25F674A500E16370 /* ItemTableViewCell.xib in Resources */,
 				60E1897425EA2A7E002A0F89 /* CashRegister.storyboard in Resources */,
 			);
@@ -340,15 +381,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */,
+				0A1E0E112609DE9B00910A4B /* FormatUtil.swift in Sources */,
 				60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */,
 				0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */,
 				60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */,
 				606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */,
+				0AE56F4A25FF5D5600877314 /* StepUpViewController.swift in Sources */,
 				60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */,
 				60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */,
+				0AF28B9025FB0AC8008CA39A /* DataTableViewCell.swift in Sources */,
 				0A2E9E8C25F76E50006ACEAC /* ColorDef.swift in Sources */,
 				606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */,
 				60E1895725E9F267002A0F89 /* MenuCollectionViewCell.swift in Sources */,
+				0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */,
+				0A1E0E092609D72900910A4B /* UIDatePickerExtension.swift in Sources */,
+				0AF28B7625FAFFBC008CA39A /* DataViewController.swift in Sources */,
+				0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +432,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		60E1892025E9F079002A0F89 /* MainViewController.storyboard */ = {
+		60E1892025E9F079002A0F89 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				60E1892125E9F079002A0F89 /* Base */,
 			);
-			name = MainViewController.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		60E1892525E9F07A002A0F89 /* LaunchScreen.storyboard */ = {

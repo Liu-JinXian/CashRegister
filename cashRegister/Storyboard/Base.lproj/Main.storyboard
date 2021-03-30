@@ -67,6 +67,9 @@
                                         <state key="normal" title="歷史資料">
                                             <color key="titleColor" systemColor="systemIndigoColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B9y-1N-gH2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCo-c9-7aG">
                                         <rect key="frame" x="0.0" y="409" width="350" height="131"/>
@@ -75,6 +78,9 @@
                                         <state key="normal" title="設定">
                                             <color key="titleColor" systemColor="systemIndigoColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTouchSetUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qja-2O-TRZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

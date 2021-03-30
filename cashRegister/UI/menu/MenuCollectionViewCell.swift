@@ -8,14 +8,14 @@
 import UIKit
 
 protocol  MenuCollectionViewCellProtocol : NSObjectProtocol {
-    func onTouchItem(price: Int)
+    func onTouchItem(item: String, price: Int)
 }
 
 class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var foodItem: UIButton!
     
-    let userDefault = UserDefaultUtil.shared
+//    let userDefault = UserDefaultUtil.shared
     weak var delegate: MenuCollectionViewCellProtocol?
     var item: String = ""
     var price: Int = 0
@@ -36,8 +36,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
     @IBAction func onTouch(_ sender: Any) {
         
-        userDefault.item?.insert(self.item, at: 0)
-        userDefault.price?.insert(self.price, at: 0)
-        self.delegate?.onTouchItem(price: price)
+//        userDefault.item?.insert(self.item, at: 0)
+//        userDefault.price?.insert(self.price, at: 0)
+        self.delegate?.onTouchItem(item: item, price: price)
     }
 }
