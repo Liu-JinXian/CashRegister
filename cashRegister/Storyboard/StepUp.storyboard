@@ -43,6 +43,9 @@
                             <constraint firstItem="BdR-b7-C0T" firstAttribute="top" secondItem="eTQ-dp-EdH" secondAttribute="top" id="s1s-GU-F9i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="BdR-b7-C0T" id="tn6-IJ-cdX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvi-Eg-55l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,6 +112,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="onTouchCancel:" destination="aPR-VX-XHI" eventType="touchUpInside" id="Rcn-7Q-E3t"/>
                                                     <action selector="onTouchClose:" destination="aPR-VX-XHI" eventType="touchUpInside" id="S8D-TU-yS7"/>
                                                 </connections>
                                             </button>
@@ -124,6 +128,9 @@
                                                         <integer key="value" value="30"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onTouchSave:" destination="aPR-VX-XHI" eventType="touchUpInside" id="KW0-ac-f7v"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -157,6 +164,10 @@
                             <constraint firstItem="jnR-FS-6j9" firstAttribute="centerY" secondItem="rzf-lP-gVU" secondAttribute="centerY" id="wmC-Eg-JPF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterItem" destination="p1a-kp-vyB" id="F72-58-qeZ"/>
+                        <outlet property="enterPrice" destination="U6d-fi-0iR" id="OQv-OR-vOI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhY-15-gBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,9 @@
 		0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */; };
 		0A2E9E8C25F76E50006ACEAC /* ColorDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */; };
 		0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */; };
+		0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57050E262D6C11002E944B /* SetUpItemTableViewCell.swift */; };
+		0A570511262D6C11002E944B /* SetUpItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A57050F262D6C11002E944B /* SetUpItemTableViewCell.xib */; };
+		0AB150082615A8A80019E2A4 /* ItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB150072615A8A80019E2A4 /* ItemsRepository.swift */; };
 		0AE56F4525FF5D1C00877314 /* StepUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE56F4425FF5D1C00877314 /* StepUp.storyboard */; };
 		0AE56F4A25FF5D5600877314 /* StepUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE56F4925FF5D5600877314 /* StepUpViewController.swift */; };
 		0AF28B6E25FAFADE008CA39A /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF28B6D25FAFADE008CA39A /* Data.storyboard */; };
@@ -61,6 +64,9 @@
 		0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexUtil.swift; sourceTree = "<group>"; };
 		0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDef.swift; sourceTree = "<group>"; };
 		0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		0A57050E262D6C11002E944B /* SetUpItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemTableViewCell.swift; sourceTree = "<group>"; };
+		0A57050F262D6C11002E944B /* SetUpItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetUpItemTableViewCell.xib; sourceTree = "<group>"; };
+		0AB150072615A8A80019E2A4 /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
 		0AE56F4425FF5D1C00877314 /* StepUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepUp.storyboard; sourceTree = "<group>"; };
 		0AE56F4925FF5D5600877314 /* StepUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepUpViewController.swift; sourceTree = "<group>"; };
 		0AF28B6D25FAFADE008CA39A /* Data.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
@@ -81,7 +87,7 @@
 		60E1892825E9F07A002A0F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E1892D25E9F07A002A0F89 /* cashRegisterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cashRegisterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1893125E9F07B002A0F89 /* cashRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cashRegisterTests.swift; sourceTree = "<group>"; };
-		60E1893325E9F07B002A0F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E1893325E9F07B002A0F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../cashRegisterTests/Info.plist; sourceTree = "<group>"; };
 		60E1893825E9F07B002A0F89 /* cashRegisterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cashRegisterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1893C25E9F07B002A0F89 /* cashRegisterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cashRegisterUITests.swift; sourceTree = "<group>"; };
 		60E1893E25E9F07B002A0F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +122,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A570515262D6C1C002E944B /* SetUp */ = {
+			isa = PBXGroup;
+			children = (
+				0A57050E262D6C11002E944B /* SetUpItemTableViewCell.swift */,
+				0A57050F262D6C11002E944B /* SetUpItemTableViewCell.xib */,
+			);
+			path = SetUp;
+			sourceTree = "<group>";
+		};
+		0AB150062615A84D0019E2A4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				0AB150072615A8A80019E2A4 /* ItemsRepository.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		0AF28B7D25FB0A8C008CA39A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +191,7 @@
 				0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */,
 				0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */,
 				0A1E0E102609DE9A00910A4B /* FormatUtil.swift */,
+				0AB150062615A84D0019E2A4 /* Test */,
 				60E1894D25E9F188002A0F89 /* UI */,
 				60E1894E25E9F18E002A0F89 /* Storyboard */,
 				60E1895225E9F210002A0F89 /* Repository */,
@@ -180,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				60E1893125E9F07B002A0F89 /* cashRegisterTests.swift */,
-				60E1893325E9F07B002A0F89 /* Info.plist */,
 			);
 			path = cashRegisterTests;
 			sourceTree = "<group>";
@@ -188,6 +211,7 @@
 		60E1893B25E9F07B002A0F89 /* cashRegisterUITests */ = {
 			isa = PBXGroup;
 			children = (
+				60E1893325E9F07B002A0F89 /* Info.plist */,
 				60E1893C25E9F07B002A0F89 /* cashRegisterUITests.swift */,
 				60E1893E25E9F07B002A0F89 /* Info.plist */,
 			);
@@ -203,6 +227,7 @@
 				0AF28B7525FAFFBC008CA39A /* DataViewController.swift */,
 				0AE56F4925FF5D5600877314 /* StepUpViewController.swift */,
 				0A13BA2626004DE200CC2D15 /* SetUpItemViewController.swift */,
+				0A570515262D6C1C002E944B /* SetUp */,
 				0AF28B7D25FB0A8C008CA39A /* Data */,
 				606AFAC125F674AC00E16370 /* Item */,
 				60E1895425E9F24D002A0F89 /* menu */,
@@ -349,6 +374,7 @@
 			files = (
 				60E1892725E9F07A002A0F89 /* LaunchScreen.storyboard in Resources */,
 				60E1892425E9F07A002A0F89 /* Assets.xcassets in Resources */,
+				0A570511262D6C11002E944B /* SetUpItemTableViewCell.xib in Resources */,
 				60E1892225E9F079002A0F89 /* Main.storyboard in Resources */,
 				0AF28B9125FB0AC8008CA39A /* DataTableViewCell.xib in Resources */,
 				0AE56F4525FF5D1C00877314 /* StepUp.storyboard in Resources */,
@@ -395,8 +421,10 @@
 				60E1895725E9F267002A0F89 /* MenuCollectionViewCell.swift in Sources */,
 				0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */,
 				0A1E0E092609D72900910A4B /* UIDatePickerExtension.swift in Sources */,
+				0AB150082615A8A80019E2A4 /* ItemsRepository.swift in Sources */,
 				0AF28B7625FAFFBC008CA39A /* DataViewController.swift in Sources */,
 				0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */,
+				0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

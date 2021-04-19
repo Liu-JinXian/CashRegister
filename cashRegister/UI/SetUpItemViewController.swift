@@ -7,23 +7,26 @@
 
 import UIKit
 
+extension SetUpItemViewController {
+    func setView(row: Int) {
+        
+    }
+}
+
 class SetUpItemViewController: BaseViewController {
+    
+    @IBOutlet weak var enterItem: UITextField!
+    @IBOutlet weak var enterPrice: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tapDismissKeyBoard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
-        self.view.addGestureRecognizer(tapDismissKeyBoard)
     }
     
-    @objc func dismissKeyBoard() {
-        
-        self.view.endEditing(true)
-    }
-    
-    @IBAction func onTouchClose(_ sender: Any) {
-        
+    @IBAction func onTouchSave(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onTouchCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

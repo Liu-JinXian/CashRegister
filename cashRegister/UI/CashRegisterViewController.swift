@@ -20,19 +20,21 @@ class CashRegisterViewController: BaseViewController {
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var cashRegister: UIButton!
     
+    var fooditem :[[String:Int]] = []
     var items: [String] = []
     var amounts: [Int] = []
     var itemTotalPrice: [Int] = []
-
+    
     var amount: Int = 0
     var price: Int = 0
     var totalprice: Int = 0
     var totalamount: Int = 0
     
-    var fooditem: [[String:Int]] = [["香腸":80],["Ｇ排":85],["招牌":95],["滷Ｇ":90],["鯖魚":90],["鯛魚":90],["秋刀魚":90],["燒肉":115],["烤雞":90],["滷排":110],["焢肉":110],["炸排":110],["養生":95],["鮭魚":110],["雞腿":120],["海南烤雞":110],["養生菜飯":80],["菜飯":70],["單腿":65],["單排":65],["單魚":50],["其他":45]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let repository = ItemsRepository()
+        fooditem = repository.getItemList()
         
         setView()
         setCollectionView()
@@ -107,7 +109,7 @@ class CashRegisterViewController: BaseViewController {
 
 extension CashRegisterViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         return CGSize(width: (self.foodItemCollectionView.frame.width/5 - 10), height: (self.foodItemCollectionView.frame.height/5 - 10))
     }
 }
@@ -145,12 +147,13 @@ extension CashRegisterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
+        cell.delegate = self
         cell.setCell(Item: items[indexPath.row] ,amount: amounts[indexPath.row] ,price: itemTotalPrice[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         
         totalprice -= itemTotalPrice[indexPath.row]
         totalamount -= amounts[indexPath.row]
@@ -184,6 +187,63 @@ extension CashRegisterViewController: MenuCollectionViewCellProtocol {
         }
         
         totalprice += price
+        totalamount += 1
+        amount = 0
+        totalAndTableviewReload()
+    }
+}
+
+extension CashRegisterViewController: ItemTableViewCellllProtocol {
+    func onTouchLess(item: String) {
+        
+        amount = amounts[items.firstIndex(of: item) ?? 0]
+        amount -= 1
+        
+        if amount == 0 {
+            
+            totalprice -= itemTotalPrice[items.firstIndex(of: item) ?? 0]
+            totalamount -= amounts[items.firstIndex(of: item) ?? 0]
+            
+            let row = items.firstIndex(of: item)
+            items.remove(at: row ?? 0)
+            amounts.remove(at: row ?? 0)
+            itemTotalPrice.remove(at: row ?? 0)
+            
+            self.totalItem.text = "共\(totalamount)項"
+            self.totalPrice.text = "$\(totalprice)元"
+            self.itemTableView.reloadData()
+            
+        } else {
+            
+            amount = amounts[items.firstIndex(of: item) ?? 0]
+            self.price = itemTotalPrice[items.firstIndex(of: item) ?? 0]
+            totalprice -= price
+            self.price = self.price/amount
+            amount -= 1
+            amounts[items.firstIndex(of: item) ?? 0] = amount
+            
+            self.price = self.price * amount
+            itemTotalPrice[items.firstIndex(of: item) ?? 0] = self.price
+            totalprice += price
+            totalamount -= 1
+            amount = 0
+            totalAndTableviewReload()
+        }
+    }
+    
+    func onTouchAdd(item: String) {
+        
+        amount = amounts[items.firstIndex(of: item) ?? 0]
+        price = itemTotalPrice[items.firstIndex(of: item) ?? 0]
+        totalprice -= price
+        price = price/amount
+        amount += 1
+        amounts[items.firstIndex(of: item) ?? 0] = amount
+        
+        price = price * amount
+        totalprice += price
+        itemTotalPrice[items.firstIndex(of: item) ?? 0] = self.price
+        
         totalamount += 1
         amount = 0
         totalAndTableviewReload()
