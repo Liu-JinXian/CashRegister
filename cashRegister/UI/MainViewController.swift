@@ -17,10 +17,10 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cashRegister.layer.cornerRadius = 5
-        checkOut.layer.cornerRadius = 5
-        historyData.layer.cornerRadius = 5
-        setUp.layer.cornerRadius = 5
+        cashRegister.layer.cornerRadius = 12
+        checkOut.layer.cornerRadius = 12
+        historyData.layer.cornerRadius = 12
+        setUp.layer.cornerRadius = 12
     }
     
     override func viewWillAppear(_ animated: Bool) {

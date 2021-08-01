@@ -14,27 +14,29 @@ protocol  MenuCollectionViewCellProtocol : NSObjectProtocol {
 class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var foodItem: UIButton!
-
+    @IBOutlet weak var item: UILabel!
+    @IBOutlet weak var price: UILabel!
+    
     weak var delegate: MenuCollectionViewCellProtocol?
-    var item: String = ""
-    var price: Int = 0
+    var items: String = ""
+    var prices: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        foodItem.layer.cornerRadius = 15
+        self.foodItem.layer.cornerRadius = 5
     }
     
     func setCell(foodItem: [String:Int]) {
         
         for (item, price) in foodItem {
-            self.foodItem.setTitle(item, for: .normal)
-            self.item = item
-            self.price = price
+            self.items = item
+            self.item.text = item
+            self.prices = price
+            self.price.text = "$\(price)"
         }
     }
     @IBAction func onTouch(_ sender: Any) {
         
-        self.delegate?.onTouchItem(item: item, price: price)
+        self.delegate?.onTouchItem(item: items, price: prices)
     }
 }

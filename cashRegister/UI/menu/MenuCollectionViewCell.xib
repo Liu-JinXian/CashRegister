@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,30 +20,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="206" height="140"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
-                        <state key="normal" title="Button">
+                        <state key="normal">
                             <color key="titleColor" red="0.19379537295644866" green="0.14966085063412549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
                             <action selector="onTouch:" destination="gTV-IL-0wX" eventType="touchUpInside" id="kl4-fG-SO8"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1m-pt-8MM">
+                        <rect key="frame" x="20" y="57" width="50.5" height="34"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toI-Qr-lB4">
+                        <rect key="frame" x="20" y="101" width="57" height="34"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="toI-Qr-lB4" firstAttribute="leading" secondItem="G1m-pt-8MM" secondAttribute="leading" id="28X-vP-tAn"/>
                 <constraint firstItem="QI3-bD-jsn" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" id="3KR-ds-RqU"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="toI-Qr-lB4" secondAttribute="bottom" constant="5" id="DdQ-qi-STe"/>
+                <constraint firstItem="G1m-pt-8MM" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="L4F-Qk-Cgc"/>
                 <constraint firstItem="QI3-bD-jsn" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="bCf-yF-ahx"/>
                 <constraint firstItem="QI3-bD-jsn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e2h-K4-nxX"/>
                 <constraint firstItem="QI3-bD-jsn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hZf-x7-jU1"/>
+                <constraint firstItem="toI-Qr-lB4" firstAttribute="top" secondItem="G1m-pt-8MM" secondAttribute="bottom" constant="10" id="rlI-E5-1We"/>
             </constraints>
             <size key="customSize" width="206" height="140"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="30"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="foodItem" destination="QI3-bD-jsn" id="VrH-U5-mqv"/>
+                <outlet property="item" destination="G1m-pt-8MM" id="38l-or-CKQ"/>
+                <outlet property="price" destination="toI-Qr-lB4" id="2VN-A9-gjZ"/>
             </connections>
             <point key="canvasLocation" x="-136" y="104"/>
         </collectionViewCell>

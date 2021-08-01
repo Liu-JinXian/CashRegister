@@ -7,5 +7,5 @@
 
 import UIKit
 
-let colorButtonYellow = ColorHexUtil.hexColor(hex: "#FFD306")
+let yellow = ColorHexUtil.hexColor(hex: "#FCCB6C")
 let colorButtonGreen = ColorHexUtil.hexColor(hex: "#00DB00")

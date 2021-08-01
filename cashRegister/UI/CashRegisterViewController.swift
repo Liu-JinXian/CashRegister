@@ -44,7 +44,9 @@ class CashRegisterViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.title = "收銀系統"
+        self.navigationItem.title = "POS系統"
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = yellow
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -72,13 +74,14 @@ class CashRegisterViewController: BaseViewController {
         
         insideOrOutside.text = "內用  >"
         
-        inside.backgroundColor = colorButtonYellow
-        inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
+        inside.backgroundColor = yellow
+        inside.setShadow(offset: CGSize.init(width: 0, height: 0), opacity: 1, shadowRadius: 1, color: .black)
+//        inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .black)
         inside.setTitleColor(.white, for: .normal)
         
         outside.backgroundColor = UIColor.white
         outside.layer.borderColor = UIColor.green.cgColor
-        outside.setTitleColor(.black, for: .normal)
+        outside.setTitleColor(yellow, for: .normal)
         outside.layer.masksToBounds = true
         outside.layer.borderWidth = 2
         outside.layer.borderColor = UIColor.lightGray.cgColor
@@ -90,7 +93,7 @@ class CashRegisterViewController: BaseViewController {
         
         inside.backgroundColor = UIColor.white
         inside.layer.borderColor = UIColor.green.cgColor
-        inside.setTitleColor(.black, for: .normal)
+        inside.setTitleColor(yellow, for: .normal)
         inside.layer.masksToBounds = true
         inside.layer.borderWidth = 2
         inside.layer.borderColor = UIColor.lightGray.cgColor
@@ -100,8 +103,9 @@ class CashRegisterViewController: BaseViewController {
         outside.setTitleColor(.white, for: .normal)
         outside.layer.borderWidth = 0
         outside.setTitleColor(.white, for: .normal)
-        outside.backgroundColor = colorButtonYellow
-        outside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
+        outside.backgroundColor = yellow
+        outside.setShadow(offset: CGSize.init(width: 0, height: 0), opacity: 1, shadowRadius: 1, color: .black)
+//        outside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .black)
         
     }
 }
@@ -110,7 +114,7 @@ class CashRegisterViewController: BaseViewController {
 extension CashRegisterViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (self.foodItemCollectionView.frame.width/5 - 10), height: (self.foodItemCollectionView.frame.height/5 - 10))
+        return CGSize(width: (self.foodItemCollectionView.frame.width/4 - 10), height: (self.foodItemCollectionView.frame.height/6 - 10))
     }
 }
 extension CashRegisterViewController: UICollectionViewDataSource {
@@ -127,7 +131,6 @@ extension CashRegisterViewController: UICollectionViewDataSource {
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
-        cell.layer.shadowRadius = 5
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.setCell(foodItem: fooditem[indexPath.row])
         return cell
@@ -257,11 +260,6 @@ extension CashRegisterViewController {
         self.navigationController?.navigationItem.title = "收銀系統"
         
         detailsView.setShadow(offset: CGSize.init(width: 3, height: 3), opacity: 0.7, shadowRadius: 5, color: .black)
-        
-        cancel.layer.borderWidth = 1
-        cancel.layer.borderColor = UIColor.black.cgColor
-        
-        cashRegister.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .gray)
         
         outside.layer.borderWidth = 2
         outside.layer.borderColor = UIColor.lightGray.cgColor
