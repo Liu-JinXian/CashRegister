@@ -1,0 +1,6 @@
+module Pods_cashRegisterUITests {
+  umbrella header "Pods-cashRegisterUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

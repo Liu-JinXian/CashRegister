@@ -21,10 +21,8 @@ class SetUpItemTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCell(item: [String:Int]) {
-        for (item, price) in item {
-            self.item.text = item
-            self.price.text = "$\(price)"
-        }
+    func setCell(name: String, price: Int) {
+        self.item.text = name
+        self.price.text = "$\(price)"
     }
 }

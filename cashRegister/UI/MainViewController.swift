@@ -51,7 +51,7 @@ class MainViewController: BaseViewController {
     
     @IBAction func onTouchSetUp(_ sender: Any) {
             
-        let vc = getVC(st: "StepUp", vc: "StepUpViewController") as! StepUpViewController
+        let vc = getVC(st: "StepUp", vc: "StepUpViewController") as! SetUpViewController
         vc.modalPresentationStyle = .overCurrentContext
         let nav = UINavigationController(rootViewController: vc)
         nav.restorationIdentifier = "MainViewController"

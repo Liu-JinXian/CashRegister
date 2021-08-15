@@ -1,0 +1,6 @@
+module Pods_cashRegister {
+  umbrella header "Pods-cashRegister-umbrella.h"
+
+  export *
+  module * { export * }
+}
