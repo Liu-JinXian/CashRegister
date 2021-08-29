@@ -16,8 +16,7 @@ struct BentoSetUp: Decodable {
 
 class SetUpViewModel {
     
-    var bentoName: [String] = []
-    var bentoPrice: [Int] = []
+    var bento: [[String: Int]] = []
     var reloadData: (() -> ())?
     
     func getBentoData() {
@@ -33,8 +32,8 @@ class SetUpViewModel {
                     
                     if let bentoSetUp = try? decoder.decode([BentoSetUp].self, from: data) {
                         DispatchQueue.main.async{
-                            for bento in bentoSetUp {                   self.bentoName.append(bento.name)
-                                self.bentoPrice.append(bento.price)
+                            for bento in bentoSetUp {
+                                self.bento.append([bento.name: bento.price])
                             }
                             self.reloadData?()
                         }

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,10 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BdR-b7-C0T">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="beA-u7-KQG">
                                 <rect key="frame" x="0.0" y="0.0" width="1080" height="729"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EXY-0Q-JT3">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SxR-fB-eYS">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V2a-KO-ao9">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAi-SD-bFe">
                                 <rect key="frame" x="0.0" y="729" width="1080" height="81"/>
                                 <state key="normal">
@@ -34,17 +51,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uAi-SD-bFe" firstAttribute="height" secondItem="eTQ-dp-EdH" secondAttribute="height" multiplier="0.1" id="585-wS-wlE"/>
-                            <constraint firstItem="uAi-SD-bFe" firstAttribute="top" secondItem="BdR-b7-C0T" secondAttribute="bottom" id="5xV-y3-BYR"/>
-                            <constraint firstItem="eTQ-dp-EdH" firstAttribute="trailing" secondItem="BdR-b7-C0T" secondAttribute="trailing" id="Nk1-fC-k3d"/>
-                            <constraint firstItem="BdR-b7-C0T" firstAttribute="leading" secondItem="eTQ-dp-EdH" secondAttribute="leading" id="Oo1-2J-Bz8"/>
+                            <constraint firstItem="beA-u7-KQG" firstAttribute="leading" secondItem="eTQ-dp-EdH" secondAttribute="leading" id="BQO-jZ-Gc3"/>
                             <constraint firstItem="eTQ-dp-EdH" firstAttribute="bottom" secondItem="uAi-SD-bFe" secondAttribute="bottom" id="PbW-rQ-8u2"/>
+                            <constraint firstItem="uAi-SD-bFe" firstAttribute="top" secondItem="beA-u7-KQG" secondAttribute="bottom" id="QGO-NU-7fu"/>
+                            <constraint firstItem="beA-u7-KQG" firstAttribute="top" secondItem="eTQ-dp-EdH" secondAttribute="top" id="ROV-BS-DY8"/>
                             <constraint firstItem="eTQ-dp-EdH" firstAttribute="trailing" secondItem="uAi-SD-bFe" secondAttribute="trailing" id="Ynh-IT-Gz5"/>
+                            <constraint firstItem="eTQ-dp-EdH" firstAttribute="trailing" secondItem="beA-u7-KQG" secondAttribute="trailing" id="fnf-YQ-ovZ"/>
                             <constraint firstItem="uAi-SD-bFe" firstAttribute="leading" secondItem="eTQ-dp-EdH" secondAttribute="leading" id="njX-tV-Usl"/>
-                            <constraint firstItem="BdR-b7-C0T" firstAttribute="top" secondItem="eTQ-dp-EdH" secondAttribute="top" id="s1s-GU-F9i"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="BdR-b7-C0T" id="tn6-IJ-cdX"/>
+                        <outlet property="collectionView" destination="beA-u7-KQG" id="izC-Ah-xSS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvi-Eg-55l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

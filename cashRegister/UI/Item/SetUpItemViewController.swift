@@ -8,8 +8,11 @@
 import UIKit
 
 extension SetUpItemViewController {
-    func setView(row: Int) {
+    
+    func setView(name: String, price: Int) {
         
+        self.name = name
+        self.price = price
     }
 }
 
@@ -18,11 +21,14 @@ class SetUpItemViewController: BaseViewController {
     @IBOutlet weak var enterItem: UITextField!
     @IBOutlet weak var enterPrice: UITextField!
     
-    var bentoName: [String] = []
-    var bentoPrice: [Int] = []
+    var name: String?
+    var price: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        enterItem.text = name
+        enterPrice.text = "\(price ?? 0)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
