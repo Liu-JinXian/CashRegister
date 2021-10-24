@@ -1,24 +1,19 @@
 //
-//  SetUpViewModel.swift
+//  ItemsReository.swift
 //  cashRegister
 //
-//  Created by 劉晉賢 on 2021/8/15.
+//  Created by 7690 劉晉賢 on 2021/4/1.
 //
 
-import RxSwift
-import RxCocoa
+import UIKit
 
-struct BentoSetUp: Decodable {
-    var name: String
-    var price: Int
-}
-
-class SetUpViewModel {
+class CashRegisterViewModel: NSObject {
     
     var bento: [[String: Int]] = []
     var reloadData: (() -> ())?
     
-    func getBentoData() {
+    func getItemList() {
+        
         let address = "http://35.234.3.50:3000/Menu"
         if let url = URL(string: address) {
             // GET

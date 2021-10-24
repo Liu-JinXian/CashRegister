@@ -20,10 +20,10 @@ extension Reactive where Base: UIDatePicker {
     /// Reactive wrapper for `date` property.
     public var value: ControlProperty<Date> {
         return base.rx.controlPropertyWithDefaultEvents(
-            getter: { datePicker in
-                datePicker.date
-            }, setter: { datePicker, value in
-                datePicker.date = value
+            getter: { datePick in
+                datePick.date
+            }, setter: { datePick, value in
+                datePick.date = value
             }
         )
     }
@@ -31,10 +31,10 @@ extension Reactive where Base: UIDatePicker {
     /// Reactive wrapper for `countDownDuration` property.
     public var countDownDuration: ControlProperty<TimeInterval> {
         return base.rx.controlPropertyWithDefaultEvents(
-            getter: { datePicker in
-                datePicker.countDownDuration
-            }, setter: { datePicker, value in
-                datePicker.countDownDuration = value
+            getter: { datePick in
+                datePick.countDownDuration
+            }, setter: { datePick, value in
+                datePick.countDownDuration = value
             }
         )
     }

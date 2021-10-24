@@ -66,6 +66,6 @@ extension BaseViewController {
     }
     
     private func adjustNavBackground() {
-        self.navigationController?.navigationBar.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = yellow
     }
 }

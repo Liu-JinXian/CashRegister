@@ -11,6 +11,10 @@ protocol  MenuCollectionViewCellProtocol : NSObjectProtocol {
     func onTouchItem(item: String, price: Int)
 }
 
+protocol MenuUpdaterotocol: NSObjectProtocol {
+    func onTouchUpdate(item: String, price: Int, location: Int)
+}
+
 class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var foodItem: UIButton!
@@ -18,8 +22,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var price: UILabel!
     
     weak var delegate: MenuCollectionViewCellProtocol?
+    weak var updateDelegate: MenuUpdaterotocol?
     var items: String = ""
     var prices: Int = 0
+    var location: Int?
+    var update: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +42,25 @@ class MenuCollectionViewCell: UICollectionViewCell {
             self.price.text = "$\(price)"
         }
     }
+    
+    func setCell(foodItem: [String:Int], row: Int) {
+        
+        for (item, price) in foodItem {
+            self.items = item
+            self.item.text = item
+            self.prices = price
+            self.price.text = "$\(price)"
+        }
+        self.location = row
+        self.update = true
+    }
+    
     @IBAction func onTouch(_ sender: Any) {
         
-        self.delegate?.onTouchItem(item: items, price: prices)
+        if update == false {
+            self.delegate?.onTouchItem(item: items, price: prices)
+        } else{
+            self.updateDelegate?.onTouchUpdate(item: items, price: prices, location: location ?? 0)
+        }
     }
 }

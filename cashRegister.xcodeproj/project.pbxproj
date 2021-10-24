@@ -15,7 +15,7 @@
 		0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */; };
 		0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57050E262D6C11002E944B /* SetUpItemTableViewCell.swift */; };
 		0A570511262D6C11002E944B /* SetUpItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A57050F262D6C11002E944B /* SetUpItemTableViewCell.xib */; };
-		0AB150082615A8A80019E2A4 /* ItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB150072615A8A80019E2A4 /* ItemsRepository.swift */; };
+		0AB150082615A8A80019E2A4 /* CashRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB150072615A8A80019E2A4 /* CashRegisterViewModel.swift */; };
 		0AE56F4525FF5D1C00877314 /* StepUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE56F4425FF5D1C00877314 /* StepUp.storyboard */; };
 		0AE56F4A25FF5D5600877314 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE56F4925FF5D5600877314 /* SetUpViewController.swift */; };
 		0AF28B6E25FAFADE008CA39A /* Data.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF28B6D25FAFADE008CA39A /* Data.storyboard */; };
@@ -24,24 +24,6 @@
 		0AF28B9125FB0AC8008CA39A /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF28B8F25FB0AC8008CA39A /* DataTableViewCell.xib */; };
 		0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFA5B9A26018B6A000FD4C0 /* BaseViewController.swift */; };
 		117DC0994EDA9B27859E2163 /* libPods-cashRegister.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB6091E60BCDF87E209AF12 /* libPods-cashRegister.a */; };
-		60310D5326BFF10300D0D726 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5226BFF10300D0D726 /* APIError.swift */; };
-		60310D5426BFF10300D0D726 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5226BFF10300D0D726 /* APIError.swift */; };
-		60310D5526BFF10300D0D726 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5226BFF10300D0D726 /* APIError.swift */; };
-		60310D5726BFF17F00D0D726 /* APIErrorHandleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5626BFF17F00D0D726 /* APIErrorHandleType.swift */; };
-		60310D5826BFF17F00D0D726 /* APIErrorHandleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5626BFF17F00D0D726 /* APIErrorHandleType.swift */; };
-		60310D5926BFF17F00D0D726 /* APIErrorHandleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5626BFF17F00D0D726 /* APIErrorHandleType.swift */; };
-		60310D5B26BFF19D00D0D726 /* APILoadingHandleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5A26BFF19D00D0D726 /* APILoadingHandleType.swift */; };
-		60310D5C26BFF19D00D0D726 /* APILoadingHandleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5A26BFF19D00D0D726 /* APILoadingHandleType.swift */; };
-		60310D5D26BFF19D00D0D726 /* APILoadingHandleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5A26BFF19D00D0D726 /* APILoadingHandleType.swift */; };
-		60310D5F26C002E200D0D726 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5E26C002E200D0D726 /* APIManager.swift */; };
-		60310D6026C002E200D0D726 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5E26C002E200D0D726 /* APIManager.swift */; };
-		60310D6126C002E200D0D726 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D5E26C002E200D0D726 /* APIManager.swift */; };
-		60310D7026C016E400D0D726 /* APIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D6F26C016E400D0D726 /* APIDefine.swift */; };
-		60310D7126C016E400D0D726 /* APIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D6F26C016E400D0D726 /* APIDefine.swift */; };
-		60310D7226C016E400D0D726 /* APIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D6F26C016E400D0D726 /* APIDefine.swift */; };
-		60310D7426C0183400D0D726 /* APPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D7326C0183400D0D726 /* APPHelper.swift */; };
-		60310D7526C0183400D0D726 /* APPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D7326C0183400D0D726 /* APPHelper.swift */; };
-		60310D7626C0183400D0D726 /* APPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310D7326C0183400D0D726 /* APPHelper.swift */; };
 		60310D7F26C8A5D900D0D726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892025E9F079002A0F89 /* Main.storyboard */; };
 		60310D8026C8A5DA00D0D726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892025E9F079002A0F89 /* Main.storyboard */; };
 		60310D8126C8A5DF00D0D726 /* CashRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */; };
@@ -96,6 +78,9 @@
 		606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */; };
 		606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFABA25F674A500E16370 /* ItemTableViewCell.swift */; };
 		606AFABD25F674A500E16370 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606AFABB25F674A500E16370 /* ItemTableViewCell.xib */; };
+		60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
+		60CEA90626F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
+		60CEA90726F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
 		60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891A25E9F079002A0F89 /* AppDelegate.swift */; };
 		60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891C25E9F079002A0F89 /* SceneDelegate.swift */; };
 		60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891E25E9F079002A0F89 /* MainViewController.swift */; };
@@ -108,6 +93,8 @@
 		60E1895825E9F267002A0F89 /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E1895625E9F267002A0F89 /* MenuCollectionViewCell.xib */; };
 		60E1897425EA2A7E002A0F89 /* CashRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */; };
 		60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */; };
+		60ECC6792725460F00B1A29A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC6782725460F00B1A29A /* BaseModel.swift */; };
+		60ECC67C2725589C00B1A29A /* BentoMenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC67B2725589C00B1A29A /* BentoMenuResponse.swift */; };
 		A10A8318C4C576B99C5C220B /* libPods-cashRegisterUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C17694D1989D94CEDEB2A7 /* libPods-cashRegisterUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +124,7 @@
 		0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		0A57050E262D6C11002E944B /* SetUpItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemTableViewCell.swift; sourceTree = "<group>"; };
 		0A57050F262D6C11002E944B /* SetUpItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetUpItemTableViewCell.xib; sourceTree = "<group>"; };
-		0AB150072615A8A80019E2A4 /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
+		0AB150072615A8A80019E2A4 /* CashRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterViewModel.swift; sourceTree = "<group>"; };
 		0AE56F4425FF5D1C00877314 /* StepUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StepUp.storyboard; sourceTree = "<group>"; };
 		0AE56F4925FF5D5600877314 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		0AF28B6D25FAFADE008CA39A /* Data.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Data.storyboard; sourceTree = "<group>"; };
@@ -150,20 +137,15 @@
 		302EB3858FE4942D0212E79A /* Pods-cashRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegister.debug.xcconfig"; path = "Target Support Files/Pods-cashRegister/Pods-cashRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		3F1254E579BB02B04F27F489 /* Pods-cashRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegister.release.xcconfig"; path = "Target Support Files/Pods-cashRegister/Pods-cashRegister.release.xcconfig"; sourceTree = "<group>"; };
 		4608DA1AF5FAAFC2A151ACE2 /* Pods-cashRegister-cashRegisterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegister-cashRegisterUITests.debug.xcconfig"; path = "Target Support Files/Pods-cashRegister-cashRegisterUITests/Pods-cashRegister-cashRegisterUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		60310D5226BFF10300D0D726 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		60310D5626BFF17F00D0D726 /* APIErrorHandleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandleType.swift; sourceTree = "<group>"; };
-		60310D5A26BFF19D00D0D726 /* APILoadingHandleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoadingHandleType.swift; sourceTree = "<group>"; };
-		60310D5E26C002E200D0D726 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		60310D6226C007FB00D0D726 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310D6626C007FF00D0D726 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310D6926C0087500D0D726 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310D6C26C00A3200D0D726 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		60310D6F26C016E400D0D726 /* APIDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDefine.swift; sourceTree = "<group>"; };
-		60310D7326C0183400D0D726 /* APPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPHelper.swift; sourceTree = "<group>"; };
 		60310DB726C8DFD000D0D726 /* SetUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewModel.swift; sourceTree = "<group>"; };
 		606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		606AFABA25F674A500E16370 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		606AFABB25F674A500E16370 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		60CEA90426F9980D004DE85B /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
 		60E1891725E9F079002A0F89 /* cashRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cashRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1891A25E9F079002A0F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E1891C25E9F079002A0F89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +164,8 @@
 		60E1895625E9F267002A0F89 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CashRegister.storyboard; sourceTree = "<group>"; };
 		60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterViewController.swift; sourceTree = "<group>"; };
+		60ECC6782725460F00B1A29A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		60ECC67B2725589C00B1A29A /* BentoMenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BentoMenuResponse.swift; sourceTree = "<group>"; };
 		85C17694D1989D94CEDEB2A7 /* libPods-cashRegisterUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cashRegisterUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		949DC298E687EE481E3071D9 /* Pods-cashRegisterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegisterUITests.debug.xcconfig"; path = "Target Support Files/Pods-cashRegisterUITests/Pods-cashRegisterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB6091E60BCDF87E209AF12 /* libPods-cashRegister.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cashRegister.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +201,7 @@
 		0A570515262D6C1C002E944B /* SetUp */ = {
 			isa = PBXGroup;
 			children = (
+				606AFAC125F674AC00E16370 /* Item */,
 				60310DB726C8DFD000D0D726 /* SetUpViewModel.swift */,
 				0AE56F4925FF5D5600877314 /* SetUpViewController.swift */,
 				0A57050E262D6C11002E944B /* SetUpItemTableViewCell.swift */,
@@ -228,7 +213,6 @@
 		0AB150062615A84D0019E2A4 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				0AB150072615A8A80019E2A4 /* ItemsRepository.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -236,6 +220,7 @@
 		0AF28B7D25FB0A8C008CA39A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				60CEA90426F9980D004DE85B /* DatePickViewController.swift */,
 				0AF28B7525FAFFBC008CA39A /* DataViewController.swift */,
 				0AF28B8E25FB0AC8008CA39A /* DataTableViewCell.swift */,
 				0AF28B8F25FB0AC8008CA39A /* DataTableViewCell.xib */,
@@ -259,12 +244,6 @@
 		60310D5126BFEFEC00D0D726 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				60310D5226BFF10300D0D726 /* APIError.swift */,
-				60310D5626BFF17F00D0D726 /* APIErrorHandleType.swift */,
-				60310D5A26BFF19D00D0D726 /* APILoadingHandleType.swift */,
-				60310D5E26C002E200D0D726 /* APIManager.swift */,
-				60310D6F26C016E400D0D726 /* APIDefine.swift */,
-				60310D7326C0183400D0D726 /* APPHelper.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -273,8 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				0A13BA2626004DE200CC2D15 /* SetUpItemViewController.swift */,
-				606AFABA25F674A500E16370 /* ItemTableViewCell.swift */,
-				606AFABB25F674A500E16370 /* ItemTableViewCell.xib */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -347,10 +324,10 @@
 			isa = PBXGroup;
 			children = (
 				0AFA5B9A26018B6A000FD4C0 /* BaseViewController.swift */,
+				60ECC6782725460F00B1A29A /* BaseModel.swift */,
 				60E1891E25E9F079002A0F89 /* MainViewController.swift */,
 				0A570515262D6C1C002E944B /* SetUp */,
 				0AF28B7D25FB0A8C008CA39A /* Data */,
-				606AFAC125F674AC00E16370 /* Item */,
 				60E1895425E9F24D002A0F89 /* menu */,
 			);
 			path = UI;
@@ -377,6 +354,7 @@
 		60E1895325E9F235002A0F89 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				60ECC67B2725589C00B1A29A /* BentoMenuResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -385,8 +363,11 @@
 			isa = PBXGroup;
 			children = (
 				60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */,
+				0AB150072615A8A80019E2A4 /* CashRegisterViewModel.swift */,
 				60E1895525E9F267002A0F89 /* MenuCollectionViewCell.swift */,
 				60E1895625E9F267002A0F89 /* MenuCollectionViewCell.xib */,
+				606AFABA25F674A500E16370 /* ItemTableViewCell.swift */,
+				606AFABB25F674A500E16370 /* ItemTableViewCell.xib */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -608,29 +589,26 @@
 			files = (
 				0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */,
 				0A1E0E112609DE9B00910A4B /* FormatUtil.swift in Sources */,
+				60ECC6792725460F00B1A29A /* BaseModel.swift in Sources */,
 				60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */,
 				0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */,
 				60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */,
 				606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */,
 				0AE56F4A25FF5D5600877314 /* SetUpViewController.swift in Sources */,
-				60310D7026C016E400D0D726 /* APIDefine.swift in Sources */,
 				60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */,
-				60310D7426C0183400D0D726 /* APPHelper.swift in Sources */,
 				60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */,
 				0AF28B9025FB0AC8008CA39A /* DataTableViewCell.swift in Sources */,
 				0A2E9E8C25F76E50006ACEAC /* ColorDef.swift in Sources */,
-				60310D5B26BFF19D00D0D726 /* APILoadingHandleType.swift in Sources */,
+				60ECC67C2725589C00B1A29A /* BentoMenuResponse.swift in Sources */,
 				606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */,
 				60310DB826C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
 				60E1895725E9F267002A0F89 /* MenuCollectionViewCell.swift in Sources */,
-				60310D5726BFF17F00D0D726 /* APIErrorHandleType.swift in Sources */,
-				60310D5326BFF10300D0D726 /* APIError.swift in Sources */,
 				0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */,
 				0A1E0E092609D72900910A4B /* UIDatePickerExtension.swift in Sources */,
-				0AB150082615A8A80019E2A4 /* ItemsRepository.swift in Sources */,
+				0AB150082615A8A80019E2A4 /* CashRegisterViewModel.swift in Sources */,
 				0AF28B7625FAFFBC008CA39A /* DataViewController.swift in Sources */,
-				60310D5F26C002E200D0D726 /* APIManager.swift in Sources */,
 				0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */,
+				60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,24 +619,19 @@
 			files = (
 				60E1893225E9F07B002A0F89 /* cashRegisterTests.swift in Sources */,
 				60310DB926C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
-				60310D7126C016E400D0D726 /* APIDefine.swift in Sources */,
 				60310D9426C8A5FE00D0D726 /* FormatUtil.swift in Sources */,
 				60310D9526C8A60100D0D726 /* ColorDef.swift in Sources */,
 				60310DA726C8A61B00D0D726 /* ItemTableViewCell.swift in Sources */,
-				60310D5826BFF17F00D0D726 /* APIErrorHandleType.swift in Sources */,
-				60310D6026C002E200D0D726 /* APIManager.swift in Sources */,
 				60310D8B26C8A5EF00D0D726 /* DataViewController.swift in Sources */,
 				60310D9726C8A60400D0D726 /* ColorHexUtil.swift in Sources */,
 				60310D8F26C8A5F400D0D726 /* BaseViewController.swift in Sources */,
 				60310D9B26C8A60900D0D726 /* UIViewExtension.swift in Sources */,
-				60310D5426BFF10300D0D726 /* APIError.swift in Sources */,
-				60310D7526C0183400D0D726 /* APPHelper.swift in Sources */,
 				60310D9126C8A5F700D0D726 /* MainViewController.swift in Sources */,
-				60310D5C26BFF19D00D0D726 /* APILoadingHandleType.swift in Sources */,
 				60310D9F26C8A60F00D0D726 /* SetUpItemTableViewCell.swift in Sources */,
 				60310D8926C8A5ED00D0D726 /* SetUpViewController.swift in Sources */,
 				60310D8D26C8A5F100D0D726 /* CashRegisterViewController.swift in Sources */,
 				60310D9926C8A60600D0D726 /* UIDatePickerExtension.swift in Sources */,
+				60CEA90626F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				60310DA326C8A61500D0D726 /* DataTableViewCell.swift in Sources */,
 				60310D8726C8A5EA00D0D726 /* SetUpItemViewController.swift in Sources */,
 				60310D9E26C8A60C00D0D726 /* UserDefaultUtil.swift in Sources */,
@@ -672,24 +645,19 @@
 			files = (
 				60E1893D25E9F07B002A0F89 /* cashRegisterUITests.swift in Sources */,
 				60310DBA26C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
-				60310D7226C016E400D0D726 /* APIDefine.swift in Sources */,
 				60310D9326C8A5FE00D0D726 /* FormatUtil.swift in Sources */,
 				60310D9626C8A60100D0D726 /* ColorDef.swift in Sources */,
 				60310DA826C8A61C00D0D726 /* ItemTableViewCell.swift in Sources */,
-				60310D5926BFF17F00D0D726 /* APIErrorHandleType.swift in Sources */,
-				60310D6126C002E200D0D726 /* APIManager.swift in Sources */,
 				60310D8C26C8A5F000D0D726 /* DataViewController.swift in Sources */,
 				60310D9826C8A60400D0D726 /* ColorHexUtil.swift in Sources */,
 				60310D9026C8A5F400D0D726 /* BaseViewController.swift in Sources */,
 				60310D9C26C8A60900D0D726 /* UIViewExtension.swift in Sources */,
-				60310D5526BFF10300D0D726 /* APIError.swift in Sources */,
-				60310D7626C0183400D0D726 /* APPHelper.swift in Sources */,
 				60310D9226C8A5F700D0D726 /* MainViewController.swift in Sources */,
-				60310D5D26BFF19D00D0D726 /* APILoadingHandleType.swift in Sources */,
 				60310DA026C8A60F00D0D726 /* SetUpItemTableViewCell.swift in Sources */,
 				60310D8A26C8A5ED00D0D726 /* SetUpViewController.swift in Sources */,
 				60310D8E26C8A5F200D0D726 /* CashRegisterViewController.swift in Sources */,
 				60310D9A26C8A60700D0D726 /* UIDatePickerExtension.swift in Sources */,
+				60CEA90726F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				60310DA426C8A61600D0D726 /* DataTableViewCell.swift in Sources */,
 				60310D8826C8A5EB00D0D726 /* SetUpItemViewController.swift in Sources */,
 				60310D9D26C8A60B00D0D726 /* UserDefaultUtil.swift in Sources */,
@@ -864,7 +832,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = a40103920045.cashRegister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -884,7 +852,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = a40103920045.cashRegister;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

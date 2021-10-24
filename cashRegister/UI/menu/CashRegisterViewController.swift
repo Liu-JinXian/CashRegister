@@ -4,7 +4,6 @@
 //
 //  Created by 劉晉賢 on 2021/2/27.
 //
-
 import UIKit
 
 class CashRegisterViewController: BaseViewController {
@@ -20,7 +19,8 @@ class CashRegisterViewController: BaseViewController {
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var cashRegister: UIButton!
     
-    var fooditem :[[String:Int]] = []
+    private var viewModel: CashRegisterViewModel?
+    
     var items: [String] = []
     var amounts: [Int] = []
     var itemTotalPrice: [Int] = []
@@ -33,8 +33,12 @@ class CashRegisterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let repository = ItemsRepository()
-        fooditem = repository.getItemList()
+        viewModel = CashRegisterViewModel()
+        viewModel?.getItemList()
+        
+        viewModel?.reloadData = { [weak self] in
+            self?.foodItemCollectionView.reloadData()
+        }
         
         setView()
         setCollectionView()
@@ -120,7 +124,7 @@ extension CashRegisterViewController: UICollectionViewDelegate, UICollectionView
 extension CashRegisterViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return fooditem.count
+        return viewModel?.bento.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -132,7 +136,7 @@ extension CashRegisterViewController: UICollectionViewDataSource {
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
         cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.setCell(foodItem: fooditem[indexPath.row])
+        cell.setCell(foodItem: viewModel?.bento[indexPath.row] ?? [:])
         return cell
     }
 }
@@ -257,8 +261,6 @@ extension CashRegisterViewController {
     
     private func setView() {
         
-        self.navigationController?.navigationItem.title = "收銀系統"
-        
         detailsView.setShadow(offset: CGSize.init(width: 3, height: 3), opacity: 0.7, shadowRadius: 5, color: .black)
         
         outside.layer.borderWidth = 2
@@ -304,4 +306,3 @@ extension CashRegisterViewController {
         self.itemTableView.reloadData()
     }
 }
-
