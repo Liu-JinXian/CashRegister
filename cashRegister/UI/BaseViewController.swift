@@ -19,6 +19,10 @@ extension BaseViewController {
         self.navTitle = title
         self.adjustNavTitle()
     }
+    
+    @objc func loadData() {
+        
+    }
 }
 
 class BaseViewController: UIViewController {

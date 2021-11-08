@@ -4,43 +4,40 @@
 //
 //  Created by 劉晉賢 on 2021/8/15.
 //
-
 import RxSwift
 import RxCocoa
-
-struct BentoSetUp: Decodable {
-    var name: String
-    var price: Int
-}
+import ObjectMapper
+import Alamofire
 
 class SetUpViewModel {
     
-    var bento: [[String: Int]] = []
     var reloadData: (() -> ())?
+    var bentoModel: [BentoModel]?
     
     func getBentoData() {
         let address = "http://35.234.3.50:3000/Menu"
-        if let url = URL(string: address) {
-            // GET
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                } else if let response = response as? HTTPURLResponse,let data = data {
-                    print("Status code: \(response.statusCode)")
-                    let decoder = JSONDecoder()
-                    
-                    if let bentoSetUp = try? decoder.decode([BentoSetUp].self, from: data) {
-                        DispatchQueue.main.async{
-                            for bento in bentoSetUp {
-                                self.bento.append([bento.name: bento.price])
-                            }
-                            self.reloadData?()
-                        }
-                    }
-                }
-            }.resume()
-        } else {
-            print("Invalid URL.")
+        Alamofire.request(address).responseJSON { response in
+            self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
+            self.reloadData?()
         }
+    }
+    
+    func getUpdateLocation(locationTemp: String, locationMove: Int) {
+        
+        let params: Parameters = ["touch": "\(locationMove)", "temp": locationTemp, "uuid": bentoModel?[locationMove].uuid ?? ""]
+        let url = URL(string: "http://35.234.3.50:3000/MenuUpdateLocation")!
+        
+        Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
+            if response.result.isSuccess {
+                self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
+                self.reloadData?()
+            }else {
+                print("error!")
+            }
+        }
+    }
+    
+    func setNumberOfItemsInSection() -> Int {
+        return bentoModel?.count ?? 0
     }
 }

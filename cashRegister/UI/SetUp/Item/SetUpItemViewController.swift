@@ -59,7 +59,6 @@ class SetUpItemViewController: BaseViewController {
     func addItem() {
         
         let url = URL(string: "http://35.234.3.50:3000/MenuInsert")!
-        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         
         components?.queryItems = [

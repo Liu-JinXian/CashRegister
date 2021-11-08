@@ -10,15 +10,15 @@ import UIKit
 class DataViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var dateStart: UIButton!
-    @IBOutlet weak var dateEnd: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let date = self.convertDateToString(dateFormatTo: "yyyy/MM/dd", date: Date())
-        dateStart.setTitle("\(date)", for: .normal)
-        dateEnd.setTitle("\(date)", for: .normal)
+        //        let date = self.convertDateToString(dateFormatTo: "yyyy/MM/dd", date: Date())
+        //        dateStart.setTitle("\(date)", for: .normal)
+        //        dateEnd.setTitle("\(date)", for: .normal)
+        
+        self.navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "setting"), style: .plain, target: self, action: #selector(onTouchSetting))
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,19 +32,25 @@ class DataViewController: BaseViewController {
         return dateFormatter.string(from: date)
     }
     
-    @IBAction func onTouchSearchDateStart(_ sender: Any) {
-        
-        let vc = getVC(st: "Data", vc: "DatePickViewController") as! DatePickViewController
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.delegate = self
-        self.present(vc, animated: true)
-    }
+    //    @IBAction func onTouchSearchDateStart(_ sender: Any) {
+    //
+    //        let vc = getVC(st: "Data", vc: "DatePickViewController") as! DatePickViewController
+    //        vc.modalPresentationStyle = .overCurrentContext
+    //        vc.delegate = self
+    //        self.present(vc, animated: true)
+    //    }
     
-    @IBAction func onTouchSearchDateEnd(_ sender: Any) {
+    //    @IBAction func onTouchSearchDateEnd(_ sender: Any) {
+    
+    //        let vc = getVC(st: "Data", vc: "DatePickViewController") as! DatePickViewController
+    //        vc.modalPresentationStyle = .overCurrentContext
+    //        vc.delegate = self
+    //        self.present(vc, animated: true)
+    //    }
+    
+    @objc private func onTouchSetting() {
         
-        let vc = getVC(st: "Data", vc: "DatePickViewController") as! DatePickViewController
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.delegate = self
+        let vc = getVC(st: "Data", vc: "DataSettingViewController") as! DataSettingViewController
         self.present(vc, animated: true)
     }
 }
@@ -64,9 +70,9 @@ extension DataViewController: UITableViewDataSource{
     }
 }
 
-extension DataViewController: DatePickProtocol {
-    func onTouchSetDate(datePickerDate: Date) {
-        let date = self.convertDateToString(dateFormatTo: "yyyy/MM/dd", date: datePickerDate)
-        dateStart.setTitle("\(date)", for: .normal)
-    }
-}
+//extension DataViewController: DatePickProtocol {
+//    func onTouchSetDate(datePickerDate: Date) {
+//        let date = self.convertDateToString(dateFormatTo: "yyyy/MM/dd", date: datePickerDate)
+//        dateStart.setTitle("\(date)", for: .normal)
+//    }
+//}

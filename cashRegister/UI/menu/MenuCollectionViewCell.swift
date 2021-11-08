@@ -33,24 +33,20 @@ class MenuCollectionViewCell: UICollectionViewCell {
         self.foodItem.layer.cornerRadius = 5
     }
     
-    func setCell(foodItem: [String:Int]) {
+    func setCell(foodItem: BentoModel) {
         
-        for (item, price) in foodItem {
-            self.items = item
-            self.item.text = item
-            self.prices = price
-            self.price.text = "$\(price)"
-        }
+        self.items = foodItem.name ?? ""
+        self.item.text = foodItem.name
+        self.prices = foodItem.price ?? 0
+        self.price.text = "$\(foodItem.price ?? 0)"
     }
     
-    func setCell(foodItem: [String:Int], row: Int) {
+    func setCell(foodItem: BentoModel, row: Int) {
         
-        for (item, price) in foodItem {
-            self.items = item
-            self.item.text = item
-            self.prices = price
-            self.price.text = "$\(price)"
-        }
+        self.items = foodItem.name ?? ""
+        self.item.text = foodItem.name ?? ""
+        self.prices = foodItem.price ?? 0
+        self.price.text = "$\(foodItem.price ?? 0)"
         self.location = row
         self.update = true
     }

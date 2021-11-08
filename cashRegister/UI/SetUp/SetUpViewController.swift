@@ -23,9 +23,16 @@ class SetUpViewController: BaseViewController {
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(_:)))
         self.collectionView.addGestureRecognizer(longPressGesture)
-        
+        viewModel = SetUpViewModel()
         setCollectionView()
         bindViewModel()
+        loadData()
+    }
+    
+    override func loadData() {
+        super.loadData()
+        
+        viewModel?.getBentoData()
     }
     
     @objc func handleLongGesture(_ gesture: UILongPressGestureRecognizer) {
@@ -71,7 +78,7 @@ extension SetUpViewController: UICollectionViewDelegate, UICollectionViewDelegat
 extension SetUpViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel?.bento.count ?? 0
+        return viewModel?.setNumberOfItemsInSection() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,15 +90,17 @@ extension SetUpViewController: UICollectionViewDataSource {
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
         cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.setCell(foodItem: (viewModel?.bento[indexPath.row])!, row: indexPath.row)
+        cell.setCell(foodItem: (viewModel?.bentoModel?[indexPath.row])!, row: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
-        let temp = viewModel?.bento.remove(at: sourceIndexPath.item)
-        update(location1: "\(destinationIndexPath.item)", location2: "\(sourceIndexPath.item)")
-        viewModel?.bento.insert(temp ?? [:], at: destinationIndexPath.item)
+//        let temp = viewModel?.bento.remove(at: sourceIndexPath.item)
+//        update(location1: "\(destinationIndexPath.item)", location2: "\(sourceIndexPath.item)")
+//        viewModel?.bento.insert(temp ?? [:], at: destinationIndexPath.item)
+        
+        viewModel?.getUpdateLocation(locationTemp: "\(destinationIndexPath.item)", locationMove: sourceIndexPath.item)
     }
 }
 
@@ -110,10 +119,7 @@ extension SetUpViewController {
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     private func bindViewModel() {
-        
-        viewModel = SetUpViewModel()
-        viewModel?.getBentoData()
-        
+    
         viewModel?.reloadData = { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -136,13 +142,13 @@ extension SetUpViewController: MenuUpdaterotocol {
 extension SetUpViewController {
     
     func update(location1: String, location2: String ) {
-        let url = URL(string: "http://35.234.3.50:3000/MenuUpdate")!
+        let url = URL(string: "http://35.234.3.50:3000/MenuUpdateLocation")!
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         
         components?.queryItems = [
-            URLQueryItem(name: "location1", value: location1),
-            URLQueryItem(name: "location2", value: location2)
+            URLQueryItem(name: "touch", value: location2),
+            URLQueryItem(name: "temp", value: location1)
         ]
         
         let query = components?.url!.query

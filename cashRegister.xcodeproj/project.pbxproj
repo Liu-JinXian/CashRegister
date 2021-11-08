@@ -78,6 +78,9 @@
 		606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */; };
 		606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFABA25F674A500E16370 /* ItemTableViewCell.swift */; };
 		606AFABD25F674A500E16370 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606AFABB25F674A500E16370 /* ItemTableViewCell.xib */; };
+		60B98A68272D00120004B7C3 /* DataSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B98A66272D00120004B7C3 /* DataSettingViewController.swift */; };
+		60B98A69272D00120004B7C3 /* DataSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B98A66272D00120004B7C3 /* DataSettingViewController.swift */; };
+		60B98A6A272D00120004B7C3 /* DataSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B98A66272D00120004B7C3 /* DataSettingViewController.swift */; };
 		60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
 		60CEA90626F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
 		60CEA90726F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
@@ -95,6 +98,9 @@
 		60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */; };
 		60ECC6792725460F00B1A29A /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC6782725460F00B1A29A /* BaseModel.swift */; };
 		60ECC67C2725589C00B1A29A /* BentoMenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC67B2725589C00B1A29A /* BentoMenuResponse.swift */; };
+		60EE7D802737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
+		60EE7D812737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
+		60EE7D822737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
 		A10A8318C4C576B99C5C220B /* libPods-cashRegisterUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C17694D1989D94CEDEB2A7 /* libPods-cashRegisterUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +151,7 @@
 		606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		606AFABA25F674A500E16370 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		606AFABB25F674A500E16370 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		60B98A66272D00120004B7C3 /* DataSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSettingViewController.swift; sourceTree = "<group>"; };
 		60CEA90426F9980D004DE85B /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
 		60E1891725E9F079002A0F89 /* cashRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cashRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1891A25E9F079002A0F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +173,7 @@
 		60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterViewController.swift; sourceTree = "<group>"; };
 		60ECC6782725460F00B1A29A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		60ECC67B2725589C00B1A29A /* BentoMenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BentoMenuResponse.swift; sourceTree = "<group>"; };
+		60EE7D7F2737C0BE00B27215 /* BentoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BentoModel.swift; sourceTree = "<group>"; };
 		85C17694D1989D94CEDEB2A7 /* libPods-cashRegisterUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cashRegisterUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		949DC298E687EE481E3071D9 /* Pods-cashRegisterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegisterUITests.debug.xcconfig"; path = "Target Support Files/Pods-cashRegisterUITests/Pods-cashRegisterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB6091E60BCDF87E209AF12 /* libPods-cashRegister.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cashRegister.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,16 +218,10 @@
 			path = SetUp;
 			sourceTree = "<group>";
 		};
-		0AB150062615A84D0019E2A4 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		0AF28B7D25FB0A8C008CA39A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				60B98A66272D00120004B7C3 /* DataSettingViewController.swift */,
 				60CEA90426F9980D004DE85B /* DatePickViewController.swift */,
 				0AF28B7525FAFFBC008CA39A /* DataViewController.swift */,
 				0AF28B8E25FB0AC8008CA39A /* DataTableViewCell.swift */,
@@ -239,13 +241,6 @@
 				3F1254E579BB02B04F27F489 /* Pods-cashRegister.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		60310D5126BFEFEC00D0D726 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		606AFAC125F674AC00E16370 /* Item */ = {
@@ -293,11 +288,10 @@
 				0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */,
 				0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */,
 				0A1E0E102609DE9A00910A4B /* FormatUtil.swift */,
-				60310D5126BFEFEC00D0D726 /* API */,
-				0AB150062615A84D0019E2A4 /* Test */,
 				60E1894D25E9F188002A0F89 /* UI */,
 				60E1895225E9F210002A0F89 /* Repository */,
 				60E1895325E9F235002A0F89 /* Response */,
+				60EE7D832737F7E600B27215 /* Model */,
 			);
 			path = cashRegister;
 			sourceTree = "<group>";
@@ -370,6 +364,14 @@
 				606AFABB25F674A500E16370 /* ItemTableViewCell.xib */,
 			);
 			path = menu;
+			sourceTree = "<group>";
+		};
+		60EE7D832737F7E600B27215 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60EE7D7F2737C0BE00B27215 /* BentoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C545CD8C4FF572E55BE50EA4 /* Frameworks */ = {
@@ -588,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */,
+				60B98A68272D00120004B7C3 /* DataSettingViewController.swift in Sources */,
 				0A1E0E112609DE9B00910A4B /* FormatUtil.swift in Sources */,
 				60ECC6792725460F00B1A29A /* BaseModel.swift in Sources */,
 				60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */,
@@ -602,6 +605,7 @@
 				60ECC67C2725589C00B1A29A /* BentoMenuResponse.swift in Sources */,
 				606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */,
 				60310DB826C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
+				60EE7D802737C0BE00B27215 /* BentoModel.swift in Sources */,
 				60E1895725E9F267002A0F89 /* MenuCollectionViewCell.swift in Sources */,
 				0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */,
 				0A1E0E092609D72900910A4B /* UIDatePickerExtension.swift in Sources */,
@@ -632,8 +636,10 @@
 				60310D8D26C8A5F100D0D726 /* CashRegisterViewController.swift in Sources */,
 				60310D9926C8A60600D0D726 /* UIDatePickerExtension.swift in Sources */,
 				60CEA90626F9980D004DE85B /* DatePickViewController.swift in Sources */,
+				60EE7D812737C0BE00B27215 /* BentoModel.swift in Sources */,
 				60310DA326C8A61500D0D726 /* DataTableViewCell.swift in Sources */,
 				60310D8726C8A5EA00D0D726 /* SetUpItemViewController.swift in Sources */,
+				60B98A69272D00120004B7C3 /* DataSettingViewController.swift in Sources */,
 				60310D9E26C8A60C00D0D726 /* UserDefaultUtil.swift in Sources */,
 				60310DAC26C8A62300D0D726 /* MenuCollectionViewCell.swift in Sources */,
 			);
@@ -658,8 +664,10 @@
 				60310D8E26C8A5F200D0D726 /* CashRegisterViewController.swift in Sources */,
 				60310D9A26C8A60700D0D726 /* UIDatePickerExtension.swift in Sources */,
 				60CEA90726F9980D004DE85B /* DatePickViewController.swift in Sources */,
+				60EE7D822737C0BE00B27215 /* BentoModel.swift in Sources */,
 				60310DA426C8A61600D0D726 /* DataTableViewCell.swift in Sources */,
 				60310D8826C8A5EB00D0D726 /* SetUpItemViewController.swift in Sources */,
+				60B98A6A272D00120004B7C3 /* DataSettingViewController.swift in Sources */,
 				60310D9D26C8A60B00D0D726 /* UserDefaultUtil.swift in Sources */,
 				60310DAB26C8A62300D0D726 /* MenuCollectionViewCell.swift in Sources */,
 			);

@@ -124,7 +124,7 @@ extension CashRegisterViewController: UICollectionViewDelegate, UICollectionView
 extension CashRegisterViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel?.bento.count ?? 0
+        return viewModel?.bentoModel?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -136,7 +136,7 @@ extension CashRegisterViewController: UICollectionViewDataSource {
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
         cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.setCell(foodItem: viewModel?.bento[indexPath.row] ?? [:])
+        cell.setCell(foodItem: (viewModel?.bentoModel?[indexPath.row])!)
         return cell
     }
 }
