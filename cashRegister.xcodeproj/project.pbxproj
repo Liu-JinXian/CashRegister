@@ -75,6 +75,9 @@
 		60310DB826C8DFD000D0D726 /* SetUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310DB726C8DFD000D0D726 /* SetUpViewModel.swift */; };
 		60310DB926C8DFD000D0D726 /* SetUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310DB726C8DFD000D0D726 /* SetUpViewModel.swift */; };
 		60310DBA26C8DFD000D0D726 /* SetUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60310DB726C8DFD000D0D726 /* SetUpViewModel.swift */; };
+		604AAD8A2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604AAD892743D65300A874B9 /* SetUpItemViewModel.swift */; };
+		604AAD8B2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604AAD892743D65300A874B9 /* SetUpItemViewModel.swift */; };
+		604AAD8C2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604AAD892743D65300A874B9 /* SetUpItemViewModel.swift */; };
 		606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */; };
 		606AFABC25F674A500E16370 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFABA25F674A500E16370 /* ItemTableViewCell.swift */; };
 		606AFABD25F674A500E16370 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606AFABB25F674A500E16370 /* ItemTableViewCell.xib */; };
@@ -148,6 +151,7 @@
 		60310D6926C0087500D0D726 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310D6C26C00A3200D0D726 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310DB726C8DFD000D0D726 /* SetUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewModel.swift; sourceTree = "<group>"; };
+		604AAD892743D65300A874B9 /* SetUpItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpItemViewModel.swift; sourceTree = "<group>"; };
 		606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		606AFABA25F674A500E16370 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		606AFABB25F674A500E16370 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 		606AFAC125F674AC00E16370 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				604AAD892743D65300A874B9 /* SetUpItemViewModel.swift */,
 				0A13BA2626004DE200CC2D15 /* SetUpItemViewController.swift */,
 			);
 			path = Item;
@@ -614,6 +619,7 @@
 				0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */,
 				60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */,
+				604AAD8A2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +630,7 @@
 				60E1893225E9F07B002A0F89 /* cashRegisterTests.swift in Sources */,
 				60310DB926C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
 				60310D9426C8A5FE00D0D726 /* FormatUtil.swift in Sources */,
+				604AAD8B2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
 				60310D9526C8A60100D0D726 /* ColorDef.swift in Sources */,
 				60310DA726C8A61B00D0D726 /* ItemTableViewCell.swift in Sources */,
 				60310D8B26C8A5EF00D0D726 /* DataViewController.swift in Sources */,
@@ -652,6 +659,7 @@
 				60E1893D25E9F07B002A0F89 /* cashRegisterUITests.swift in Sources */,
 				60310DBA26C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
 				60310D9326C8A5FE00D0D726 /* FormatUtil.swift in Sources */,
+				604AAD8C2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
 				60310D9626C8A60100D0D726 /* ColorDef.swift in Sources */,
 				60310DA826C8A61C00D0D726 /* ItemTableViewCell.swift in Sources */,
 				60310D8C26C8A5F000D0D726 /* DataViewController.swift in Sources */,

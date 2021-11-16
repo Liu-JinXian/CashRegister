@@ -4,7 +4,6 @@
 //
 //  Created by 7690 劉晉賢 on 2021/3/15.
 //
-
 import UIKit
 
 class SetUpViewController: BaseViewController {
@@ -16,14 +15,7 @@ class SetUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "設定"
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = yellow
-        self.collectionView.backgroundColor = yellow
-        
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(_:)))
-        self.collectionView.addGestureRecognizer(longPressGesture)
-        viewModel = SetUpViewModel()
+        setView()
         setCollectionView()
         bindViewModel()
         loadData()
@@ -96,15 +88,30 @@ extension SetUpViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
-//        let temp = viewModel?.bento.remove(at: sourceIndexPath.item)
-//        update(location1: "\(destinationIndexPath.item)", location2: "\(sourceIndexPath.item)")
-//        viewModel?.bento.insert(temp ?? [:], at: destinationIndexPath.item)
-        
         viewModel?.getUpdateLocation(locationTemp: "\(destinationIndexPath.item)", locationMove: sourceIndexPath.item)
     }
 }
 
 extension SetUpViewController {
+    
+    private func bindViewModel() {
+        
+        viewModel = SetUpViewModel()
+        
+        viewModel?.reloadData = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
+    
+    private func setView() {
+        self.navigationItem.title = "設定"
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = yellow
+        self.collectionView.backgroundColor = yellow
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(_:)))
+        self.collectionView.addGestureRecognizer(longPressGesture)
+    }
     
     private func setCollectionView() {
         
@@ -118,55 +125,19 @@ extension SetUpViewController {
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
-    private func bindViewModel() {
-    
-        viewModel?.reloadData = { [weak self] in
-            self?.collectionView.reloadData()
-        }
-    }
 }
 
 extension SetUpViewController: MenuUpdaterotocol {
     
     func onTouchUpdate(item: String, price: Int, location: Int) {
         let vc = getVC(st: "StepUp", vc: "SetUpItemViewController") as! SetUpItemViewController
-        vc.setView(name: item, price: price, row: location)
+        let viewModel = SetUpItemViewModel()
+        viewModel.setViewModel(name: item, price: price, row: location)
+        vc.setView(viewModel: viewModel)
         vc.modalPresentationStyle = .overCurrentContext
         let nav = UINavigationController(rootViewController: vc)
         nav.restorationIdentifier = "StepUpViewController"
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
-    }
-}
-
-extension SetUpViewController {
-    
-    func update(location1: String, location2: String ) {
-        let url = URL(string: "http://35.234.3.50:3000/MenuUpdateLocation")!
-        
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        
-        components?.queryItems = [
-            URLQueryItem(name: "touch", value: location2),
-            URLQueryItem(name: "temp", value: location1)
-        ]
-        
-        let query = components?.url!.query
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = Data(query!.utf8)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-            }
-        }
-        task.resume()
     }
 }

@@ -109,8 +109,6 @@ class CashRegisterViewController: BaseViewController {
         outside.setTitleColor(.white, for: .normal)
         outside.backgroundColor = yellow
         outside.setShadow(offset: CGSize.init(width: 0, height: 0), opacity: 1, shadowRadius: 1, color: .black)
-        //        outside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .black)
-        
     }
 }
 
