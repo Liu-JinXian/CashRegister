@@ -11,37 +11,34 @@ import Alamofire
 
 class SetUpItemViewModel{
     
+    var reloadData: (() -> ())?
     var name: String?
     var price: Int?
-    var row: Int?
+    var id: String?
     var add: Bool?
     
-    func setViewModel(bentoModel: BentoModel, add: Bool? = false) {
-        self.name = bentoModel.name
-    }
-    
-    func setViewModel(name: String, price: Int, row: Int? = nil, add: Bool? = false) {
-        
-        self.name = name
-        self.row = row
-        self.price = price
+    func setViewModel(bentoModel: BentoModel? = nil, add: Bool? = false) {
+        self.name = bentoModel?.name
+        self.price = bentoModel?.price
+        self.id = bentoModel?.uuid
         self.add = add
     }
     
-    func onTouchSave() {
-        add == false ? updateBentoItem() : addBentoItem()
+    func onTouchSave(name: String, price: String) {
+        add == false ? updateBentoItem(name: name, price: price) : addBentoItem(name: name, price: price)
     }
 }
 
 extension SetUpItemViewModel {
     
-    func addBentoItem() {
+    func addBentoItem(name: String, price: String) {
         
-        let params: Parameters = ["name": name ?? "", "price": "\(price ?? 0)"]
-        let url = URL(string: "http://35.234.3.50:3000/MenuInsert")!
+        let params: Parameters = ["name": name, "price": price]
+        let url = URL(string: "http://localhost:3000/MenuInsert")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             if response.result.isSuccess {
+                self.reloadData?()
                 print("Add success!")
             }else {
                 print("error!")
@@ -51,25 +48,28 @@ extension SetUpItemViewModel {
     
     func deleteBentoItem() {
         
-        let params: Parameters = ["name": name ?? "", "price": "\(price ?? 0)"]
-        let url = URL(string: "http://35.234.3.50:3000/MenuDelete")!
+        let params: Parameters = ["id": id ?? ""]
+        let url = URL(string: "http://localhost:3000/MenuDelete")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
-            if response.result.isSuccess {
+            switch response.result {
+            case .success:
+                self.reloadData?()
                 print("Delete successfully!")
-            }else {
-                print("error!")
+            case .failure:
+                print("error")
             }
         }
     }
     
-    func updateBentoItem() {
+    func updateBentoItem(name: String, price: String) {
         
-        let params: Parameters = ["location":"\(row ?? 0)", "name": name ?? "", "price": "\(price ?? 0)"]
-        let url = URL(string: "http://35.234.3.50:3000/MenuUpdate")!
+        let params: Parameters = ["id": id ?? "", "name": name, "price": price]
+        let url = URL(string: "http://localhost:3000/MenuUpdate")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             if response.result.isSuccess {
+                self.reloadData?()
                 print("update successfully!")
             }else {
                 print("error!")

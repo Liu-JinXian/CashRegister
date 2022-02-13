@@ -21,25 +21,10 @@ class CashRegisterViewController: BaseViewController {
     
     private var viewModel: CashRegisterViewModel?
     
-    var items: [String] = []
-    var amounts: [Int] = []
-    var itemTotalPrice: [Int] = []
-    
-    var amount: Int = 0
-    var price: Int = 0
-    var totalprice: Int = 0
-    var totalamount: Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = CashRegisterViewModel()
-        viewModel?.getItemList()
-        
-        viewModel?.reloadData = { [weak self] in
-            self?.foodItemCollectionView.reloadData()
-        }
-        
+        bindViewModel()
         setView()
         setCollectionView()
         setTableView()
@@ -49,7 +34,7 @@ class CashRegisterViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "POS系統"
-        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = yellow
     }
     
@@ -57,26 +42,22 @@ class CashRegisterViewController: BaseViewController {
         super.viewDidDisappear(animated)
         
         //離開頁面時清除UserDeafaults
-        clearUserDeafaults()
+        viewModel?.clearUserDeafaults()
     }
     
     @IBAction func onTouchCashRegister(_ sender: Any) {
         
-        clearUserDeafaults()
-        totalprice = 0
-        totalAndTableviewReload()
+        viewModel?.onTouchCashRegister()
     }
     
     @IBAction func onTouchCancel(_ sender: Any) {
-        
-        clearUserDeafaults()
-        totalprice = 0
-        totalAndTableviewReload()
+        viewModel?.onTouchCancel()
     }
     
     @IBAction func onTouchInside(_ sender: Any) {
         
         insideOrOutside.text = "內用  >"
+        viewModel?.isInside = true
         
         inside.backgroundColor = yellow
         inside.setShadow(offset: CGSize.init(width: 0, height: 0), opacity: 1, shadowRadius: 1, color: .black)
@@ -94,7 +75,7 @@ class CashRegisterViewController: BaseViewController {
     @IBAction func onTouchOutside(_ sender: Any) {
         
         insideOrOutside.text = "外帶  >"
-        
+        viewModel?.isInside = false
         inside.backgroundColor = UIColor.white
         inside.layer.borderColor = UIColor.green.cgColor
         inside.setTitleColor(yellow, for: .normal)
@@ -127,135 +108,56 @@ extension CashRegisterViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
-        
-        cell.delegate = self
-        
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
         cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.setCell(foodItem: (viewModel?.bentoModel?[indexPath.row])!)
+        cell.setCell(viewModel: (viewModel?.subViewModels[indexPath.row])!)
         return cell
     }
-}
-
-extension CashRegisterViewController: UITableViewDelegate {
-    
 }
 
 extension CashRegisterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return  items.count
+        return  viewModel?.items.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        viewModel?.setItemTableViewModel(indexPath: indexPath)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-        cell.delegate = self
-        cell.setCell(Item: items[indexPath.row] ,amount: amounts[indexPath.row] ,price: itemTotalPrice[indexPath.row])
+        cell.setCell(viewModel: (viewModel?.itemTableViewModel)!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        
-        totalprice -= itemTotalPrice[indexPath.row]
-        totalamount -= amounts[indexPath.row]
-        
-        items.remove(at: indexPath.row)
-        amounts.remove(at: indexPath.row)
-        itemTotalPrice.remove(at: indexPath.row)
-        
-        self.totalItem.text = "共\(totalamount)項"
-        self.totalPrice.text = "$\(totalprice)元"
-        self.itemTableView.reloadData()
+        viewModel?.onTouchEditing(indexPath: indexPath)
     }
 }
 
-extension CashRegisterViewController: MenuCollectionViewCellProtocol {
-    
-    func onTouchItem(item: String, price: Int) {
-        
-        if items.contains(item) == false {
-            items.append(item)
-            amounts.append(1)
-            itemTotalPrice.append(price)
-        } else {
-            amount = amounts[items.firstIndex(of: item) ?? 0]
-            amount += 1
-            amounts[items.firstIndex(of: item) ?? 0] = amount
-            
-            self.price = itemTotalPrice[items.firstIndex(of: item) ?? 0]
-            self.price += price
-            itemTotalPrice[items.firstIndex(of: item) ?? 0] = self.price
-        }
-        
-        totalprice += price
-        totalamount += 1
-        amount = 0
-        totalAndTableviewReload()
-    }
-}
 
-extension CashRegisterViewController: ItemTableViewCellllProtocol {
-    func onTouchLess(item: String) {
-        
-        amount = amounts[items.firstIndex(of: item) ?? 0]
-        amount -= 1
-        
-        if amount == 0 {
-            
-            totalprice -= itemTotalPrice[items.firstIndex(of: item) ?? 0]
-            totalamount -= amounts[items.firstIndex(of: item) ?? 0]
-            
-            let row = items.firstIndex(of: item)
-            items.remove(at: row ?? 0)
-            amounts.remove(at: row ?? 0)
-            itemTotalPrice.remove(at: row ?? 0)
-            
-            self.totalItem.text = "共\(totalamount)項"
-            self.totalPrice.text = "$\(totalprice)元"
-            self.itemTableView.reloadData()
-            
-        } else {
-            
-            amount = amounts[items.firstIndex(of: item) ?? 0]
-            self.price = itemTotalPrice[items.firstIndex(of: item) ?? 0]
-            totalprice -= price
-            self.price = self.price/amount
-            amount -= 1
-            amounts[items.firstIndex(of: item) ?? 0] = amount
-            
-            self.price = self.price * amount
-            itemTotalPrice[items.firstIndex(of: item) ?? 0] = self.price
-            totalprice += price
-            totalamount -= 1
-            amount = 0
-            totalAndTableviewReload()
-        }
-    }
-    
-    func onTouchAdd(item: String) {
-        
-        amount = amounts[items.firstIndex(of: item) ?? 0]
-        price = itemTotalPrice[items.firstIndex(of: item) ?? 0]
-        totalprice -= price
-        price = price/amount
-        amount += 1
-        amounts[items.firstIndex(of: item) ?? 0] = amount
-        
-        price = price * amount
-        totalprice += price
-        itemTotalPrice[items.firstIndex(of: item) ?? 0] = self.price
-        
-        totalamount += 1
-        amount = 0
-        totalAndTableviewReload()
-    }
-}
 
 extension CashRegisterViewController {
+    
+    private func bindViewModel() {
+        
+        viewModel = CashRegisterViewModel()
+        viewModel?.getItemList()
+        
+        viewModel?.reloadData = { [weak self] in
+            self?.foodItemCollectionView.reloadData()
+        }
+        
+        viewModel?.setTotalItem = { [weak self] amout, price in
+            self?.totalItem.text = "共\(amout)項"
+            self?.totalPrice.text = "$\(price)元"
+            self?.itemTableView.reloadData()
+        }
+    }
     
     private func setView() {
         
@@ -283,24 +185,7 @@ extension CashRegisterViewController {
     
     private func setTableView() {
         
-        itemTableView.delegate = self
         itemTableView.dataSource = self
         itemTableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemTableViewCell")
-    }
-    
-    private func clearUserDeafaults() {
-        
-        items = []
-        amounts = []
-        itemTotalPrice = []
-        price = 0
-        totalprice = 0
-        totalamount = 0
-    }
-    
-    private func totalAndTableviewReload() {
-        self.totalPrice.text = "$\(totalprice)元"
-        self.totalItem.text = "共\(totalamount)項"
-        self.itemTableView.reloadData()
     }
 }

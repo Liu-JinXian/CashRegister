@@ -10,7 +10,7 @@ class SetUpViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel: SetUpViewModel?
+    private var viewModel: SetUpViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,19 +18,24 @@ class SetUpViewController: BaseViewController {
         setView()
         setCollectionView()
         bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadData()
     }
     
     override func loadData() {
         super.loadData()
         
+        viewModel?.cleanModel()
         viewModel?.getBentoData()
     }
     
     @objc func handleLongGesture(_ gesture: UILongPressGestureRecognizer) {
         
         switch(gesture.state) {
-        
+            
         case UIGestureRecognizer.State.began:
             guard let selectedIndexPath = self.collectionView.indexPathForItem(at: gesture.location(in: self.collectionView)) else {
                 break
@@ -47,12 +52,7 @@ class SetUpViewController: BaseViewController {
     
     @IBAction func onTouchSetUpItem(_ sender: Any) {
         
-        let vc = getVC(st: "StepUp", vc: "SetUpItemViewController") as! SetUpItemViewController
-        vc.modalPresentationStyle = .overCurrentContext
-        let nav = UINavigationController(rootViewController: vc)
-        nav.restorationIdentifier = "StepUpViewController"
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true)
+        viewModel?.onTouchSetUpItem()
     }
 }
 
@@ -74,15 +74,13 @@ extension SetUpViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
-        
-        cell.updateDelegate = self
-        
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
         cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.setCell(foodItem: (viewModel?.bentoModel?[indexPath.row])!, row: indexPath.row)
+        cell.setCell(viewModel: (viewModel?.subViewModels[indexPath.row])!)
         return cell
     }
     
@@ -101,12 +99,18 @@ extension SetUpViewController {
         viewModel?.reloadData = { [weak self] in
             self?.collectionView.reloadData()
         }
+        
+        viewModel?.presentToVC = { [weak self] vc in
+            self?.present(vc, animated: true)
+        }
     }
     
     private func setView() {
         self.navigationItem.title = "設定"
+        
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = yellow
+        
         self.collectionView.backgroundColor = yellow
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongGesture(_:)))
@@ -124,20 +128,5 @@ extension SetUpViewController {
         layout.minimumLineSpacing = 5
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         collectionView.setCollectionViewLayout(layout, animated: false)
-    }
-}
-
-extension SetUpViewController: MenuUpdaterotocol {
-    
-    func onTouchUpdate(item: String, price: Int, location: Int) {
-        let vc = getVC(st: "StepUp", vc: "SetUpItemViewController") as! SetUpItemViewController
-        let viewModel = SetUpItemViewModel()
-        viewModel.setViewModel(name: item, price: price, row: location)
-        vc.setView(viewModel: viewModel)
-        vc.modalPresentationStyle = .overCurrentContext
-        let nav = UINavigationController(rootViewController: vc)
-        nav.restorationIdentifier = "StepUpViewController"
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: true)
     }
 }

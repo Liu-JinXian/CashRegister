@@ -41,7 +41,7 @@ class MainViewController: BaseViewController {
     
     @IBAction func onTouchData(_ sender: Any) {
         
-        let vc = getVC(st: "Data", vc: "DataViewController") as! DataViewController
+        let vc = getVC(st: "Data", vc: "DataViewController") as! HistoryDataViewController
         vc.modalPresentationStyle = .overCurrentContext
         let nav = UINavigationController(rootViewController: vc)
         nav.restorationIdentifier = "MainViewController"

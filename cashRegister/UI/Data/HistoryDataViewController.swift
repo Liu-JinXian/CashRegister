@@ -4,16 +4,19 @@
 //
 //  Created by 7690 劉晉賢 on 2021/3/12.
 //
-
 import UIKit
+import Alamofire
+import ObjectMapper
 
-class DataViewController: BaseViewController {
+class HistoryDataViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var buyDetailModel: [BuyDetailModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getDataList()
         //        let date = self.convertDateToString(dateFormatTo: "yyyy/MM/dd", date: Date())
         //        dateStart.setTitle("\(date)", for: .normal)
         //        dateEnd.setTitle("\(date)", for: .normal)
@@ -55,18 +58,39 @@ class DataViewController: BaseViewController {
     }
 }
 
-extension DataViewController: UITableViewDelegate {
+extension HistoryDataViewController: UITableViewDelegate {
     
 }
 
-extension DataViewController: UITableViewDataSource{
+extension HistoryDataViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell", for: indexPath) as! DataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell", for: indexPath) as! HistoryDataTableViewCell
         return cell
+    }
+}
+
+extension HistoryDataViewController {
+    
+    func getDataList() {
+        let address = "http://localhost:3000/buyDeatail"
+        Alamofire.request(address).responseJSON { response in
+            self.buyDetailModel = Mapper<BuyDetailModel>().mapArray(JSONObject: response.result.value) ?? []
+            print(self.getPrettyPrint(response.result.value!))
+        }
+    }
+    
+    private func getPrettyPrint(_ responseValue: Any) -> String {
+        var string: String = ""
+        if let data = try? JSONSerialization.data(withJSONObject: responseValue, options: .prettyPrinted) {
+            if let nstr = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+                string = nstr as String
+            }
+        }
+        return string
     }
 }
 

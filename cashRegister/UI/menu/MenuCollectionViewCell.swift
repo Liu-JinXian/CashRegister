@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol  MenuCollectionViewCellProtocol : NSObjectProtocol {
-    func onTouchItem(item: String, price: Int)
-}
-
-protocol MenuUpdaterotocol: NSObjectProtocol {
-    func onTouchUpdate(item: String, price: Int, location: Int)
-}
 
 class MenuCollectionViewCell: UICollectionViewCell {
     
@@ -21,42 +14,17 @@ class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var item: UILabel!
     @IBOutlet weak var price: UILabel!
     
-    weak var delegate: MenuCollectionViewCellProtocol?
-    weak var updateDelegate: MenuUpdaterotocol?
-    var items: String = ""
-    var prices: Int = 0
-    var location: Int?
-    var update: Bool = false
+    private var viewModel: MenuCollectionCellViewModel?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.foodItem.layer.cornerRadius = 5
-    }
-    
-    func setCell(foodItem: BentoModel) {
+    func setCell(viewModel: MenuCollectionCellViewModel) {
+        self.viewModel = viewModel
         
-        self.items = foodItem.name ?? ""
-        self.item.text = foodItem.name
-        self.prices = foodItem.price ?? 0
-        self.price.text = "$\(foodItem.price ?? 0)"
-    }
-    
-    func setCell(foodItem: BentoModel, row: Int) {
-        
-        self.items = foodItem.name ?? ""
-        self.item.text = foodItem.name ?? ""
-        self.prices = foodItem.price ?? 0
-        self.price.text = "$\(foodItem.price ?? 0)"
-        self.location = row
-        self.update = true
+        self.item.text = viewModel.item
+        self.price.text = "$\(viewModel.price)"
     }
     
     @IBAction func onTouch(_ sender: Any) {
         
-        if update == false {
-            self.delegate?.onTouchItem(item: items, price: prices)
-        } else{
-            self.updateDelegate?.onTouchUpdate(item: items, price: prices, location: location ?? 0)
-        }
+        viewModel?.onTouch()
     }
 }

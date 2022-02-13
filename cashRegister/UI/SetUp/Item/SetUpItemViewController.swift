@@ -33,7 +33,7 @@ class SetUpItemViewController: BaseViewController {
     
     @IBAction func onTouchSave(_ sender: Any) {
         
-        viewModel?.onTouchSave()
+        viewModel?.onTouchSave(name: enterItem.text ?? "", price: enterPrice.text ?? "")
         dismiss(animated: true, completion: nil)
     }
     

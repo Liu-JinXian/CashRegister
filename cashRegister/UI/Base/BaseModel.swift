@@ -6,7 +6,7 @@
 //
 import ObjectMapper
 
-class BaseModel: NSObject, Mappable {
+class BaseModel: NSObject, Mappable,Codable {
     
     var alertMsg: String?
     var errorMsg: String?
