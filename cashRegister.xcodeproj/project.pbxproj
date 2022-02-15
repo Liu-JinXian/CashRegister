@@ -122,6 +122,9 @@
 		60EE7D802737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
 		60EE7D812737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
 		60EE7D822737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
+		60FE85C927BBCBC8003E3314 /* CashRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */; };
+		60FE85CA27BBCBC8003E3314 /* CashRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */; };
+		60FE85CB27BBCBC8003E3314 /* CashRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */; };
 		A10A8318C4C576B99C5C220B /* libPods-cashRegisterUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C17694D1989D94CEDEB2A7 /* libPods-cashRegisterUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +203,7 @@
 		60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterViewController.swift; sourceTree = "<group>"; };
 		60ECC6782725460F00B1A29A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		60EE7D7F2737C0BE00B27215 /* BentoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BentoModel.swift; sourceTree = "<group>"; };
+		60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterModel.swift; sourceTree = "<group>"; };
 		85C17694D1989D94CEDEB2A7 /* libPods-cashRegisterUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cashRegisterUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		949DC298E687EE481E3071D9 /* Pods-cashRegisterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegisterUITests.debug.xcconfig"; path = "Target Support Files/Pods-cashRegisterUITests/Pods-cashRegisterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAB6091E60BCDF87E209AF12 /* libPods-cashRegister.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cashRegister.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,6 +437,7 @@
 			children = (
 				60EE7D7F2737C0BE00B27215 /* BentoModel.swift */,
 				604AADA42748E87C00A874B9 /* BuyDetailModel.swift */,
+				60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				0AF28B7625FAFFBC008CA39A /* HistoryDataViewController.swift in Sources */,
 				0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */,
 				60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */,
+				60FE85C927BBCBC8003E3314 /* CashRegisterModel.swift in Sources */,
 				0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */,
 				604AAD8A2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
 			);
@@ -700,6 +706,7 @@
 				60310D9526C8A60100D0D726 /* ColorDef.swift in Sources */,
 				60310DA726C8A61B00D0D726 /* ItemTableViewCell.swift in Sources */,
 				60310D8B26C8A5EF00D0D726 /* HistoryDataViewController.swift in Sources */,
+				60FE85CA27BBCBC8003E3314 /* CashRegisterModel.swift in Sources */,
 				60310D9726C8A60400D0D726 /* ColorHexUtil.swift in Sources */,
 				60310D8F26C8A5F400D0D726 /* BaseViewController.swift in Sources */,
 				60310D9B26C8A60900D0D726 /* UIViewExtension.swift in Sources */,
@@ -736,6 +743,7 @@
 				60310D9626C8A60100D0D726 /* ColorDef.swift in Sources */,
 				60310DA826C8A61C00D0D726 /* ItemTableViewCell.swift in Sources */,
 				60310D8C26C8A5F000D0D726 /* HistoryDataViewController.swift in Sources */,
+				60FE85CB27BBCBC8003E3314 /* CashRegisterModel.swift in Sources */,
 				60310D9826C8A60400D0D726 /* ColorHexUtil.swift in Sources */,
 				60310D9026C8A5F400D0D726 /* BaseViewController.swift in Sources */,
 				60310D9C26C8A60900D0D726 /* UIViewExtension.swift in Sources */,

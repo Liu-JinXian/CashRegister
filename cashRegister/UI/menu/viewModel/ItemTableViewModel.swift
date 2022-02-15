@@ -18,6 +18,6 @@ class ItemTableViewModel {
         
         self.item = item
         self.amount = amount
-        self.totalPrice = (amount) * (price)
+        self.totalPrice = price
     }
 }

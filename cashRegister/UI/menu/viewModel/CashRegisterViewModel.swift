@@ -13,21 +13,14 @@ class CashRegisterViewModel {
     var bentoModel: [BentoModel]?
     var subViewModels: [MenuCollectionCellViewModel] = []
     
-    var items: [String] = []
-    var amounts: [Int] = []
-    var itemTotalPrices: [Int] = []
-    var itemPrices: [Int] = []
-    
-    var amount: Int = 0
-    var price: Int = 0
+    var cashRegisterModels: [CashRegisterModel] = []
+    var isInModel: Bool?
     var totalprice: Int = 0
     var totalamount: Int = 0
     var date: String?
     var isInside: Bool? = true
     
     var itemTableViewModel: ItemTableViewModel?
-    
-    var buyDetails: [BuyDetailResponse] = []
     
     var reloadData: (() -> ())?
     var setTotalItem: ((Int, Int) -> ())?
@@ -43,22 +36,12 @@ class CashRegisterViewModel {
     
     func onTouchEditing(indexPath: IndexPath) {
         
-        totalprice -= itemTotalPrices[indexPath.row]
-        totalamount -= amounts[indexPath.row]
-        
-        items.remove(at: indexPath.row)
-        amounts.remove(at: indexPath.row)
-        itemTotalPrices.remove(at: indexPath.row)
-        
-        setTotalItem?(totalamount, totalprice)
+        cashRegisterModels.remove(at: indexPath.row)
+        setTotal()
     }
     
     func clearUserDeafaults() {
-        itemPrices = []
-        items = []
-        amounts = []
-        itemTotalPrices = []
-        price = 0
+        cashRegisterModels = []
         totalprice = 0
         totalamount = 0
     }
@@ -66,12 +49,15 @@ class CashRegisterViewModel {
     func setItemTableViewModel(indexPath: IndexPath) {
         
         itemTableViewModel = ItemTableViewModel()
-        itemTableViewModel?.setViewModel(item: items[indexPath.row] ,amount: amounts[indexPath.row] ,price: itemPrices[indexPath.row])
+        itemTableViewModel?.setViewModel(item: cashRegisterModels[indexPath.row].bentoName ?? "",
+                                         amount: cashRegisterModels[indexPath.row].bentoAmount ?? 0,
+                                         price: cashRegisterModels[indexPath.row].bentoTotalPrice ?? 0)
+        
         itemTableViewModel?.onTouchLess = { [weak self] in
-            self?.onTouchLess(item: self?.items[indexPath.row] ?? "")
+            self?.onTouchLess(item: self?.cashRegisterModels[indexPath.row].bentoName ?? "")
         }
         itemTableViewModel?.onTouchAdd = { [weak self] in
-            self?.onTouchAdd(item: self?.items[indexPath.row] ?? "")
+            self?.onTouchAdd(item: self?.cashRegisterModels[indexPath.row].bentoName ?? "")
         }
     }
     
@@ -86,6 +72,7 @@ class CashRegisterViewModel {
     
     func onTouchCancel() {
         clearUserDeafaults()
+        cashRegisterModels = []
         totalprice = 0
         setTotalItem?(totalamount, totalprice)
     }
@@ -106,89 +93,55 @@ extension CashRegisterViewModel {
     
     private func onTouchItem(item: BentoModel) {
         
-        if items.contains(item.name ?? "") == false {
-            items.append(item.name ?? "")
-            amounts.append(1)
-            itemPrices.append(item.price ?? 0)
-            itemTotalPrices.append(item.price ?? 0)
-        } else {
-            amount = amounts[items.firstIndex(of: item.name ?? "") ?? 0]
-            amount += 1
-            amounts[items.firstIndex(of: item.name ?? "") ?? 0] = amount
-            
-            self.price = itemTotalPrices[items.firstIndex(of: item.name ?? "") ?? 0]
-            self.price += item.price ?? 0
-            itemTotalPrices[items.firstIndex(of: item.name ?? "") ?? 0] = self.price
+        self.isInModel = false
+        
+        cashRegisterModels.forEach{ (model) in
+            if model.bentoName == item.name {
+                model.bentoAmount! += 1
+                model.bentoTotalPrice! += model.bentoPrice!
+                self.isInModel = true
+            }
         }
         
-        totalprice += item.price ?? 0
-        totalamount += 1
-        amount = 0
-        setTotalItem?(totalamount, totalprice)
+        if isInModel == false {
+            let cashRegisterModel = CashRegisterModel()
+            cashRegisterModel.bentoName = item.name
+            cashRegisterModel.bentoPrice = item.price
+            cashRegisterModel.bentoAmount = 1
+            cashRegisterModel.bentoTotalPrice = item.price
+            cashRegisterModels.append(cashRegisterModel)
+        }
+        
+        setTotal()
     }
     
     private func onTouchLess(item: String) {
         
-        amount = amounts[items.firstIndex(of: item) ?? 0]
-        amount -= 1
-        
-        if amount == 0 {
-            
-            totalprice -= itemTotalPrices[items.firstIndex(of: item) ?? 0]
-            totalamount -= amounts[items.firstIndex(of: item) ?? 0]
-            
-            let row = items.firstIndex(of: item)
-            items.remove(at: row ?? 0)
-            amounts.remove(at: row ?? 0)
-            itemTotalPrices.remove(at: row ?? 0)
-            setTotalItem?(totalamount, totalprice)
-            
-        } else {
-            
-            amount = amounts[items.firstIndex(of: item) ?? 0]
-            self.price = itemTotalPrices[items.firstIndex(of: item) ?? 0]
-            totalprice -= price
-            self.price = self.price/amount
-            amount -= 1
-            amounts[items.firstIndex(of: item) ?? 0] = amount
-            
-            self.price = self.price * amount
-            itemTotalPrices[items.firstIndex(of: item) ?? 0] = self.price
-            totalprice += price
-            totalamount -= 1
-            amount = 0
-            setTotalItem?(totalamount, totalprice)
+        for (index, model) in cashRegisterModels.enumerated() {
+            if model.bentoName == item {
+                model.bentoAmount! -= 1
+                model.bentoTotalPrice! -= model.bentoPrice!
+                if model.bentoAmount == 0 {
+                    cashRegisterModels.remove(at: index)
+                }
+            }
         }
+        
+        setTotal()
     }
     
     private func onTouchAdd(item: String) {
         
-        amount = amounts[items.firstIndex(of: item) ?? 0]
-        price = itemTotalPrices[items.firstIndex(of: item) ?? 0]
-        totalprice -= price
-        price = price/amount
-        amount += 1
-        amounts[items.firstIndex(of: item) ?? 0] = amount
-        
-        price = price * amount
-        totalprice += price
-        itemTotalPrices[items.firstIndex(of: item) ?? 0] = self.price
-        
-        totalamount += 1
-        amount = 0
-        setTotalItem?(totalamount, totalprice)
+        cashRegisterModels.forEach{ (model) in
+            if model.bentoName == item {
+                model.bentoAmount! += 1
+                model.bentoTotalPrice! += model.bentoPrice!
+            }
+        }
+        setTotal()
     }
     
     private func setAll() {
-        buyDetails = []
-        
-        for (index, item) in items.enumerated() {
-            let buyDetail = BuyDetailResponse()
-            buyDetail.name = item
-            buyDetail.amount = amounts[index]
-            buyDetail.price = itemPrices[index]
-            buyDetails.append(buyDetail)
-        }
         
         let time = Date()
         let formatter = DateFormatter()
@@ -200,7 +153,7 @@ extension CashRegisterViewModel {
     private func setBuyDetails() {
         
         let url = URL(string: "http://localhost:3000/buyDeatailInsert")!
-        if buyDetails == [] { return }
+        if cashRegisterModels.isEmpty == true { return }
         let params = getDictionary()
         let headers: HTTPHeaders = [
             "Authorization": "Basic VXNlcm5hbWU6UGFzc3dvcmQ=",
@@ -221,22 +174,22 @@ extension CashRegisterViewModel {
     
     private func getDictionary() -> [String: Any] {
         
-        var a: [[String: Any]] = []
+        var buyDetails: [[String: Any]] = []
         
-        buyDetails.forEach{ (item) in
-            let abc = [
-                "name": item.name ?? "",
-                "price": item.price ?? 0,
-                "amount": item.amount ?? 0
+        cashRegisterModels.forEach{ (model) in
+            let buyDetail = [
+                "name": model.bentoName ?? "",
+                "price": model.bentoPrice ?? 0,
+                "amount": model.bentoAmount ?? 0
             ] as [String : Any]
             
-            a.append(abc)
+            buyDetails.append(buyDetail)
         }
         
         let params: Parameters = [
             "time": date ?? "",
             "isInSide": "\(isInside ?? false)" ,
-            "buyDetails": buyDetails.toJSON()
+            "buyDetails": buyDetails
         ] as [String: Any]
         return params
     }
@@ -244,5 +197,16 @@ extension CashRegisterViewModel {
     private func getPrettyParams(_ dict: [String: Any]) -> NSString? {
         let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
         return NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)
+    }
+    
+    private func setTotal() {
+        totalamount = 0
+        totalprice = 0
+        
+        cashRegisterModels.forEach{ (model) in
+            totalprice += model.bentoTotalPrice ?? 0
+            totalamount += model.bentoAmount ?? 0
+        }
+        setTotalItem?(totalamount, totalprice)
     }
 }

@@ -121,7 +121,7 @@ extension CashRegisterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return  viewModel?.items.count ?? 0
+        return  viewModel?.cashRegisterModels.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
