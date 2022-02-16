@@ -1,11 +1,10 @@
 //
-//  MenuCollectionCellViewModel.swift
+//  CashRegisterItemCollectionViewModel.swift
 //  cashRegister
 //
 //  Created by 劉晉賢 on 2021/11/20.
 //
-
-class MenuCollectionCellViewModel {
+class CashRegisterItemCollectionViewModel {
     
     var onTouchItem: (() -> ())?
     var onTouchUpdate: (() -> ())?

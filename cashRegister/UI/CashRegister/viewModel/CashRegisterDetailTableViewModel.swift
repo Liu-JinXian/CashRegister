@@ -1,11 +1,11 @@
 //
-//  ItemTableViewModel.swift
+//  CashRegisterDetailTableViewModel.swift
 //  cashRegister
 //
 //  Created by 劉晉賢 on 2021/11/20.
 //
 
-class ItemTableViewModel {
+class CashRegisterDetailTableViewModel {
     
     var onTouchLess: (() -> ())?
     var onTouchAdd: (() -> ())?

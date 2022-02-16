@@ -34,7 +34,7 @@ class CashRegisterViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "POS系統"
-//        self.navigationController?.navigationBar.isTranslucent = false
+        //        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = yellow
     }
     
@@ -61,7 +61,7 @@ class CashRegisterViewController: BaseViewController {
         
         inside.backgroundColor = yellow
         inside.setShadow(offset: CGSize.init(width: 0, height: 0), opacity: 1, shadowRadius: 1, color: .black)
-        //        inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .black)
+//        inside.setShadow(offset: CGSize.init(width: -3, height: -3), opacity: 0.5, shadowRadius: 1, color: .black)
         inside.setTitleColor(.white, for: .normal)
         
         outside.backgroundColor = UIColor.white
@@ -95,11 +95,13 @@ class CashRegisterViewController: BaseViewController {
 
 
 extension CashRegisterViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: (self.foodItemCollectionView.frame.width/4 - 10), height: (self.foodItemCollectionView.frame.height/6 - 10))
     }
 }
+
 extension CashRegisterViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -107,7 +109,7 @@ extension CashRegisterViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CashRegisterItemCollectionViewCell", for: indexPath) as! CashRegisterItemCollectionViewCell
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
@@ -121,21 +123,19 @@ extension CashRegisterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return  viewModel?.cashRegisterModels.count ?? 0
+        return  viewModel?.cashRegisterDetailTableViewModels.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        viewModel?.setItemTableViewModel(indexPath: indexPath)
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-        cell.setCell(viewModel: (viewModel?.itemTableViewModel)!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CashRegisterDetailTableViewCell", for: indexPath) as! CashRegisterDetailTableViewCell
+        cell.setCell(viewModel: (viewModel?.cashRegisterDetailTableViewModels[indexPath.row])!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        viewModel?.onTouchEditing(indexPath: indexPath)
+        viewModel?.onTouchEditing(row: indexPath.row)
     }
 }
 
@@ -174,7 +174,7 @@ extension CashRegisterViewController {
         
         foodItemCollectionView.dataSource = self
         foodItemCollectionView.delegate = self
-        foodItemCollectionView.register(UINib(nibName: "MenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MenuCollectionViewCell")
+        foodItemCollectionView.register(UINib(nibName: "CashRegisterItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CashRegisterItemCollectionViewCell")
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 5
@@ -186,6 +186,6 @@ extension CashRegisterViewController {
     private func setTableView() {
         
         itemTableView.dataSource = self
-        itemTableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemTableViewCell")
+        itemTableView.register(UINib(nibName: "CashRegisterDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "CashRegisterDetailTableViewCell")
     }
 }

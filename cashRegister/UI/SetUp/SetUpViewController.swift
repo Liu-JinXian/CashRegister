@@ -75,7 +75,7 @@ extension SetUpViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CashRegisterItemCollectionViewCell", for: indexPath) as! CashRegisterItemCollectionViewCell
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSize.init(width: 1, height: 1)
         cell.layer.shadowOpacity = 0.7
@@ -121,7 +121,7 @@ extension SetUpViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "MenuCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MenuCollectionViewCell")
+        collectionView.register(UINib(nibName: "CashRegisterItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CashRegisterItemCollectionViewCell")
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 5

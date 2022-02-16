@@ -14,7 +14,7 @@ class SetUpViewModel: BaseViewModel {
     var reloadData: (() -> ())?
     var presentToVC: ((UIViewController) -> ())?
     var bentoModel: [BentoModel]?
-    var subViewModels: [MenuCollectionCellViewModel] = []
+    var subViewModels: [CashRegisterItemCollectionViewModel] = []
     
     func getBentoData() {
         let address = "http://localhost:3000/Menu"
@@ -71,7 +71,7 @@ extension SetUpViewModel {
     
     private func setCellData() {
         bentoModel?.forEach { (item) in
-            let viewModel = MenuCollectionCellViewModel()
+            let viewModel = CashRegisterItemCollectionViewModel()
             viewModel.setViewModel(foodItem: item, update: true)
             viewModel.onTouchUpdate = { [weak self] in
                 let vc = self?.getVC(st: "StepUp", vc: "SetUpItemViewController") as! SetUpItemViewController

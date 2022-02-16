@@ -10,20 +10,18 @@ import ObjectMapper
 
 class CashRegisterViewModel {
     
-    var bentoModel: [BentoModel]?
-    var subViewModels: [MenuCollectionCellViewModel] = []
-    
-    var cashRegisterModels: [CashRegisterModel] = []
-    var isInModel: Bool?
-    var totalprice: Int = 0
-    var totalamount: Int = 0
-    var date: String?
-    var isInside: Bool? = true
-    
-    var itemTableViewModel: ItemTableViewModel?
-    
     var reloadData: (() -> ())?
     var setTotalItem: ((Int, Int) -> ())?
+    var subViewModels: [CashRegisterItemCollectionViewModel] = []
+    var cashRegisterDetailTableViewModels: [CashRegisterDetailTableViewModel] = []
+    var bentoModel: [BentoModel]?
+    var isInside: Bool? = true
+    
+    private var cashRegisterModels: [CashRegisterModel] = []
+    private var isInModel: Bool?
+    private var totalPrice: Int = 0
+    private var totalAmount: Int = 0
+    private var date: String?
     
     func getItemList() {
         let address = "http://localhost:3000/Menu"
@@ -34,55 +32,35 @@ class CashRegisterViewModel {
         }
     }
     
-    func onTouchEditing(indexPath: IndexPath) {
+    func onTouchEditing(row: Int) {
         
-        cashRegisterModels.remove(at: indexPath.row)
+        cashRegisterModels.remove(at: row)
         setTotal()
     }
     
     func clearUserDeafaults() {
+        cashRegisterDetailTableViewModels = []
         cashRegisterModels = []
-        totalprice = 0
-        totalamount = 0
-    }
-    
-    func setItemTableViewModel(indexPath: IndexPath) {
-        
-        itemTableViewModel = ItemTableViewModel()
-        itemTableViewModel?.setViewModel(item: cashRegisterModels[indexPath.row].bentoName ?? "",
-                                         amount: cashRegisterModels[indexPath.row].bentoAmount ?? 0,
-                                         price: cashRegisterModels[indexPath.row].bentoTotalPrice ?? 0)
-        
-        itemTableViewModel?.onTouchLess = { [weak self] in
-            self?.onTouchLess(item: self?.cashRegisterModels[indexPath.row].bentoName ?? "")
-        }
-        itemTableViewModel?.onTouchAdd = { [weak self] in
-            self?.onTouchAdd(item: self?.cashRegisterModels[indexPath.row].bentoName ?? "")
-        }
+        setTotalItem?(totalAmount, totalPrice)
     }
     
     func onTouchCashRegister() {
         
-        setAll()
         setBuyDetails()
         clearUserDeafaults()
-        totalprice = 0
-        setTotalItem?(totalamount, totalprice)
     }
     
     func onTouchCancel() {
         clearUserDeafaults()
-        cashRegisterModels = []
-        totalprice = 0
-        setTotalItem?(totalamount, totalprice)
     }
 }
 
 extension CashRegisterViewModel {
     
     private func setCellData() {
+        
         bentoModel?.forEach{ (item) in
-            let viewModel = MenuCollectionCellViewModel()
+            let viewModel = CashRegisterItemCollectionViewModel()
             viewModel.setViewModel(foodItem: item)
             viewModel.onTouchItem = { [weak self] in
                 self?.onTouchItem(item: item)
@@ -141,16 +119,8 @@ extension CashRegisterViewModel {
         setTotal()
     }
     
-    private func setAll() {
-        
-        let time = Date()
-        let formatter = DateFormatter()
-        formatter.locale = Locale.init(identifier: "zh_TW")
-        formatter.dateFormat = "yyyy/MM/dd"
-        self.date = formatter.string(from: time)
-    }
-    
     private func setBuyDetails() {
+        
         
         let url = URL(string: "http://localhost:3000/buyDeatailInsert")!
         if cashRegisterModels.isEmpty == true { return }
@@ -173,6 +143,12 @@ extension CashRegisterViewModel {
     }
     
     private func getDictionary() -> [String: Any] {
+        
+        let time = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "zh_TW")
+        formatter.dateFormat = "yyyy/MM/dd"
+        self.date = formatter.string(from: time)
         
         var buyDetails: [[String: Any]] = []
         
@@ -200,13 +176,26 @@ extension CashRegisterViewModel {
     }
     
     private func setTotal() {
-        totalamount = 0
-        totalprice = 0
+        
+        totalAmount = 0
+        totalPrice = 0
+        cashRegisterDetailTableViewModels = []
         
         cashRegisterModels.forEach{ (model) in
-            totalprice += model.bentoTotalPrice ?? 0
-            totalamount += model.bentoAmount ?? 0
+            totalPrice += model.bentoTotalPrice ?? 0
+            totalAmount += model.bentoAmount ?? 0
+            
+            let viewModel = CashRegisterDetailTableViewModel()
+            viewModel.setViewModel(item: model.bentoName ?? "", amount: model.bentoAmount ?? 0, price: model.bentoPrice ?? 0)
+            viewModel.onTouchLess = { [weak self] in
+                self?.onTouchLess(item: model.bentoName ?? "")
+            }
+            viewModel.onTouchAdd = { [weak self] in
+                self?.onTouchAdd(item: model.bentoName ?? "")
+            }
+            cashRegisterDetailTableViewModels.append(viewModel)
         }
-        setTotalItem?(totalamount, totalprice)
+        
+        setTotalItem?(totalAmount, totalPrice)
     }
 }
