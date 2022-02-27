@@ -108,8 +108,11 @@ extension SetUpViewController {
     private func setView() {
         self.navigationItem.title = "設定"
         
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = yellow
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = yellow
+        self.navigationController?.navigationBar.standardAppearance = appearance;
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         
         self.collectionView.backgroundColor = yellow
         

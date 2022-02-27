@@ -34,7 +34,7 @@ extension SetUpItemViewModel {
     func addBentoItem(name: String, price: String) {
         
         let params: Parameters = ["name": name, "price": price]
-        let url = URL(string: "http://localhost:3000/MenuInsert")!
+        let url = URL(string: "http://192.168.0.102:3000/MenuInsert")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             if response.result.isSuccess {
@@ -49,7 +49,7 @@ extension SetUpItemViewModel {
     func deleteBentoItem() {
         
         let params: Parameters = ["id": id ?? ""]
-        let url = URL(string: "http://localhost:3000/MenuDelete")!
+        let url = URL(string: "http://192.168.0.102:3000/MenuDelete")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             switch response.result {
@@ -65,7 +65,7 @@ extension SetUpItemViewModel {
     func updateBentoItem(name: String, price: String) {
         
         let params: Parameters = ["id": id ?? "", "name": name, "price": price]
-        let url = URL(string: "http://localhost:3000/MenuUpdate")!
+        let url = URL(string: "http://192.168.0.102:3000/MenuUpdate")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             if response.result.isSuccess {

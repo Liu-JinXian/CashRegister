@@ -17,7 +17,7 @@ class SetUpViewModel: BaseViewModel {
     var subViewModels: [CashRegisterItemCollectionViewModel] = []
     
     func getBentoData() {
-        let address = "http://localhost:3000/Menu"
+        let address = "http://192.168.0.102:3000/Menu"
         Alamofire.request(address).responseJSON { response in
             self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
             self.setCellData()
@@ -34,7 +34,7 @@ class SetUpViewModel: BaseViewModel {
     func getUpdateLocation(locationTemp: String, locationMove: Int) {
         
         let params: Parameters = ["touch": "\(locationMove)", "temp": locationTemp, "uuid": bentoModel?[locationMove].uuid ?? ""]
-        let url = URL(string: "http://localhost:3000/MenuUpdateLocation")!
+        let url = URL(string: "http://192.168.0.102:3000/MenuUpdateLocation")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             if response.result.isSuccess {

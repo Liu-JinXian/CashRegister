@@ -24,7 +24,7 @@ class CashRegisterViewModel {
     private var date: String?
     
     func getItemList() {
-        let address = "http://localhost:3000/Menu"
+        let address = "http://192.168.0.102:3000/Menu"
         Alamofire.request(address).responseJSON { response in
             self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
             self.setCellData()
@@ -41,7 +41,7 @@ class CashRegisterViewModel {
     func clearUserDeafaults() {
         cashRegisterDetailTableViewModels = []
         cashRegisterModels = []
-        setTotalItem?(totalAmount, totalPrice)
+        setTotal()
     }
     
     func onTouchCashRegister() {
@@ -121,8 +121,7 @@ extension CashRegisterViewModel {
     
     private func setBuyDetails() {
         
-        
-        let url = URL(string: "http://localhost:3000/buyDeatailInsert")!
+        let url = URL(string: "http://192.168.0.102:3000/buyDeatailInsert")!
         if cashRegisterModels.isEmpty == true { return }
         let params = getDictionary()
         let headers: HTTPHeaders = [

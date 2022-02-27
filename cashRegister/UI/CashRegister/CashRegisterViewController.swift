@@ -34,8 +34,11 @@ class CashRegisterViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "POS系統"
-        //        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = yellow
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = yellow
+        self.navigationController?.navigationBar.standardAppearance = appearance;
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
     
     override func viewDidDisappear(_ animated: Bool) {

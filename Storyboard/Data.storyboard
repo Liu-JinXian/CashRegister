@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="mac" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="DataViewController" id="7RN-0o-qGa" customClass="HistoryDataViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cq9-q7-2U5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kaa-Ny-TTW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kaa-Ny-TTW">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -36,31 +38,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAr-Zv-Wsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509.44444444444446" y="106.66666666666666"/>
+            <point key="canvasLocation" x="-191" y="-573"/>
         </scene>
         <!--Date Pick View Controller-->
         <scene sceneID="vY4-M7-5Hj">
             <objects>
                 <viewController storyboardIdentifier="DatePickViewController" id="pDg-xi-84C" customClass="DatePickViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dg3-WO-PdM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHN-Zs-xkC" userLabel="otherView">
-                                <rect key="frame" x="0.0" y="-950" width="600" height="1000"/>
+                                <rect key="frame" x="0.0" y="-950" width="800" height="1000"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1000" id="tmH-cL-Ns4"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-b2-z80" userLabel="backView">
-                                <rect key="frame" x="0.0" y="50" width="600" height="290"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBx-eo-mZi">
-                                <rect key="frame" x="0.0" y="340" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="354" width="800" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMG-ZG-oCm">
-                                        <rect key="frame" x="540" y="-5" width="40" height="40"/>
+                                        <rect key="frame" x="740" y="-5" width="40" height="41"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
                                         <state key="normal" title="完成">
                                             <color key="titleColor" name="AccentColor"/>
@@ -70,7 +69,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0w-Nu-iLz" userLabel="Line">
-                                        <rect key="frame" x="0.0" y="29" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="29" width="800" height="1"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="cVw-Tv-XG2"/>
@@ -86,29 +85,45 @@
                                     <constraint firstItem="FMG-ZG-oCm" firstAttribute="trailing" secondItem="wBx-eo-mZi" secondAttribute="trailing" constant="-20" id="sMs-hE-tpn"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="M06-ol-9C1">
-                                <rect key="frame" x="0.0" y="360" width="600" height="240"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwP-4N-LzB" userLabel="datePickerView">
+                                <rect key="frame" x="0.0" y="384" width="800" height="216"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="M06-ol-9C1">
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <locale key="locale" localeIdentifier="zh"/>
+                                    </datePicker>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <locale key="locale" localeIdentifier="zh"/>
-                            </datePicker>
+                                <constraints>
+                                    <constraint firstItem="M06-ol-9C1" firstAttribute="bottom" secondItem="GwP-4N-LzB" secondAttribute="bottom" id="OvZ-zw-h1Y"/>
+                                    <constraint firstItem="M06-ol-9C1" firstAttribute="top" secondItem="GwP-4N-LzB" secondAttribute="top" id="VdT-Ui-eCd"/>
+                                    <constraint firstItem="M06-ol-9C1" firstAttribute="leading" secondItem="GwP-4N-LzB" secondAttribute="leading" id="m3B-by-jHW"/>
+                                    <constraint firstItem="M06-ol-9C1" firstAttribute="trailing" secondItem="GwP-4N-LzB" secondAttribute="trailing" id="mKs-u5-PaH"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-b2-z80" userLabel="backView">
+                                <rect key="frame" x="0.0" y="50" width="800" height="304"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Ct-kO-rEp"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="YHN-Zs-xkC" firstAttribute="trailing" secondItem="6Ct-kO-rEp" secondAttribute="trailing" id="1b0-rD-ko5"/>
                             <constraint firstItem="cYB-b2-z80" firstAttribute="trailing" secondItem="6Ct-kO-rEp" secondAttribute="trailing" id="49F-gW-VTS"/>
-                            <constraint firstItem="M06-ol-9C1" firstAttribute="height" secondItem="dg3-WO-PdM" secondAttribute="height" multiplier="0.4" id="5P7-a1-tn7"/>
                             <constraint firstItem="wBx-eo-mZi" firstAttribute="top" secondItem="cYB-b2-z80" secondAttribute="bottom" id="6of-fX-eAp"/>
                             <constraint firstItem="wBx-eo-mZi" firstAttribute="trailing" secondItem="6Ct-kO-rEp" secondAttribute="trailing" id="9Ql-bx-Y1n"/>
-                            <constraint firstItem="M06-ol-9C1" firstAttribute="trailing" secondItem="6Ct-kO-rEp" secondAttribute="trailing" id="B9G-DY-pJ2"/>
                             <constraint firstItem="wBx-eo-mZi" firstAttribute="leading" secondItem="6Ct-kO-rEp" secondAttribute="leading" id="EHh-fL-ckm"/>
                             <constraint firstItem="cYB-b2-z80" firstAttribute="top" secondItem="6Ct-kO-rEp" secondAttribute="top" constant="50" id="K0h-sV-tke"/>
+                            <constraint firstItem="wBx-eo-mZi" firstAttribute="bottom" secondItem="GwP-4N-LzB" secondAttribute="top" id="Lc6-Hq-QCy"/>
                             <constraint firstItem="wBx-eo-mZi" firstAttribute="height" secondItem="dg3-WO-PdM" secondAttribute="height" multiplier="0.05" id="Muk-pY-mEO"/>
+                            <constraint firstItem="6Ct-kO-rEp" firstAttribute="bottom" secondItem="GwP-4N-LzB" secondAttribute="bottom" id="OyA-Mh-0CO"/>
                             <constraint firstItem="cYB-b2-z80" firstAttribute="leading" secondItem="6Ct-kO-rEp" secondAttribute="leading" id="b2y-0h-jrz"/>
-                            <constraint firstItem="M06-ol-9C1" firstAttribute="top" secondItem="wBx-eo-mZi" secondAttribute="bottom" constant="-10" id="i8h-uh-Ct6"/>
-                            <constraint firstItem="M06-ol-9C1" firstAttribute="leading" secondItem="6Ct-kO-rEp" secondAttribute="leading" id="mcK-TR-ofL"/>
+                            <constraint firstItem="GwP-4N-LzB" firstAttribute="leading" secondItem="6Ct-kO-rEp" secondAttribute="leading" id="dda-VF-gSy"/>
                             <constraint firstItem="YHN-Zs-xkC" firstAttribute="leading" secondItem="6Ct-kO-rEp" secondAttribute="leading" id="n3y-Ov-2DE"/>
-                            <constraint firstItem="M06-ol-9C1" firstAttribute="bottom" secondItem="6Ct-kO-rEp" secondAttribute="bottom" id="n8h-Qh-76z"/>
                             <constraint firstItem="YHN-Zs-xkC" firstAttribute="bottom" secondItem="cYB-b2-z80" secondAttribute="top" id="qXG-Om-4W4"/>
+                            <constraint firstItem="6Ct-kO-rEp" firstAttribute="trailing" secondItem="GwP-4N-LzB" secondAttribute="trailing" id="rDv-TO-GZI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -119,19 +134,19 @@
             </objects>
             <point key="canvasLocation" x="-859" y="-573"/>
         </scene>
-        <!--Data Setting View Controller-->
+        <!--History Setting Data Setting View Controller-->
         <scene sceneID="W5F-f2-E2G">
             <objects>
-                <viewController storyboardIdentifier="DataSettingViewController" id="deu-3G-x6g" customClass="DataSettingViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistorySettingDataSettingViewController" id="deu-3G-x6g" customClass="HistorySettingDataSettingViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ehq-jv-EGp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmR-AA-D7u">
-                                <rect key="frame" x="15" y="150" width="600" height="300"/>
+                                <rect key="frame" x="15" y="150" width="800" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查詢日期:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js4-4a-t5t">
-                                        <rect key="frame" x="30" y="15" width="128" height="42"/>
+                                        <rect key="frame" x="30" y="15" width="128" height="42.5"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -145,42 +160,44 @@
                                         <connections>
                                             <action selector="onTouchSearchDateEnd:" destination="7RN-0o-qGa" eventType="touchUpInside" id="xH0-79-aLp"/>
                                             <action selector="onTouchSearchDateStart:" destination="7RN-0o-qGa" eventType="touchUpInside" id="9rz-Jz-YOJ"/>
+                                            <action selector="onTouchStartDate:" destination="deu-3G-x6g" eventType="touchUpInside" id="IAW-4s-uPa"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUn-uq-m0x">
-                                        <rect key="frame" x="377" y="15" width="15" height="42"/>
+                                        <rect key="frame" x="377" y="15" width="15" height="42.5"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdp-3Y-G4S">
-                                        <rect key="frame" x="417" y="9" width="169" height="54"/>
+                                        <rect key="frame" x="417" y="9" width="169" height="55"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                         <state key="normal" title="2021/03/22">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="onTouchEndDate:" destination="deu-3G-x6g" eventType="touchUpInside" id="kk6-kg-g4Z"/>
                                             <action selector="onTouchSearchDateEnd:" destination="7RN-0o-qGa" eventType="touchUpInside" id="4xf-sT-UBN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查詢種類:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJg-bN-MsH">
-                                        <rect key="frame" x="30" y="82" width="128" height="42"/>
+                                        <rect key="frame" x="30" y="83" width="128" height="42.5"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5la-fX-G8a">
-                                        <rect key="frame" x="183" y="76" width="60" height="54"/>
+                                        <rect key="frame" x="183" y="76" width="60" height="55"/>
                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                         <state key="normal" title="全部">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jDN-FZ-WJy">
-                                        <rect key="frame" x="200" y="216" width="200" height="54"/>
+                                        <rect key="frame" x="300" y="215" width="200" height="55"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xb6-jl-5vY">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="54"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="JLW-TZ-3eB"/>
@@ -196,7 +213,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaK-3p-CKd" userLabel="搜尋">
-                                                <rect key="frame" x="100" y="0.0" width="100" height="54"/>
+                                                <rect key="frame" x="100" y="0.0" width="100" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="APd-7J-MCS"/>
@@ -245,11 +262,13 @@
                     </view>
                     <connections>
                         <outlet property="cancel" destination="Xb6-jl-5vY" id="WgC-YW-fJO"/>
+                        <outlet property="endDate" destination="Jdp-3Y-G4S" id="t5C-VM-x0L"/>
+                        <outlet property="startDate" destination="fue-rb-pLH" id="wUX-Za-efV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbM-Xv-tvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1484" y="30"/>
+            <point key="canvasLocation" x="-1541" y="-573"/>
         </scene>
     </scenes>
     <resources>
@@ -257,10 +276,10 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

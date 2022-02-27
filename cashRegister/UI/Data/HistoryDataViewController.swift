@@ -12,6 +12,11 @@ class HistoryDataViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    enum Section : Int, CaseIterable {
+        case BANNER = 0
+        case DATA
+    }
+    
     var buyDetailModel: [BuyDetailModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +28,21 @@ class HistoryDataViewController: BaseViewController {
         
         self.navigationItem.rightBarButtonItem =  UIBarButtonItem(image: UIImage(named: "setting"), style: .plain, target: self, action: #selector(onTouchSetting))
         
+        self.navigationItem.title = "設定"
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = yellow
+        self.navigationController?.navigationBar.standardAppearance = appearance;
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "DataTableViewCell", bundle: nil), forCellReuseIdentifier: "DataTableViewCell")
+        tableView.register(UINib(nibName: "HistoryDataTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryDataTableViewCell")
     }
     
     
-    func convertDateToString(dateFormatTo: String, date: Date, amSymbolTo: String? = nil, pmSymbolTo: String? = nil) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.setToBasic(dateFormat: dateFormatTo, amSymbol: amSymbolTo, pmSymbol: pmSymbolTo)
-        return dateFormatter.string(from: date)
-    }
+
     
     //    @IBAction func onTouchSearchDateStart(_ sender: Any) {
     //
@@ -53,8 +62,10 @@ class HistoryDataViewController: BaseViewController {
     
     @objc private func onTouchSetting() {
         
-        let vc = getVC(st: "Data", vc: "DataSettingViewController") as! DataSettingViewController
-        self.present(vc, animated: true)
+        let vc = getVC(st: "Data", vc: "HistorySettingDataSettingViewController") as! HistorySettingDataSettingViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
     }
 }
 
@@ -62,23 +73,51 @@ extension HistoryDataViewController: UITableViewDelegate {
     
 }
 
-extension HistoryDataViewController: UITableViewDataSource{
+extension HistoryDataViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Section.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        let section = Section(rawValue: section)!
+        switch section {
+        case .BANNER:
+            return 1
+        case .DATA:
+            return buyDetailModel.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell", for: indexPath) as! HistoryDataTableViewCell
-        return cell
+        
+        let section = Section(rawValue: indexPath.section)!
+        
+        switch section {
+        case .BANNER:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryDataTableViewCell", for: indexPath) as! HistoryDataTableViewCell
+            cell.setBannerCell()
+            return cell
+            
+        case .DATA:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryDataTableViewCell", for: indexPath) as! HistoryDataTableViewCell
+            let viewModel = HistoryDataTableViewMdoel()
+            viewModel.setViewModel(buyDetailModel: buyDetailModel[indexPath.row])
+            cell.setCell(viewModel: viewModel)
+            return cell
+        }
+
     }
 }
 
 extension HistoryDataViewController {
     
     func getDataList() {
-        let address = "http://localhost:3000/buyDeatail"
+        let address = "http://192.168.0.102:3000/buyDeatail"
         Alamofire.request(address).responseJSON { response in
             self.buyDetailModel = Mapper<BuyDetailModel>().mapArray(JSONObject: response.result.value) ?? []
+            self.tableView.reloadData()
             print(self.getPrettyPrint(response.result.value!))
         }
     }

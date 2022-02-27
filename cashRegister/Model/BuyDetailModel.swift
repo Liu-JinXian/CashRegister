@@ -9,7 +9,7 @@ import ObjectMapper
 class BuyDetailModel: Mappable {
     
     var time: String?
-    var isInside: String?
+    var isInside: Bool?
     var buyDetails: [BuyDetailResponse]?
     
     required init?(map: Map) {
@@ -17,7 +17,7 @@ class BuyDetailModel: Mappable {
     
     func mapping(map: Map) {
         time <- map["time"]
-        isInside <- map["isInside"]
+        isInside <- map["isInSide"]
         buyDetails <- map["buyDetails"]
     }
 }
