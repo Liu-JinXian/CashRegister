@@ -8,18 +8,18 @@ import ObjectMapper
 
 class BentoModel: Mappable {
     
-    var uuid: String?
-    var name: String?
-    var price: Int?
+    var bentoToken: String?
+    var bentoName: String?
+    var bentoPrice: Int?
     var location: Int?
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        uuid <- map["_id"]
-        name <- map["name"]
-        price <- map["price"]
+        bentoToken <- map["bentoToken"]
+        bentoName <- map["bentoName"]
+        bentoPrice <- map["bentoPrice"]
         location <- map["location"]
     }
 }

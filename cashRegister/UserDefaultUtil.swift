@@ -8,30 +8,39 @@
 import Foundation
 
 enum UserDefaultKey: String {
-    case item = "ITEM"
-    case price = "PRICE"
+    case memberToken = "MemberToken"
+    case companyToken = "CompanyToken"
+    case openForUse = "OpenForUse"
 }
 
 class UserDefaultUtil: NSObject {
     
     static var shared = UserDefaultUtil()
     
-    var item: [String]? {
+    var memberToken: String? {
         get {
-            return getObject(classType: [String](), key: .item) ?? []
+            return getObject(classType: String(), key: .memberToken) ?? ""
         }
-        set(value){
-            let values = setOnlyThreeItem(array: value ?? [])
-            update(object: values, key: .item)
+        set(value) {
+            update(object: value, key: .memberToken)
         }
     }
     
-    var price: [Int]? {
+    var companyToken: String? {
         get {
-            return getObject(classType: [Int](), key: .price) ?? []
-        }set(value){
-            let values = setOnlyThreeItem(array: value ?? [])
-            update(object: values, key: .price)
+            return getObject(classType: String(), key: .companyToken) ?? ""
+        }
+        set(value) {
+            update(object: value, key: .companyToken)
+        }
+    }
+    
+    var openForUse: Bool? {
+        get {
+            return getObject(classType: Bool(), key: .openForUse) ?? false
+        }
+        set(value) {
+            update(object: value, key: .openForUse)
         }
     }
     
@@ -50,7 +59,7 @@ class UserDefaultUtil: NSObject {
         return userDefaults.object(forKey: key.rawValue) as? T
     }
     
-    private func setOnlyThreeItem(array:[Any]) -> [Any] {
+    private func setOnlyThreeItem(array: [Any]) -> [Any] {
         var howManyItem = array
         if howManyItem.count > 1000 {
             howManyItem.removeLast()

@@ -16,9 +16,9 @@ class CashRegisterItemCollectionViewModel {
     
     func setViewModel(foodItem: BentoModel, update: Bool? = false) {
         
-        self.item = foodItem.name ?? ""
-        self.price = foodItem.price ?? 0
-        self.id = foodItem.uuid ?? ""
+        self.item = foodItem.bentoName ?? ""
+        self.price = foodItem.bentoPrice ?? 0
+        self.id = foodItem.bentoToken ?? ""
         self.update = update ?? false
     }
     

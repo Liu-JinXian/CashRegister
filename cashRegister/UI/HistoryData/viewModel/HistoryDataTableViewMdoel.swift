@@ -18,7 +18,7 @@ class HistoryDataTableViewMdoel {
         
         buyDetailModel.buyDetails?.forEach{ (detail) in
             self.amount += detail.amount ?? 0
-            self.price += detail.price ?? 0
+            self.price += (detail.bentoPrice ?? 0) * (detail.amount ?? 0)
         }
     }
 }

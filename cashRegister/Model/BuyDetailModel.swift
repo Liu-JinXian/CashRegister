@@ -8,6 +8,7 @@ import ObjectMapper
 
 class BuyDetailModel: Mappable {
     
+    var timeID: String?
     var time: String?
     var isInside: Bool?
     var buyDetails: [BuyDetailResponse]?
@@ -16,6 +17,7 @@ class BuyDetailModel: Mappable {
     }
     
     func mapping(map: Map) {
+        timeID <- map["id"]
         time <- map["time"]
         isInside <- map["isInSide"]
         buyDetails <- map["buyDetails"]

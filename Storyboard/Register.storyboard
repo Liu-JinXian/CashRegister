@@ -9,6 +9,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="fGN-BU-q6g">
+            <objects>
+                <viewController id="fOy-yi-UR4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nj8-Nq-vgs">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9d-xm-WZL" userLabel="AccountStackView">
+                                <rect key="frame" x="100" y="120" width="880" height="51.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公司名稱：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmr-fH-Roz">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ff-1i-W08" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                        <rect key="frame" x="150" y="0.0" width="730" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xpu-xO-tSN"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.79607843137254897" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="U9d-xm-WZL" firstAttribute="centerX" secondItem="Xpu-xO-tSN" secondAttribute="centerX" id="1qr-Iz-4Ri"/>
+                            <constraint firstItem="U9d-xm-WZL" firstAttribute="leading" secondItem="Xpu-xO-tSN" secondAttribute="leading" constant="100" id="cXh-Uv-Hre"/>
+                            <constraint firstItem="U9d-xm-WZL" firstAttribute="top" secondItem="Xpu-xO-tSN" secondAttribute="top" constant="100" id="tX2-tO-DgJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDB-lq-ghX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-189.44444444444443" y="-296.2962962962963"/>
+        </scene>
         <!--Member Register View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -21,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="20" width="1080" height="790"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Wtl-rK-LRq">
-                                        <rect key="frame" x="108" y="100" width="864" height="543"/>
+                                        <rect key="frame" x="108" y="100" width="864" height="461.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rc-E1-PPl" userLabel="AccountStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="864" height="51.5"/>
@@ -71,40 +109,24 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwh-h3-Dbd" userLabel="StoreNameStackView">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwh-h3-Dbd" userLabel="UniformStackView">
                                                 <rect key="frame" x="0.0" y="244.5" width="864" height="51.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsW-3f-m30">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稅籍編號：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsW-3f-m30">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="51.5"/>
                                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8oD-MK-ePs" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
-                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
-                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ck-Gd-5FQ" userLabel="PositionStackView">
-                                                <rect key="frame" x="0.0" y="326" width="864" height="51.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="職位：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGS-Kf-cYN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
-                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VBF-I1-Fgq" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
-                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
+                                                        <rect key="frame" x="150" y="0.0" width="714" height="51.5"/>
                                                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVb-aJ-1WX" userLabel="PhoneStackView">
-                                                <rect key="frame" x="0.0" y="407.5" width="864" height="51.5"/>
+                                                <rect key="frame" x="0.0" y="326" width="864" height="51.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聯絡電話：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyf-Z2-lhE">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="51.5"/>
@@ -120,7 +142,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLG-3N-zkZ">
-                                                <rect key="frame" x="0.0" y="489" width="864" height="54"/>
+                                                <rect key="frame" x="0.0" y="407.5" width="864" height="54"/>
                                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -132,6 +154,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onTouchRegister:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ju2-8z-g2F"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -161,13 +186,174 @@
                         <outlet property="name" destination="LO3-kw-tED" id="Cmp-ml-4Jt"/>
                         <outlet property="password" destination="8TY-GO-NUn" id="GC8-sE-r5x"/>
                         <outlet property="phone" destination="xf6-ke-QET" id="d3p-C3-Dgy"/>
-                        <outlet property="position" destination="VBF-I1-Fgq" id="0kV-No-0LJ"/>
-                        <outlet property="storeName" destination="8oD-MK-ePs" id="Ks0-fI-nlw"/>
+                        <outlet property="uniform" destination="8oD-MK-ePs" id="h4m-E9-nN1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-189" y="385"/>
+        </scene>
+        <!--Company Register View Controller-->
+        <scene sceneID="h9G-j8-XP0">
+            <objects>
+                <viewController storyboardIdentifier="CompanyRegisterViewController" id="gBN-Ak-jbp" customClass="CompanyRegisterViewController" customModule="cashRegister" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lvg-Ym-gjH">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-dS-96D">
+                                <rect key="frame" x="0.0" y="20" width="1080" height="790"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LZR-Al-ckb">
+                                        <rect key="frame" x="100" y="100" width="864" height="543"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8O-jo-A7K" userLabel="AccountStackView">
+                                                <rect key="frame" x="0.0" y="0.0" width="864" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳號：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCo-3L-SWH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUK-zh-dzK" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivu-ux-XWh" userLabel="PasswordStackView">
+                                                <rect key="frame" x="0.0" y="81.5" width="864" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HD-mr-YdZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-oS-ejl" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m09-26-Eyj" userLabel="UniformStackView">
+                                                <rect key="frame" x="0.0" y="163" width="864" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稅籍編號：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-6e-vEp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-Yd-aLx" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                                        <rect key="frame" x="150" y="0.0" width="714" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6L-qC-Eas" userLabel="StoreNameStackView">
+                                                <rect key="frame" x="0.0" y="244.5" width="864" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-ui-Xfl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-5f-fxt" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dht-gO-aIr" userLabel="PhoneStackView">
+                                                <rect key="frame" x="0.0" y="326" width="864" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電話：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-oo-Bpz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-y7-UMu" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIo-Rl-BgW" userLabel="AdressStackView">
+                                                <rect key="frame" x="0.0" y="407.5" width="864" height="51.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHq-ha-RiC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9A-Q9-mon" customClass="AccPwdTextField" customModule="cashRegister" customModuleProvider="target">
+                                                        <rect key="frame" x="90" y="0.0" width="774" height="51.5"/>
+                                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-7X-1wZ">
+                                                <rect key="frame" x="0.0" y="489" width="864" height="54"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                                <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="註冊">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onTouchRegister:" destination="gBN-Ak-jbp" eventType="touchUpInside" id="CQ6-FQ-UgY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LZR-Al-ckb" secondAttribute="trailing" constant="100" id="LLD-eb-DbE"/>
+                                    <constraint firstItem="LZR-Al-ckb" firstAttribute="leading" secondItem="N9h-dS-96D" secondAttribute="leading" constant="100" id="aaH-KR-XL9"/>
+                                    <constraint firstAttribute="bottom" secondItem="LZR-Al-ckb" secondAttribute="bottom" constant="100" id="wPn-ZJ-zWu"/>
+                                    <constraint firstItem="LZR-Al-ckb" firstAttribute="top" secondItem="N9h-dS-96D" secondAttribute="top" constant="100" id="zgw-cE-hco"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mfQ-66-9pK"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.79607843137254897" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="N9h-dS-96D" firstAttribute="leading" secondItem="mfQ-66-9pK" secondAttribute="leading" id="9Tg-MA-2MA"/>
+                            <constraint firstItem="N9h-dS-96D" firstAttribute="trailing" secondItem="mfQ-66-9pK" secondAttribute="trailing" id="FEC-Sg-K1D"/>
+                            <constraint firstItem="N9h-dS-96D" firstAttribute="top" secondItem="mfQ-66-9pK" secondAttribute="top" id="KA0-qc-Sho"/>
+                            <constraint firstItem="N9h-dS-96D" firstAttribute="bottom" secondItem="mfQ-66-9pK" secondAttribute="bottom" id="UCs-NO-KxN"/>
+                            <constraint firstItem="LZR-Al-ckb" firstAttribute="width" secondItem="mfQ-66-9pK" secondAttribute="width" multiplier="0.8" id="YlQ-jj-uSY"/>
+                            <constraint firstItem="N9h-dS-96D" firstAttribute="width" secondItem="lvg-Ym-gjH" secondAttribute="width" id="k2h-DT-pO0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="account" destination="hUK-zh-dzK" id="LGq-hK-0GL"/>
+                        <outlet property="address" destination="I9A-Q9-mon" id="glX-ij-WkQ"/>
+                        <outlet property="password" destination="E2J-oS-ejl" id="doV-bU-hF0"/>
+                        <outlet property="phone" destination="aKF-y7-UMu" id="IyA-lv-kE2"/>
+                        <outlet property="storeName" destination="hEz-5f-fxt" id="Fpu-Xp-11c"/>
+                        <outlet property="uniform" destination="xCn-Yd-aLx" id="5qv-TZ-Wq7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FlB-cs-0SP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-885" y="384"/>
         </scene>
     </scenes>
     <resources>

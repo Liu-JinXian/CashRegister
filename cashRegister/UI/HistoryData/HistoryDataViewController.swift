@@ -107,14 +107,13 @@ extension HistoryDataViewController: UITableViewDataSource {
             cell.setCell(viewModel: viewModel)
             return cell
         }
-
     }
 }
 
 extension HistoryDataViewController {
     
     func getDataList() {
-        let address = "http://192.168.0.102:3000/buyDeatail"
+        let address = "http://localhost:3000/businessInfos"
         Alamofire.request(address).responseJSON { response in
             self.buyDetailModel = Mapper<BuyDetailModel>().mapArray(JSONObject: response.result.value) ?? []
             self.tableView.reloadData()

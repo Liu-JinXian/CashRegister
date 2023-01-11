@@ -50,7 +50,6 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
     
     private func adjustLeftBarButtonItem() {
-        
         let closeImage = #imageLiteral(resourceName: "back")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: closeImage, style: .plain, target: self, action: #selector(onTouchNavClose))
     }
@@ -71,5 +70,5 @@ extension BaseViewController {
     
     private func adjustNavBackground() {
         self.navigationController?.navigationBar.barTintColor = yellow
-    }
+    }    
 }

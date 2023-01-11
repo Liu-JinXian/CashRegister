@@ -8,13 +8,15 @@ import ObjectMapper
 
 class BuyDetailResponse: BaseModel {
     
-    var name: String?
-    var price: Int?
+    var detailsID: Int?
+    var bentoName: String?
+    var bentoPrice: Int?
     var amount: Int?
     
     override func mapping(map: Map) {
-        name <- map["name"]
-        price <- map["price"]
+        detailsID <- map["details_id"]
+        bentoName <- map["bentoName"]
+        bentoPrice <- map["bentoPrice"]
         amount <- map["amount"]
     }
 }

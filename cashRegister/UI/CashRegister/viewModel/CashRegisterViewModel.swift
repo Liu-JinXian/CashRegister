@@ -24,8 +24,10 @@ class CashRegisterViewModel {
     private var date: String?
     
     func getItemList() {
-        let address = "http://192.168.0.102:3000/Menu"
-        Alamofire.request(address).responseJSON { response in
+        let address = "http://localhost:3000/menuinfo"
+        let params = ["companyToken": UserDefaultUtil.shared.companyToken ?? ""]
+        Alamofire.request(address, method: .post, parameters: params).responseJSON { response in
+            print("\(response)")
             self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
             self.setCellData()
             self.reloadData?()
@@ -74,7 +76,7 @@ extension CashRegisterViewModel {
         self.isInModel = false
         
         cashRegisterModels.forEach{ (model) in
-            if model.bentoName == item.name {
+            if model.bentoName == item.bentoName {
                 model.bentoAmount! += 1
                 model.bentoTotalPrice! += model.bentoPrice!
                 self.isInModel = true
@@ -83,10 +85,11 @@ extension CashRegisterViewModel {
         
         if isInModel == false {
             let cashRegisterModel = CashRegisterModel()
-            cashRegisterModel.bentoName = item.name
-            cashRegisterModel.bentoPrice = item.price
+            cashRegisterModel.bentoToken = item.bentoToken
+            cashRegisterModel.bentoName = item.bentoName
+            cashRegisterModel.bentoPrice = item.bentoPrice
             cashRegisterModel.bentoAmount = 1
-            cashRegisterModel.bentoTotalPrice = item.price
+            cashRegisterModel.bentoTotalPrice = item.bentoPrice
             cashRegisterModels.append(cashRegisterModel)
         }
         
@@ -121,7 +124,7 @@ extension CashRegisterViewModel {
     
     private func setBuyDetails() {
         
-        let url = URL(string: "http://192.168.0.102:3000/buyDeatailInsert")!
+        let url = URL(string: "http://localhost:3000/businessInfos/adddetails")!
         if cashRegisterModels.isEmpty == true { return }
         let params = getDictionary()
         let headers: HTTPHeaders = [
@@ -146,15 +149,14 @@ extension CashRegisterViewModel {
         let time = Date()
         let formatter = DateFormatter()
         formatter.locale = Locale.init(identifier: "zh_TW")
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
         self.date = formatter.string(from: time)
         
         var buyDetails: [[String: Any]] = []
         
         cashRegisterModels.forEach{ (model) in
             let buyDetail = [
-                "name": model.bentoName ?? "",
-                "price": model.bentoPrice ?? 0,
+                "bentoToken": model.bentoToken ?? "",
                 "amount": model.bentoAmount ?? 0
             ] as [String : Any]
             
@@ -163,7 +165,7 @@ extension CashRegisterViewModel {
         
         let params: Parameters = [
             "time": date ?? "",
-            "isInSide": "\(isInside ?? false)" ,
+            "isInSide": isInside ?? false ,
             "buyDetails": buyDetails
         ] as [String: Any]
         return params

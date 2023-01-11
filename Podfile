@@ -7,6 +7,7 @@ def cashRegister_pods
     pod 'RxCocoa', '5.1.0'
     pod 'ReachabilitySwift', '4.1.0'
     pod 'ObjectMapper', '3.5.1'
+    pod 'CryptoSwift', '~> 1.4.1'
 end
 
   # Pods for cashRegister

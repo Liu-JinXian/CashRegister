@@ -16,9 +16,12 @@ class SetUpViewModel: BaseViewModel {
     var bentoModel: [BentoModel]?
     var subViewModels: [CashRegisterItemCollectionViewModel] = []
     
+    private var moveToken: String?
+    
     func getBentoData() {
-        let address = "http://192.168.0.102:3000/Menu"
-        Alamofire.request(address).responseJSON { response in
+        let address = "http://localhost:3000/menuinfo"
+        let params = ["companyToken": UserDefaultUtil.shared.companyToken ?? ""]
+        Alamofire.request(address, method: .post, parameters: params).responseJSON { response in
             self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
             self.setCellData()
             self.reloadData?()
@@ -31,14 +34,22 @@ class SetUpViewModel: BaseViewModel {
         bentoModel = []
     }
     
-    func getUpdateLocation(locationTemp: String, locationMove: Int) {
+    func getUpdateLocation(locationTemp: Int, locationMove: Int) {
         
-        let params: Parameters = ["touch": "\(locationMove)", "temp": locationTemp, "uuid": bentoModel?[locationMove].uuid ?? ""]
-        let url = URL(string: "http://192.168.0.102:3000/MenuUpdateLocation")!
+        bentoModel?.forEach{ (model) in
+            if model.location == locationMove + 1 {
+                moveToken = model.bentoToken ?? ""
+            }
+        }
+        
+        let params: Parameters = ["move": "\(locationMove + 1)", "temp": "\(locationTemp + 1)", "moveToken": moveToken ?? ""]
+        let url = URL(string: "http://localhost:3000/menuinfo/updatelocation")!
         
         Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
             if response.result.isSuccess {
                 self.bentoModel = Mapper<BentoModel>().mapArray(JSONObject: response.result.value)
+                self.subViewModels = []
+                self.setCellData()
                 self.reloadData?()
             }else {
                 print("error!")

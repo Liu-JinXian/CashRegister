@@ -84,9 +84,8 @@ extension SetUpViewController: UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-        viewModel?.getUpdateLocation(locationTemp: "\(destinationIndexPath.item)", locationMove: sourceIndexPath.item)
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {        
+        viewModel?.getUpdateLocation(locationTemp: destinationIndexPath.item, locationMove: sourceIndexPath.item)
     }
 }
 

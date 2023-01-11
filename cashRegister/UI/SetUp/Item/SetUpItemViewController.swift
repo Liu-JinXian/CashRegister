@@ -54,8 +54,8 @@ extension SetUpItemViewController {
     
     private func setView() {
         if viewModel?.add == false {
-            self.enterItem.text = viewModel?.name ?? ""
-            self.enterPrice.text = "\(viewModel?.price ?? 0)"
+            self.enterItem.text = viewModel?.bentoName ?? ""
+            self.enterPrice.text = "\(viewModel?.bentoPrice ?? 0)"
         }
     }
 }

@@ -7,23 +7,56 @@
 
 import UIKit
 
-class CompanyRegisterViewController: UIViewController {
+class CompanyRegisterViewController: BaseViewController {
 
+    @IBOutlet weak var account: AccPwdTextField!
+    @IBOutlet weak var password: AccPwdTextField!
+    @IBOutlet weak var uniform: AccPwdTextField!
+    @IBOutlet weak var storeName: AccPwdTextField!
+    @IBOutlet weak var phone: AccPwdTextField!
+    @IBOutlet weak var address: AccPwdTextField!
+    
+    private var viewModel: CompanyRegisterViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setView()
+        bindViewModel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "公司註冊"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = yellow
+        self.navigationController?.navigationBar.standardAppearance = appearance;
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
-    */
+    
+    @IBAction func onTouchRegister(_ sender: Any) {
+        viewModel?.companyReigster(account: account.text ?? "",
+                                   password: password.text ?? "",
+                                   uniform: uniform.text ?? "",
+                                   storeName: storeName.text ?? "",
+                                   phone: phone.text ?? "",
+                                   address: address.text ?? "")
+    }
+}
 
+extension CompanyRegisterViewController {
+    private func setView() {
+        self.navigationItem.title = "公司註冊"
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = yellow
+        self.navigationController?.navigationBar.standardAppearance = appearance;
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+    }
+    
+    private func bindViewModel() {
+        viewModel = CompanyRegisterViewModel()
+    }
 }

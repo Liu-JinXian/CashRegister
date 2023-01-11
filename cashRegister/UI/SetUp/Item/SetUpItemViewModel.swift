@@ -12,15 +12,15 @@ import Alamofire
 class SetUpItemViewModel{
     
     var reloadData: (() -> ())?
-    var name: String?
-    var price: Int?
-    var id: String?
+    var bentoName: String?
+    var bentoPrice: Int?
+    var bentoToken: String?
     var add: Bool?
     
     func setViewModel(bentoModel: BentoModel? = nil, add: Bool? = false) {
-        self.name = bentoModel?.name
-        self.price = bentoModel?.price
-        self.id = bentoModel?.uuid
+        self.bentoName = bentoModel?.bentoName
+        self.bentoPrice = bentoModel?.bentoPrice
+        self.bentoToken = bentoModel?.bentoToken
         self.add = add
     }
     
@@ -33,46 +33,45 @@ extension SetUpItemViewModel {
     
     func addBentoItem(name: String, price: String) {
         
-        let params: Parameters = ["name": name, "price": price]
-        let url = URL(string: "http://192.168.0.102:3000/MenuInsert")!
+        let params: Parameters = ["companyToken": UserDefaultUtil.shared.companyToken ?? "","bentoName": name, "bentoPrice": price]
+        let url = URL(string: "http://localhost:3000/menuinfo/menuAdd")!
         
-        Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
-            if response.result.isSuccess {
+        Alamofire.request(url, method: .post ,parameters: params).response{ (res) in
+            if res.response?.statusCode == 200 {
                 self.reloadData?()
-                print("Add success!")
+                print("成功")
             }else {
-                print("error!")
+                print("失敗")
             }
         }
     }
     
     func deleteBentoItem() {
         
-        let params: Parameters = ["id": id ?? ""]
-        let url = URL(string: "http://192.168.0.102:3000/MenuDelete")!
+        let params: Parameters = ["companyToken": UserDefaultUtil.shared.companyToken ?? "", "bentoToken": bentoToken ?? ""]
+        let url = URL(string: "http://localhost:3000/menuinfo/menuDelete")!
         
-        Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
-            switch response.result {
-            case .success:
+        Alamofire.request(url, method: .post ,parameters: params).response { (res) in
+            if res.response?.statusCode == 200 {
                 self.reloadData?()
-                print("Delete successfully!")
-            case .failure:
-                print("error")
+                print("成功")
+            }else {
+                print("失敗")
             }
         }
     }
     
     func updateBentoItem(name: String, price: String) {
         
-        let params: Parameters = ["id": id ?? "", "name": name, "price": price]
-        let url = URL(string: "http://192.168.0.102:3000/MenuUpdate")!
+        let params: Parameters = ["companyToken": UserDefaultUtil.shared.companyToken ?? "", "bentoToken": bentoToken ?? "", "bentoName": name, "bentoPrice": price]
+        let url = URL(string: "http://localhost:3000/menuinfo/menuUpdate")!
         
-        Alamofire.request(url, method: .post ,parameters: params).responseJSON { (response) in
-            if response.result.isSuccess {
+        Alamofire.request(url, method: .post ,parameters: params).response { (res) in
+            if res.response?.statusCode == 200 {
                 self.reloadData?()
-                print("update successfully!")
+                print("成功")
             }else {
-                print("error!")
+                print("失敗")
             }
         }
     }

@@ -24,6 +24,21 @@
 		0AF28B9125FB0AC8008CA39A /* HistoryDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AF28B8F25FB0AC8008CA39A /* HistoryDataTableViewCell.xib */; };
 		0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFA5B9A26018B6A000FD4C0 /* BaseViewController.swift */; };
 		117DC0994EDA9B27859E2163 /* libPods-cashRegister.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB6091E60BCDF87E209AF12 /* libPods-cashRegister.a */; };
+		601CDB092896C93000444187 /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB082896C93000444187 /* CompanyRegisterViewController.swift */; };
+		601CDB0A2896C93000444187 /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB082896C93000444187 /* CompanyRegisterViewController.swift */; };
+		601CDB0B2896C93000444187 /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB082896C93000444187 /* CompanyRegisterViewController.swift */; };
+		601CDB0E289818A200444187 /* CompanyRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB0D289818A200444187 /* CompanyRegisterViewModel.swift */; };
+		601CDB0F289818A200444187 /* CompanyRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB0D289818A200444187 /* CompanyRegisterViewModel.swift */; };
+		601CDB10289818A200444187 /* CompanyRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB0D289818A200444187 /* CompanyRegisterViewModel.swift */; };
+		601CDB12289C139100444187 /* MemberRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB11289C139100444187 /* MemberRegisterViewModel.swift */; };
+		601CDB13289C139100444187 /* MemberRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB11289C139100444187 /* MemberRegisterViewModel.swift */; };
+		601CDB14289C139100444187 /* MemberRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB11289C139100444187 /* MemberRegisterViewModel.swift */; };
+		601CDB16289E4D8C00444187 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB15289E4D8C00444187 /* Constant.swift */; };
+		601CDB17289E4D8C00444187 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB15289E4D8C00444187 /* Constant.swift */; };
+		601CDB18289E4D8C00444187 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB15289E4D8C00444187 /* Constant.swift */; };
+		601CDB1A289E603B00444187 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB19289E603B00444187 /* LoginResponse.swift */; };
+		601CDB1B289E603B00444187 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB19289E603B00444187 /* LoginResponse.swift */; };
+		601CDB1C289E603B00444187 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601CDB19289E603B00444187 /* LoginResponse.swift */; };
 		60310D7F26C8A5D900D0D726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892025E9F079002A0F89 /* Main.storyboard */; };
 		60310D8026C8A5DA00D0D726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1892025E9F079002A0F89 /* Main.storyboard */; };
 		60310D8126C8A5DF00D0D726 /* CashRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */; };
@@ -83,6 +98,18 @@
 		604AADB12748E90F00A874B9 /* BuyDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604AADAE2748E90F00A874B9 /* BuyDetailResponse.swift */; };
 		604AADB62748EAD700A874B9 /* CashRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB150072615A8A80019E2A4 /* CashRegisterViewModel.swift */; };
 		604AADB72748EAD700A874B9 /* CashRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB150072615A8A80019E2A4 /* CashRegisterViewModel.swift */; };
+		6068CC0227F880EF00F6A065 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC0027F880EF00F6A065 /* LoginViewController.swift */; };
+		6068CC0327F880EF00F6A065 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC0027F880EF00F6A065 /* LoginViewController.swift */; };
+		6068CC0427F880EF00F6A065 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC0027F880EF00F6A065 /* LoginViewController.swift */; };
+		6068CC0927F8821200F6A065 /* AccPwdTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC0827F8821200F6A065 /* AccPwdTextField.swift */; };
+		6068CC0A27F8821200F6A065 /* AccPwdTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC0827F8821200F6A065 /* AccPwdTextField.swift */; };
+		6068CC0B27F8821200F6A065 /* AccPwdTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC0827F8821200F6A065 /* AccPwdTextField.swift */; };
+		6068CC0D27F8A78D00F6A065 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068CC0C27F8A78D00F6A065 /* Register.storyboard */; };
+		6068CC0E27F8A78D00F6A065 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068CC0C27F8A78D00F6A065 /* Register.storyboard */; };
+		6068CC0F27F8A78D00F6A065 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068CC0C27F8A78D00F6A065 /* Register.storyboard */; };
+		6068CC1327F8AB3A00F6A065 /* MemberRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC1127F8AB3A00F6A065 /* MemberRegisterViewController.swift */; };
+		6068CC1427F8AB3A00F6A065 /* MemberRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC1127F8AB3A00F6A065 /* MemberRegisterViewController.swift */; };
+		6068CC1527F8AB3A00F6A065 /* MemberRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CC1127F8AB3A00F6A065 /* MemberRegisterViewController.swift */; };
 		606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */; };
 		60B98A68272D00120004B7C3 /* HistorySettingDataSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B98A66272D00120004B7C3 /* HistorySettingDataSettingViewController.swift */; };
 		60B98A69272D00120004B7C3 /* HistorySettingDataSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B98A66272D00120004B7C3 /* HistorySettingDataSettingViewController.swift */; };
@@ -90,6 +117,9 @@
 		60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
 		60CEA90626F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
 		60CEA90726F9980D004DE85B /* DatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA90426F9980D004DE85B /* DatePickViewController.swift */; };
+		60DE9366282FA982000B7F11 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DE9365282FA982000B7F11 /* StringExtension.swift */; };
+		60DE9367282FA982000B7F11 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DE9365282FA982000B7F11 /* StringExtension.swift */; };
+		60DE9368282FA982000B7F11 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DE9365282FA982000B7F11 /* StringExtension.swift */; };
 		60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891A25E9F079002A0F89 /* AppDelegate.swift */; };
 		60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891C25E9F079002A0F89 /* SceneDelegate.swift */; };
 		60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1891E25E9F079002A0F89 /* MainViewController.swift */; };
@@ -104,6 +134,9 @@
 		60EE7D802737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
 		60EE7D812737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
 		60EE7D822737C0BE00B27215 /* BentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE7D7F2737C0BE00B27215 /* BentoModel.swift */; };
+		60F49E4628B1FCBA0099CB44 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F49E4528B1FCBA0099CB44 /* APIManager.swift */; };
+		60F49E4728B1FCBA0099CB44 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F49E4528B1FCBA0099CB44 /* APIManager.swift */; };
+		60F49E4828B1FCBA0099CB44 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F49E4528B1FCBA0099CB44 /* APIManager.swift */; };
 		60FE85C927BBCBC8003E3314 /* CashRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */; };
 		60FE85CA27BBCBC8003E3314 /* CashRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */; };
 		60FE85CB27BBCBC8003E3314 /* CashRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */; };
@@ -173,6 +206,11 @@
 		302EB3858FE4942D0212E79A /* Pods-cashRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegister.debug.xcconfig"; path = "Target Support Files/Pods-cashRegister/Pods-cashRegister.debug.xcconfig"; sourceTree = "<group>"; };
 		3F1254E579BB02B04F27F489 /* Pods-cashRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegister.release.xcconfig"; path = "Target Support Files/Pods-cashRegister/Pods-cashRegister.release.xcconfig"; sourceTree = "<group>"; };
 		4608DA1AF5FAAFC2A151ACE2 /* Pods-cashRegister-cashRegisterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cashRegister-cashRegisterUITests.debug.xcconfig"; path = "Target Support Files/Pods-cashRegister-cashRegisterUITests/Pods-cashRegister-cashRegisterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		601CDB082896C93000444187 /* CompanyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegisterViewController.swift; sourceTree = "<group>"; };
+		601CDB0D289818A200444187 /* CompanyRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegisterViewModel.swift; sourceTree = "<group>"; };
+		601CDB11289C139100444187 /* MemberRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterViewModel.swift; sourceTree = "<group>"; };
+		601CDB15289E4D8C00444187 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		601CDB19289E603B00444187 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		60310D6226C007FB00D0D726 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310D6626C007FF00D0D726 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60310D6926C0087500D0D726 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,9 +220,14 @@
 		604AAD9D2748DC8E00A874B9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		604AADA42748E87C00A874B9 /* BuyDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyDetailModel.swift; sourceTree = "<group>"; };
 		604AADAE2748E90F00A874B9 /* BuyDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyDetailResponse.swift; sourceTree = "<group>"; };
+		6068CC0027F880EF00F6A065 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6068CC0827F8821200F6A065 /* AccPwdTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccPwdTextField.swift; sourceTree = "<group>"; };
+		6068CC0C27F8A78D00F6A065 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		6068CC1127F8AB3A00F6A065 /* MemberRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterViewController.swift; sourceTree = "<group>"; };
 		606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		60B98A66272D00120004B7C3 /* HistorySettingDataSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySettingDataSettingViewController.swift; sourceTree = "<group>"; };
 		60CEA90426F9980D004DE85B /* DatePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickViewController.swift; sourceTree = "<group>"; };
+		60DE9365282FA982000B7F11 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		60E1891725E9F079002A0F89 /* cashRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cashRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1891A25E9F079002A0F89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E1891C25E9F079002A0F89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +246,7 @@
 		60E1897825EA2ADE002A0F89 /* CashRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterViewController.swift; sourceTree = "<group>"; };
 		60ECC6782725460F00B1A29A /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		60EE7D7F2737C0BE00B27215 /* BentoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BentoModel.swift; sourceTree = "<group>"; };
+		60F49E4528B1FCBA0099CB44 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		60FE85C827BBCBC8003E3314 /* CashRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashRegisterModel.swift; sourceTree = "<group>"; };
 		60FE85CC27BD3876003E3314 /* CashRegisterItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashRegisterItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		60FE85D027BD3887003E3314 /* CashRegisterDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashRegisterDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,17 +300,16 @@
 			path = SetUp;
 			sourceTree = "<group>";
 		};
-		0AF28B7D25FB0A8C008CA39A /* Data */ = {
+		0AF28B7D25FB0A8C008CA39A /* HistoryData */ = {
 			isa = PBXGroup;
 			children = (
 				603C9BF227B8996800623681 /* viewModel */,
 				60B98A66272D00120004B7C3 /* HistorySettingDataSettingViewController.swift */,
-				60CEA90426F9980D004DE85B /* DatePickViewController.swift */,
 				0AF28B7525FAFFBC008CA39A /* HistoryDataViewController.swift */,
 				0AF28B8E25FB0AC8008CA39A /* HistoryDataTableViewCell.swift */,
 				0AF28B8F25FB0AC8008CA39A /* HistoryDataTableViewCell.xib */,
 			);
-			path = Data;
+			path = HistoryData;
 			sourceTree = "<group>";
 		};
 		3B68AD9F8E35D8DA53AEAE30 /* Pods */ = {
@@ -280,6 +323,15 @@
 				3F1254E579BB02B04F27F489 /* Pods-cashRegister.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		601CDB0C2898188F00444187 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				601CDB0D289818A200444187 /* CompanyRegisterViewModel.swift */,
+				601CDB11289C139100444187 /* MemberRegisterViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		603C9BED27B7DA8B00623681 /* Base */ = {
@@ -304,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				60FE85E427C09306003E3314 /* HistoryDataTableViewMdoel.swift */,
-				60FE85F027C1252C003E3314 /* DatePickViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -315,6 +366,44 @@
 				0AB150072615A8A80019E2A4 /* CashRegisterViewModel.swift */,
 				60FE85DD27BD3896003E3314 /* CashRegisterDetailTableViewModel.swift */,
 				60FE85DC27BD3896003E3314 /* CashRegisterItemCollectionViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		6068CBFF27F880D600F6A065 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6068CC0027F880EF00F6A065 /* LoginViewController.swift */,
+				601CDB19289E603B00444187 /* LoginResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6068CC1027F8AB1300F6A065 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				601CDB0C2898188F00444187 /* viewModel */,
+				6068CC1127F8AB3A00F6A065 /* MemberRegisterViewController.swift */,
+				601CDB082896C93000444187 /* CompanyRegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		606A526F27CB281A007E91C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				606A527027CB282B007E91C6 /* viewModel */,
+				60CEA90426F9980D004DE85B /* DatePickViewController.swift */,
+				6068CC0827F8821200F6A065 /* AccPwdTextField.swift */,
+				60DE9365282FA982000B7F11 /* StringExtension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		606A527027CB282B007E91C6 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				60FE85F027C1252C003E3314 /* DatePickViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -356,17 +445,17 @@
 			children = (
 				60E1891A25E9F079002A0F89 /* AppDelegate.swift */,
 				60E1891C25E9F079002A0F89 /* SceneDelegate.swift */,
+				601CDB15289E4D8C00444187 /* Constant.swift */,
 				60E1892325E9F07A002A0F89 /* Assets.xcassets */,
 				60E1892525E9F07A002A0F89 /* LaunchScreen.storyboard */,
-				60E1892825E9F07A002A0F89 /* Info.plist */,
 				606AFAAF25F3806F00E16370 /* UserDefaultUtil.swift */,
 				0A2E9E9325F771E3006ACEAC /* UIViewExtension.swift */,
+				60E1892825E9F07A002A0F89 /* Info.plist */,
 				0A1E0E082609D72900910A4B /* UIDatePickerExtension.swift */,
 				0A2E9E6E25F74D0F006ACEAC /* ColorHexUtil.swift */,
 				0A2E9E8B25F76E50006ACEAC /* ColorDef.swift */,
 				0A1E0E102609DE9A00910A4B /* FormatUtil.swift */,
 				60E1894D25E9F188002A0F89 /* UI */,
-				60E1895225E9F210002A0F89 /* Repository */,
 				60E1895325E9F235002A0F89 /* Response */,
 				60EE7D832737F7E600B27215 /* Model */,
 			);
@@ -394,10 +483,14 @@
 		60E1894D25E9F188002A0F89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				60F49E4528B1FCBA0099CB44 /* APIManager.swift */,
+				6068CC1027F8AB1300F6A065 /* Register */,
+				6068CBFF27F880D600F6A065 /* Login */,
+				606A526F27CB281A007E91C6 /* Common */,
 				603C9BF127B7DABC00623681 /* Main */,
 				603C9BED27B7DA8B00623681 /* Base */,
 				0A570515262D6C1C002E944B /* SetUp */,
-				0AF28B7D25FB0A8C008CA39A /* Data */,
+				0AF28B7D25FB0A8C008CA39A /* HistoryData */,
 				60E1895425E9F24D002A0F89 /* CashRegister */,
 			);
 			path = UI;
@@ -410,15 +503,9 @@
 				60E1897325EA2A7E002A0F89 /* CashRegister.storyboard */,
 				0AF28B6D25FAFADE008CA39A /* Data.storyboard */,
 				0AE56F4425FF5D1C00877314 /* StepUp.storyboard */,
+				6068CC0C27F8A78D00F6A065 /* Register.storyboard */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		60E1895225E9F210002A0F89 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		60E1895325E9F235002A0F89 /* Response */ = {
@@ -570,6 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6068CC0D27F8A78D00F6A065 /* Register.storyboard in Resources */,
 				60E1892725E9F07A002A0F89 /* LaunchScreen.storyboard in Resources */,
 				60E1892425E9F07A002A0F89 /* Assets.xcassets in Resources */,
 				0A570511262D6C11002E944B /* SetUpItemTableViewCell.xib in Resources */,
@@ -592,6 +680,7 @@
 				60310D8526C8A5E400D0D726 /* StepUp.storyboard in Resources */,
 				60310DA126C8A61200D0D726 /* SetUpItemTableViewCell.xib in Resources */,
 				60FE85D727BD3887003E3314 /* CashRegisterDetailTableViewCell.xib in Resources */,
+				6068CC0E27F8A78D00F6A065 /* Register.storyboard in Resources */,
 				60FE85DA27BD3887003E3314 /* CashRegisterItemCollectionViewCell.xib in Resources */,
 				60310D8126C8A5DF00D0D726 /* CashRegister.storyboard in Resources */,
 				60310D7F26C8A5D900D0D726 /* Main.storyboard in Resources */,
@@ -607,6 +696,7 @@
 				60310D8626C8A5E500D0D726 /* StepUp.storyboard in Resources */,
 				60310DA226C8A61200D0D726 /* SetUpItemTableViewCell.xib in Resources */,
 				60FE85D827BD3887003E3314 /* CashRegisterDetailTableViewCell.xib in Resources */,
+				6068CC0F27F8A78D00F6A065 /* Register.storyboard in Resources */,
 				60FE85DB27BD3887003E3314 /* CashRegisterItemCollectionViewCell.xib in Resources */,
 				60310D8226C8A5DF00D0D726 /* CashRegister.storyboard in Resources */,
 				60310D8026C8A5DA00D0D726 /* Main.storyboard in Resources */,
@@ -670,12 +760,16 @@
 				0A2E9E9425F771E3006ACEAC /* UIViewExtension.swift in Sources */,
 				60B98A68272D00120004B7C3 /* HistorySettingDataSettingViewController.swift in Sources */,
 				60FE85D327BD3887003E3314 /* CashRegisterDetailTableViewCell.swift in Sources */,
+				601CDB092896C93000444187 /* CompanyRegisterViewController.swift in Sources */,
+				60DE9366282FA982000B7F11 /* StringExtension.swift in Sources */,
 				0A1E0E112609DE9B00910A4B /* FormatUtil.swift in Sources */,
 				60ECC6792725460F00B1A29A /* BaseModel.swift in Sources */,
 				60E1891F25E9F079002A0F89 /* MainViewController.swift in Sources */,
 				0A2E9E6F25F74D0F006ACEAC /* ColorHexUtil.swift in Sources */,
+				601CDB12289C139100444187 /* MemberRegisterViewModel.swift in Sources */,
 				60E1891B25E9F079002A0F89 /* AppDelegate.swift in Sources */,
 				606AFAB025F3806F00E16370 /* UserDefaultUtil.swift in Sources */,
+				6068CC1327F8AB3A00F6A065 /* MemberRegisterViewController.swift in Sources */,
 				0AE56F4A25FF5D5600877314 /* SetUpViewController.swift in Sources */,
 				60E1897925EA2ADE002A0F89 /* CashRegisterViewController.swift in Sources */,
 				60E1891D25E9F079002A0F89 /* SceneDelegate.swift in Sources */,
@@ -683,8 +777,11 @@
 				0A2E9E8C25F76E50006ACEAC /* ColorDef.swift in Sources */,
 				604AADAF2748E90F00A874B9 /* BuyDetailResponse.swift in Sources */,
 				60FE85F127C1252C003E3314 /* DatePickViewModel.swift in Sources */,
+				601CDB1A289E603B00444187 /* LoginResponse.swift in Sources */,
+				6068CC0927F8821200F6A065 /* AccPwdTextField.swift in Sources */,
 				60FE85CD27BD3876003E3314 /* CashRegisterItemCollectionViewCell.swift in Sources */,
 				60310DB826C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
+				601CDB0E289818A200444187 /* CompanyRegisterViewModel.swift in Sources */,
 				60EE7D802737C0BE00B27215 /* BentoModel.swift in Sources */,
 				604AAD9E2748DC8E00A874B9 /* BaseViewModel.swift in Sources */,
 				0AFA5B9B26018B6A000FD4C0 /* BaseViewController.swift in Sources */,
@@ -692,11 +789,14 @@
 				0A1E0E092609D72900910A4B /* UIDatePickerExtension.swift in Sources */,
 				0AB150082615A8A80019E2A4 /* CashRegisterViewModel.swift in Sources */,
 				0AF28B7625FAFFBC008CA39A /* HistoryDataViewController.swift in Sources */,
+				601CDB16289E4D8C00444187 /* Constant.swift in Sources */,
 				0A13BA2826004DE200CC2D15 /* SetUpItemViewController.swift in Sources */,
 				60FE85DE27BD3896003E3314 /* CashRegisterItemCollectionViewModel.swift in Sources */,
+				60F49E4628B1FCBA0099CB44 /* APIManager.swift in Sources */,
 				60FE85E527C09306003E3314 /* HistoryDataTableViewMdoel.swift in Sources */,
 				60CEA90526F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				60FE85C927BBCBC8003E3314 /* CashRegisterModel.swift in Sources */,
+				6068CC0227F880EF00F6A065 /* LoginViewController.swift in Sources */,
 				60FE85E127BD3896003E3314 /* CashRegisterDetailTableViewModel.swift in Sources */,
 				0A570510262D6C11002E944B /* SetUpItemTableViewCell.swift in Sources */,
 				604AAD8A2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
@@ -707,13 +807,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6068CC1427F8AB3A00F6A065 /* MemberRegisterViewController.swift in Sources */,
 				60FE85E627C09306003E3314 /* HistoryDataTableViewMdoel.swift in Sources */,
+				601CDB1B289E603B00444187 /* LoginResponse.swift in Sources */,
 				604AADB62748EAD700A874B9 /* CashRegisterViewModel.swift in Sources */,
 				60E1893225E9F07B002A0F89 /* cashRegisterTests.swift in Sources */,
 				60FE85F227C1252C003E3314 /* DatePickViewModel.swift in Sources */,
+				60F49E4728B1FCBA0099CB44 /* APIManager.swift in Sources */,
 				604AADA62748E87C00A874B9 /* BuyDetailModel.swift in Sources */,
 				60310DB926C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
 				60310D9426C8A5FE00D0D726 /* FormatUtil.swift in Sources */,
+				6068CC0A27F8821200F6A065 /* AccPwdTextField.swift in Sources */,
 				604AAD8B2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
 				604AAD9F2748DC8E00A874B9 /* BaseViewModel.swift in Sources */,
 				60310D9526C8A60100D0D726 /* ColorDef.swift in Sources */,
@@ -728,14 +832,20 @@
 				60310D8926C8A5ED00D0D726 /* SetUpViewController.swift in Sources */,
 				603C9BEE27B7DA9A00623681 /* BaseModel.swift in Sources */,
 				60FE85DF27BD3896003E3314 /* CashRegisterItemCollectionViewModel.swift in Sources */,
+				6068CC0327F880EF00F6A065 /* LoginViewController.swift in Sources */,
 				60310D8D26C8A5F100D0D726 /* CashRegisterViewController.swift in Sources */,
 				60310D9926C8A60600D0D726 /* UIDatePickerExtension.swift in Sources */,
 				604AADB02748E90F00A874B9 /* BuyDetailResponse.swift in Sources */,
+				601CDB17289E4D8C00444187 /* Constant.swift in Sources */,
+				601CDB0F289818A200444187 /* CompanyRegisterViewModel.swift in Sources */,
 				60CEA90626F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				60EE7D812737C0BE00B27215 /* BentoModel.swift in Sources */,
 				60310DA326C8A61500D0D726 /* HistoryDataTableViewCell.swift in Sources */,
 				60FE85D427BD3887003E3314 /* CashRegisterDetailTableViewCell.swift in Sources */,
+				601CDB13289C139100444187 /* MemberRegisterViewModel.swift in Sources */,
 				60310D8726C8A5EA00D0D726 /* SetUpItemViewController.swift in Sources */,
+				601CDB0A2896C93000444187 /* CompanyRegisterViewController.swift in Sources */,
+				60DE9367282FA982000B7F11 /* StringExtension.swift in Sources */,
 				60B98A69272D00120004B7C3 /* HistorySettingDataSettingViewController.swift in Sources */,
 				60310D9E26C8A60C00D0D726 /* UserDefaultUtil.swift in Sources */,
 				60FE85CE27BD3876003E3314 /* CashRegisterItemCollectionViewCell.swift in Sources */,
@@ -746,13 +856,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6068CC1527F8AB3A00F6A065 /* MemberRegisterViewController.swift in Sources */,
 				60FE85E727C09306003E3314 /* HistoryDataTableViewMdoel.swift in Sources */,
+				601CDB1C289E603B00444187 /* LoginResponse.swift in Sources */,
 				604AADB72748EAD700A874B9 /* CashRegisterViewModel.swift in Sources */,
 				60E1893D25E9F07B002A0F89 /* cashRegisterUITests.swift in Sources */,
 				60FE85F327C1252C003E3314 /* DatePickViewModel.swift in Sources */,
+				60F49E4828B1FCBA0099CB44 /* APIManager.swift in Sources */,
 				604AADA72748E87C00A874B9 /* BuyDetailModel.swift in Sources */,
 				60310DBA26C8DFD000D0D726 /* SetUpViewModel.swift in Sources */,
 				60310D9326C8A5FE00D0D726 /* FormatUtil.swift in Sources */,
+				6068CC0B27F8821200F6A065 /* AccPwdTextField.swift in Sources */,
 				604AAD8C2743D65300A874B9 /* SetUpItemViewModel.swift in Sources */,
 				604AADA02748DC8E00A874B9 /* BaseViewModel.swift in Sources */,
 				60310D9626C8A60100D0D726 /* ColorDef.swift in Sources */,
@@ -767,14 +881,20 @@
 				60310D8A26C8A5ED00D0D726 /* SetUpViewController.swift in Sources */,
 				603C9BEF27B7DA9A00623681 /* BaseModel.swift in Sources */,
 				60FE85E027BD3896003E3314 /* CashRegisterItemCollectionViewModel.swift in Sources */,
+				6068CC0427F880EF00F6A065 /* LoginViewController.swift in Sources */,
 				60310D8E26C8A5F200D0D726 /* CashRegisterViewController.swift in Sources */,
 				60310D9A26C8A60700D0D726 /* UIDatePickerExtension.swift in Sources */,
 				604AADB12748E90F00A874B9 /* BuyDetailResponse.swift in Sources */,
+				601CDB18289E4D8C00444187 /* Constant.swift in Sources */,
+				601CDB10289818A200444187 /* CompanyRegisterViewModel.swift in Sources */,
 				60CEA90726F9980D004DE85B /* DatePickViewController.swift in Sources */,
 				60EE7D822737C0BE00B27215 /* BentoModel.swift in Sources */,
 				60310DA426C8A61600D0D726 /* HistoryDataTableViewCell.swift in Sources */,
 				60FE85D527BD3887003E3314 /* CashRegisterDetailTableViewCell.swift in Sources */,
+				601CDB14289C139100444187 /* MemberRegisterViewModel.swift in Sources */,
 				60310D8826C8A5EB00D0D726 /* SetUpItemViewController.swift in Sources */,
+				601CDB0B2896C93000444187 /* CompanyRegisterViewController.swift in Sources */,
+				60DE9368282FA982000B7F11 /* StringExtension.swift in Sources */,
 				60B98A6A272D00120004B7C3 /* HistorySettingDataSettingViewController.swift in Sources */,
 				60310D9D26C8A60B00D0D726 /* UserDefaultUtil.swift in Sources */,
 				60FE85CF27BD3876003E3314 /* CashRegisterItemCollectionViewCell.swift in Sources */,
